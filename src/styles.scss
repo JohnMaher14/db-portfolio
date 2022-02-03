@@ -1,5 +1,6 @@
 // theme stylesheet\
 $mainColor: #290707;
+$secondaryColor: #ED2924;
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -10,7 +11,13 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
+.contact-info a{
+  color: #fff;
+  text-decoration: none;
+  &:hover{
+    color: $mainColor;
+  }
+}
 .betterShadow{
   border: none;
   box-shadow: 0 0 18px rgba(0, 0 ,0 , 6%);
@@ -347,10 +354,23 @@ a {
       height: 400px;
       position: relative;
     }
-    &:hover .card-body{
+    &:hover .card-overlay{
         bottom:15px
     }
-    .card-body{
+    &:hover .card-info{
+        bottom:-100%
+    }
+    &-info{
+      background-color: #fff;
+
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      transition: all 1s;
+
+    }
+    &-overlay{
       transition: all 1s;
       background-color: #fff;
       position: absolute;
@@ -555,6 +575,170 @@ a {
     opacity: 1 !important;
   }
 }
+// about page
+.about{
+
+}
+.team{
+  &_section{
+    &_page{
+
+      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+      background-image: url(assets/images/BG/1.jpg);
+      background-size: cover;
+      background-position: center;
+      @media screen and (max-width:1024px) {
+        clip-path: unset;
+      }
+      .title{
+        font-size: 50px;
+        font-weight: 600;
+
+      }
+      .sub-title{
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: initial!important;
+        margin-bottom: 20px;
+      }
+      .item{
+
+        .image-holder{
+          img{
+            height: 250px;
+            width: 250px !important;
+            background-color: #290707;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            &:hover{
+              animation: wiggle 1s ease infinite;
+            }
+          }
+        }
+        .team-name{
+          margin-top: 20px;
+          transition: .5s ease all;
+          margin-bottom: 0.5rem;
+        }
+
+      }
+    }
+  }
+}
+.about{
+  &_us{
+    background-image: url(assets/images/BG/1.jpg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 3%, 100% 8%, 100% 93%, 0 100%);
+    padding: 120px 0;
+    @media screen and (max-width:1024px) {
+      clip-path: unset;
+    }
+    h1{
+      font-size: 50px;
+      font-weight: 600;
+    }
+      p{
+        font-size: 18px;
+        font-weight: 400;
+      }
+  }
+  &_vision{
+    background-image: url(assets/images/BG/2.jpg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+    padding: 60px 0;
+    .vision_mission{
+      margin-top: 40px;
+    }
+    .mission{
+      margin-bottom: 20px;
+      h3{
+        font-size: 30px;
+        font-weight: 500;
+        &::after{
+          content: "";
+          background-color: #fff;
+          position: absolute;
+          width: 5px;
+          height: 100%;
+          top: 50%;
+          right: 0;
+          display: block;
+          transform: translateY(-50%);
+          }
+        }
+
+
+    }
+    .vision{
+      margin-bottom: 20px;
+      h3{
+        font-size: 30px;
+        font-weight: 500;
+        &::after{
+          content: "";
+          background-color: #fff;
+          position: absolute;
+          width: 5px;
+          height: 100%;
+          top: 50%;
+          right: 0;
+          display: block;
+          transform: translateY(-50%);
+          }
+        }
+
+
+    }
+    .about-details{
+      .title{
+        font-size: 50px;
+        font-weight: 600;
+        color: #fff;
+      }
+      .sub-title{
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff;
+      }
+    }
+    .accordion .card-header:not(.collapse) {
+      border:1px solid $mainColor;
+      background: transparent;
+    }
+    .card{
+      border: none;
+      .card-body{
+        background-color: $secondaryColor;
+        color: #fff;
+      }
+    }
+    .btn-link{
+      width: 100%;
+      color: $secondaryColor;
+      &:hover{
+        text-decoration: unset;
+      }
+      &:focus{
+        text-decoration: unset;
+      }
+    }
+  }
+}
+/* ===================================
+   Team SECTION
+====================================== */
+
+
+
+
+
 .btn_up{
   position: fixed;
   bottom: 50px;

@@ -9,6 +9,15 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #290707;
+}
+
 .betterShadow {
   border: none;
   -webkit-box-shadow: 0 0 18px black;
@@ -384,11 +393,25 @@ a:hover {
   position: relative;
 }
 
-.say-hello .card:hover .card-body {
+.say-hello .card:hover .card-overlay {
   bottom: 15px;
 }
 
-.say-hello .card .card-body {
+.say-hello .card:hover .card-info {
+  bottom: -100%;
+}
+
+.say-hello .card-info {
+  background-color: #fff;
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.say-hello .card-overlay {
   -webkit-transition: all 1s;
   transition: all 1s;
   background-color: #fff;
@@ -633,6 +656,181 @@ a:hover {
   opacity: 1 !important;
 }
 
+.team_section_page {
+  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  background-image: url(assets/images/BG/1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .team_section_page {
+    -webkit-clip-path: unset;
+            clip-path: unset;
+  }
+}
+
+.team_section_page .title {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.team_section_page .sub-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: initial !important;
+  margin-bottom: 20px;
+}
+
+.team_section_page .item .image-holder img {
+  height: 250px;
+  width: 250px !important;
+  background-color: #290707;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.team_section_page .item .image-holder img:hover {
+  -webkit-animation: wiggle 1s ease infinite;
+          animation: wiggle 1s ease infinite;
+}
+
+.team_section_page .item .team-name {
+  margin-top: 20px;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  margin-bottom: 0.5rem;
+}
+
+.about_us {
+  background-image: url(assets/images/BG/1.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-clip-path: polygon(0 3%, 100% 8%, 100% 93%, 0 100%);
+          clip-path: polygon(0 3%, 100% 8%, 100% 93%, 0 100%);
+  padding: 120px 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .about_us {
+    -webkit-clip-path: unset;
+            clip-path: unset;
+  }
+}
+
+.about_us h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.about_us p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.about_vision {
+  background-image: url(assets/images/BG/2.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+          clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+  padding: 60px 0;
+}
+
+.about_vision .vision_mission {
+  margin-top: 40px;
+}
+
+.about_vision .mission {
+  margin-bottom: 20px;
+}
+
+.about_vision .mission h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.about_vision .mission h3::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  top: 50%;
+  right: 0;
+  display: block;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.about_vision .vision {
+  margin-bottom: 20px;
+}
+
+.about_vision .vision h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.about_vision .vision h3::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  top: 50%;
+  right: 0;
+  display: block;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.about_vision .about-details .title {
+  font-size: 50px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.about_vision .about-details .sub-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.about_vision .accordion .card-header:not(.collapse) {
+  border: 1px solid #290707;
+  background: transparent;
+}
+
+.about_vision .card {
+  border: none;
+}
+
+.about_vision .card .card-body {
+  background-color: #ED2924;
+  color: #fff;
+}
+
+.about_vision .btn-link {
+  width: 100%;
+  color: #ED2924;
+}
+
+.about_vision .btn-link:hover {
+  text-decoration: unset;
+}
+
+.about_vision .btn-link:focus {
+  text-decoration: unset;
+}
+
+/* ===================================
+   Team SECTION
+====================================== */
 .btn_up {
   position: fixed;
   bottom: 50px;

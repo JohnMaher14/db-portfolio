@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     nav: true,
     navText: [`<a class='circle border-0 center' id='team-circle-left'><img src="assets/images/logo/arrow_left.png"></a>`
     , `<a class='circle border-0 center' id='team-circle-right'><img src="assets/images/logo/arrow_right.png"></a>`],
-    animateIn: 'rotateIn',
+    animateIn: 'shakeX',
     animateOut: 'fadeOut',
     responsive: {
       0: {
@@ -135,6 +135,6 @@ export class HomeComponent implements OnInit {
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
-    
+
   }
 }

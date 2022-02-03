@@ -21,8 +21,10 @@ export class AboutComponent implements OnInit {
     center: true,
     dots: false,
     navSpeed: 700,
-    navText: [`<a class='circle center' id='team-circle-left'><i class='lni lni-chevron-left'></i></a>`
-    , `<a class='circle center' id='team-circle-right'><i class='lni lni-chevron-right'></i></a>`],
+    navText: [`<a class='circle border-0 center' id='team-circle-left'><img src="assets/images/logo/arrow_black_left.png"></a>`
+    , `<a class='circle border-0 center' id='team-circle-right'><img src="assets/images/logo/arrow_black_right.png"></a>`],
+
+    nav: true,
     responsive: {
       0: {
         items: 1
@@ -37,6 +39,5 @@ export class AboutComponent implements OnInit {
         items: 3
       },
     },
-    nav:true
   }
 }

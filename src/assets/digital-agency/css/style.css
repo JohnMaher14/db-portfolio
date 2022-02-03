@@ -2079,8 +2079,9 @@ header{
 
 .standalone-content-data {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    bottom: 10px;
+    left: 20%;
+    text-align: left;
     transform: translate(-50%,-50%);
 }
 
