@@ -1,0 +1,143 @@
+.team_section {
+  .card{
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: transparent;
+  }
+  .tag {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.1rem;
+    top: 0;
+    right: 1em;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    padding: 0.5em 0.5em 0.8em;
+    clip-path: polygon(-1% -1%, 100% -1%, 100% 100%, 50% 80%, 0 100%);
+
+    transition: transform 200ms cubic-bezier(0.31, 1, 0.65, 1);
+  }
+
+  .front {
+    transition: 200ms;
+    text-align: center;
+    &_bottom{
+
+      padding: 10px ;
+    }
+    .banner {
+      max-width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      border-radius: 0.5em;
+    }
+  }
+
+  .util {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .back {
+    display: none;
+  }
+
+  .background {
+    background: #ed2924;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0.2, 0.9);
+  }
+
+  .card:hover {
+    box-shadow: none;
+    .tag {
+      transform: translate(150%, -54%);
+      top: -6px;
+    }
+
+    .front {
+      transform: translateY(-30%) scale(0.9);
+      .name {
+        animation: cardName 200ms forwards;
+        color: #fff;
+        margin-top: 10px;
+      }
+      .position{
+        animation: cardName 200ms forwards;
+        color: #fff;
+        margin-top: 10px;
+      }
+    }
+
+    .background {
+      transform: scale(1.3, 1.2);
+      border-radius: 0.5em;
+      opacity: 1;
+      transition: transform 200ms cubic-bezier(0.31, 1, 0.65, 1),
+        opacity 100ms linear;
+    }
+  }
+
+  @keyframes cardName {
+    0% {
+      text-align: left;
+      opacity: 1;
+    }
+    20% {
+      text-align: left;
+      opacity: 0;
+    }
+    60% {
+      text-align: center;
+      opacity: 0;
+      transform: scale(1.1);
+    }
+    100% {
+      text-align: center;
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+}
+.client_team {
+  .card {
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    text-align: left;
+    border: none;
+    overflow: hidden;
+  }
+
+  .upper-card {
+    position: relative;
+    img {
+      height: 250px;
+    }
+    h2 {
+      position: absolute;
+      bottom: 0;
+      padding: 7px 20px;
+      color: #e4e4e4;
+      text-align: left;
+      border-radius: 0 30px 0 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    p {
+      font-size: 16px;
+    }
+  }
+}

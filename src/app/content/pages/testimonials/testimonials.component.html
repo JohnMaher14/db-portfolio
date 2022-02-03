@@ -1,0 +1,150 @@
+<!--Banner Start-->
+<section class="page-title parallax1">
+      <div class="container">
+          <div class="standalone-content-data">
+              <h2 class="hide-cursor">Testimonals</h2>
+              <ul class="page-breadcrumb link">
+                  <li><a routerLink="/home"><span class="icon fas fa-home"></span>Home</a></li>
+                  <li><a>Testimonals</a></li>
+              </ul>
+          </div>
+      </div>
+
+  </section>
+  <!--Banner End-->
+  <!--testimonial section start-->
+<section class="testimonial-page padding-top">
+  <div class="container">
+      <div class="testimonial-area">
+          <div class="row">
+              <div class="col-12">
+                  <div class="testimonial-title">
+                      <h1 class="heading">SATISFIED <span>CUSTOMERS</span></h1>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="testimonial-carousel">
+                      <owl-carousel-o [options]="testimonials" class="testimonial-box">
+
+                          <ng-template carouselSlide>
+                            <div class="item">
+                              <div class="item-body">
+
+                                <div class="icon-holder">
+                                  <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p class="text">
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae egestas mi, vel dapibus diam. Mauris malesuada, nisl non rutrum commodo, sem magna laoreet tellus, eu euismod dolor enim et mi. In at tempor purus.
+                                </p>
+                                <div class="d-flex align-items-center py-3">
+                                  <!-- <div class="media align-items-center">
+                                    <img src="assets/img/team/team-4.jpg" alt="team" class="avatar avatar-sm mr-3">
+                                    <div class="media-body">
+                                      <h6 class="mb-0">Kyan Boards</h6>
+                                      <small>CEO, ThemeTags</small>
+                                    </div>
+                                  </div> -->
+                                  <div class="img-holder">
+                                    <img src="assets/digital-agency/img/test2.jpg">
+                                  </div>
+                                  <h4 class="user-name">Julia Miltese</h4>
+                                </div>
+                                </div>
+                              </div>
+                          </ng-template>
+                          <ng-template carouselSlide >
+                            <div class="item">
+                              <div class="item-body">
+
+                                <div class="icon-holder">
+                                  <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p class="text">
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae egestas mi, vel dapibus diam. Mauris malesuada, nisl non rutrum commodo, sem magna laoreet tellus, eu euismod dolor enim et mi. In at tempor purus.
+                                </p>
+                                <div class="d-flex align-items-center py-3">
+
+                                  <div class="img-holder">
+                                    <img src="assets/digital-agency/img/test2.jpg">
+                                  </div>
+                                  <h4 class="user-name">Julia Miltese</h4>
+                                </div>
+                                </div>
+                              </div>
+                          </ng-template>
+                      </owl-carousel-o>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</section>
+<!--testimonial section end-->
+<!-- section form testominals -->
+<section class="py-5 bg-gray">
+  <div class="container">
+    <h2>Send a Review
+    </h2>
+    <form [formGroup]="testimonialForm" (ngSubmit)="onSubmit(testimonialForm)">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" class="form-control" type="text" formControlName="name" name="name">
+            <div *ngIf="testimonialForm.controls['name'].touched && testimonialForm.controls['name'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+              <p class="mb-0" *ngIf="testimonialForm.controls['name'].errors['required']">Name is required</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input id="phone" class="form-control" type="number" name="phone" formControlName="phone">
+            <div *ngIf="testimonialForm.controls['phone'].touched && testimonialForm.controls['phone'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+              <p class="mb-0" *ngIf="testimonialForm.controls['phone'].errors['required']">Phone is required</p>
+              <p class="mb-0" *ngIf="testimonialForm.controls['phone'].errors['pattern']">Enter phone number</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">Email address</label>
+
+            <input type="email" class="form-control" id="email" formControlName='email' name="email" placeholder="Email">
+            <div *ngIf="testimonialForm.controls['email'].touched && testimonialForm.controls['email'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+              <p class="mb-0" *ngIf="testimonialForm.controls['email'].errors['required']">email is required</p>
+              <p class="mb-0" *ngIf="testimonialForm.controls['email'].errors['email']">email is valid</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="position">Position</label>
+            <input id="position" class="form-control" type="text" name="position" formControlName="position">
+            <div *ngIf="testimonialForm.controls['position'].touched && testimonialForm.controls['position'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+              <p class="mb-0" *ngIf="testimonialForm.controls['position'].errors['required']">Position is required</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="review">Review</label>
+            <textarea id="review" class="form-control" type="text" name="review" formControlName="review" rows="6"></textarea>
+            <div *ngIf="testimonialForm.controls['review'].touched && testimonialForm.controls['review'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+              <p class="mb-0" *ngIf="testimonialForm.controls['review'].errors['required']">Review is required</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" [disabled]="!testimonialForm.valid">Submit review</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>

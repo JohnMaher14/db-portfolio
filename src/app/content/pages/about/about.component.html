@@ -1,0 +1,222 @@
+<!--Banner Start-->
+<section class="page-title parallax1">
+  <div class="container">
+    <div class="standalone-content-data">
+      <h2 class="hide-cursor">About us</h2>
+      <ul class="page-breadcrumb link">
+        <li>
+          <a routerLink="/home"><span class="icon fas fa-home"></span>Home</a>
+        </li>
+        <li><a>About us</a></li>
+      </ul>
+    </div>
+  </div>
+  <svg
+  id="banner_svg"
+  class="separator__svg"
+  width="100%"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="none"
+  fill="#ffffff"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M 100 100 V 60 L 0 100" />
+  <path d="M 30 73 L 100 50 V 50 Z" fill="#ffffff" stroke-width="0" />
+</svg>
+</section>
+<!--Banner End-->
+<!--
+<section>
+  <div class="container">
+    <div class="row">
+
+    </div>
+  </div>
+</section> -->
+
+
+<!--team section start-->
+<section class="team-section" id="team-section">
+  <!-- <svg
+    class="separator__svg"
+    id="team-header-svg"
+    width="100%"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    fill="#fff"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M 100 100 V 10 L 0 100" />
+    <path d="M 30 73 L 100 18 V 10 Z" fill="#fff" stroke-width="0" />
+  </svg> -->
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <div class="team-details pr-lg-5" [attr.data-depth]="0.1">
+          <h6 class="sub-title main-color">Wanna meet the Bonders?
+          </h6>
+          <h2 class="title">Our Creative Team</h2>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 team-member-area">
+        <owl-carousel-o [options]="teamCarousal" class="testimonial-team">
+          <ng-template carouselSlide class="wow fadeInUp">
+            <div class="item text-center">
+              <div class="image-holder">
+                <img src="assets/images/Bonders/males.jpg" alt="team1" />
+              </div>
+              <h3 class="team-name">Hassan Khaled</h3>
+              <p>CEO</p>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".3s">
+            <div class="item text-center">
+              <div class="image-holder">
+                <img src="assets/images/Bonders/females.jpg" alt="team1" />
+              </div>
+              <h3 class="team-name">Haneen Hamdi</h3>
+              <p>Operations Executive</p>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".4s">
+            <div class="item text-center">
+              <div class="image-holder">
+                <img src="assets/images/Bonders/males.jpg" alt="team1" />
+              </div>
+              <h3 class="team-name">Mohamed Hamed</h3>
+              <p>Project Manager</p>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="">
+            <div class="item text-center">
+              <div class="image-holder">
+                <img src="assets/images/Bonders/males.jpg" alt="team1" />
+              </div>
+              <h3 class="team-name">Abdelrahman Labib</h3>
+              <p>Customer Service Lead</p>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="">
+            <div class="item text-center">
+              <div class="image-holder">
+                <img src="assets/images/Bonders/males.jpg" alt="team1" />
+              </div>
+              <h3 class="team-name">Tarek Abdullah</h3>
+              <p>Accountant</p>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="">
+            <div class="item text-center">
+              <div class="image-holder">
+                <img src="assets/images/Bonders/males.jpg" alt="team1" />
+              </div>
+              <h3 class="team-name">Mohamed Khalifa</h3>
+              <p>Backend Developer</p>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="">
+            <div class="item text-center">
+              <div class="image-holder">
+                <img src="assets/images/Bonders/females.jpg" alt="team1" />
+              </div>
+              <h3 class="team-name">Nardeen Youssef</h3>
+              <p>Graphic designer</p>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+  <!-- <svg
+    class="separator__svg"
+    id="team-foot-svg"
+    width="100%"
+    height="100"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    fill="#fff"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M 100 100 V 10 L 0 100" />
+    <path d="M 30 73 L 100 18 V 10 Z" fill="#fff" stroke-width="0" />
+  </svg> -->
+</section>
+<!--team section start-->
+
+<section>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <h4 class="section-header">Our vission and mission</h4>
+      </div>
+      <!-- <div class="col-lg-7">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Mission
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi dignissimos amet nemo at accusantium. Perferendis est molestiae illo eveniet mollitia.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Vision
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi dignissimos amet nemo at accusantium. Perferendis est molestiae illo eveniet mollitia.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <img src="assets/digital-agency/img/work1.jpg" class="w-100" alt="">
+      </div> -->
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-6 mb-3">
+        <div class="card w-75 m-auto betterShadow">
+          <div class="card-body">
+            <h5 class="card-title">Vision</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores autem quae voluptates id labore asperiores.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-3">
+        <div class="card w-75 m-auto betterShadow">
+          <div class="card-body">
+            <h5 class="card-title">Mission</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores autem quae voluptates id labore asperiores.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-3">
+        <div class="card w-75 m-auto betterShadow">
+          <div class="card-body">
+            <h5 class="card-title">Mission</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores autem quae voluptates id labore asperiores.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

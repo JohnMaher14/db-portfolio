@@ -1,0 +1,105 @@
+<!--Banner Start-->
+<section class="page-title parallax1">
+  <div class="container">
+    <div class="standalone-content-data">
+      <h2 class="hide-cursor">Contact us</h2>
+      <ul class="page-breadcrumb link">
+        <li>
+          <a routerLink="/home"><span class="icon fas fa-home"></span>Home</a>
+        </li>
+        <li><a>Contact us</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!--Banner End-->
+
+
+<!--Contact section start-->
+<section class="contact-sec padding-top padding-bottom" id="contact-sec">
+  <div class="container">
+      <div class="row">
+          <div class="col-12 col-lg-7">
+            <div class="bg-gray p-5">
+
+              <h4 class="heading text-center text-lg-left">GET IN TOUCH</h4>
+              <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)">
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input id="name" class="form-control" type="text" formControlName="name" name="name">
+                      <div *ngIf="contactForm.controls['name'].touched && contactForm.controls['name'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+                        <p class="mb-0" *ngIf="contactForm.controls['name'].errors['required']">Name is required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone">Phone number</label>
+                      <input id="phone" class="form-control" type="number" name="phone" formControlName="phone">
+                      <div *ngIf="contactForm.controls['phone'].touched && contactForm.controls['phone'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+                        <p class="mb-0" *ngIf="contactForm.controls['phone'].errors['required']">Phone is required</p>
+                        <p class="mb-0" *ngIf="contactForm.controls['phone'].errors['pattern']">Enter phone number</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email">Email address</label>
+
+                      <input type="email" class="form-control" id="email" formControlName='email' name="email">
+                      <div *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+                        <p class="mb-0" *ngIf="contactForm.controls['email'].errors['required']">email is required</p>
+                        <p class="mb-0" *ngIf="contactForm.controls['email'].errors['email']">email is valid</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="position">Position</label>
+                      <input id="position" class="form-control" type="text" name="position" formControlName="position">
+                      <div *ngIf="contactForm.controls['position'].touched && contactForm.controls['position'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+                        <p class="mb-0" *ngIf="contactForm.controls['position'].errors['required']">Position is required</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="message">message</label>
+                      <textarea id="message" class="form-control" type="text" name="message" formControlName="message" rows="6"></textarea>
+                      <div *ngIf="contactForm.controls['message'].touched && contactForm.controls['message'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+                        <p class="mb-0" *ngIf="contactForm.controls['message'].errors['required']">Message is required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-dark" [disabled]="!contactForm.valid">Submit review</button>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5 text-center text-lg-left position-relative">
+              <div class="contact-details bg-gray p-5 wow fadeInRight">
+                  <h4 class="heading">OUR LOCATION</h4>
+                  <p class="text">
+                      There are many variations of passages of Lorem Ipsum available, but the majority have suffered .
+                  </p>
+                  <ul>
+                      <li><i class="las la-map-marker addr"></i>123 Park Avenue, New York, United States </li>
+                      <li><i class="las la-phone-volume phone"></i>
+                      <span>+1 631 1234 5678</span>
+                      <span>+1 631 1234 5678</span>
+                      </li>
+                      <li><i class="las la-paper-plane email"></i>email@website.com</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!--Contact section end-->
