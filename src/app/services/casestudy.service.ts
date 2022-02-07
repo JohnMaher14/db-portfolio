@@ -170,7 +170,5 @@ export class CasestudyService {
     },
   ];
   constructor() {}
-  getCaseStudies() {
-    return this.getCaseStudies;
-  }
+
 }

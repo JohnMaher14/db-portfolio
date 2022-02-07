@@ -1,83 +1,159 @@
 <!--Banner Start-->
-<section class="page-title parallax1">
+<section class="page-title services_page--title parallax1">
   <div class="container">
     <div class="standalone-content-data">
-      <h2 class="hide-cursor">Case study</h2>
+      <h2 class="hide-cursor">Services</h2>
       <ul class="page-breadcrumb link">
         <li>
           <a routerLink="/home"><span class="icon fas fa-home"></span>Home</a>
         </li>
-        <li><a>Case study</a></li>
+        <li><a>Services</a></li>
       </ul>
     </div>
   </div>
+  <svg
+    id="banner_svg"
+    class="separator__svg"
+    width="100%"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    fill="#ffffff"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M 100 100 V 60 L 0 100" />
+    <path d="M 30 73 L 100 50 V 50 Z" fill="#ffffff" stroke-width="0" />
+  </svg>
 </section>
 <!--Banner End-->
 
-    <section class="services-section">
-      <div class="container">
-        <div class="row">
-          <!--Column item-->
-          <div class="col-12 text-center">
-            <h1 class="section-header">Services</h1>
+<section class="services-section">
+  <div class="container">
+    <div class="row">
+      <!--Column item-->
+      <div class="col-12 text-center">
+        <h1 class="section-header">Services</h1>
+      </div>
+      <div class="col-md-4 wow animated fadeInUp">
+        <div class="card">
+          <div class="card-content">
+            <h2>BRANDING</h2>
+            <p>
+              {{
+                "                  Your brand needs distinguishing and a place in the market with our various branding techniques we guarantee you to be the chitchat.                "
+                  | slice: 0:130
+              }}
+            </p>
+            <a routerLink="1" class="btn">Discover more</a>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-content">
-                <h2>Lorem Ipsum</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                </p>
-                <a routerLink="1" class="btn">Show More</a>
-              </div>
-              <div class="card-img right">
-                <img
-                  class=""
-                  src="https://images.unsplash.com/photo-1601823984263-b87b59798b70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-content">
-                <h2>Lorem Ipsum</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                </p>
-                <a routerLink="1" class="btn">Show More</a>
-              </div>
-              <div class="card-img right">
-                <img
-                  class=""
-                  src="https://images.unsplash.com/photo-1601823984263-b87b59798b70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-content">
-                <h2>Lorem Ipsum</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                </p>
-                <a routerLink="1" class="btn">Show More</a>
-              </div>
-              <div class="card-img right">
-                <img
-                  class=""
-                  src="https://images.unsplash.com/photo-1601823984263-b87b59798b70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                  alt=""
-                />
-              </div>
-            </div>
+          <div class="card-img right">
+            <img class="" src="assets/images/services_card/1.jpg" alt="" />
           </div>
         </div>
       </div>
-    </section>
+      <div class="col-md-4 wow animated fadeInUp">
+        <div class="card">
+          <div class="card-content">
+            <h2>SOCIAL MEDIA</h2>
+            <p>
+              {{
+                "                  Bonding you with an outstanding online presence takes a joker, one who got the hang of it; and is creative above all. The ability to keep up and cope with the everyday changes is what it takes to make a brand digitally shine.                "
+                  | slice: 0:130
+              }}
+            </p>
+            <a routerLink="1" class="btn">Discover more</a>
+          </div>
+          <div class="card-img right">
+            <img class="" src="assets/images/services_card/2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 wow animated fadeInUp">
+        <div class="card">
+          <div class="card-content">
+            <h2>INFLUENCERS MARKETING & Digital PR</h2>
+            <p>
+              {{
+                "                  Our main aim is to bond with and for; bonding you with figures for your image to stand out.                "
+                  | slice: 0:130
+              }}
+            </p>
+            <a routerLink="1" class="btn">Discover more</a>
+          </div>
+          <div class="card-img right">
+            <img class="" src="assets/images/services_card/3.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 wow animated fadeInUp">
+        <div class="card">
+          <div class="card-content">
+            <h2>VIDEO PRODUCTION</h2>
+            <p>
+              {{
+                "                  Bonding artists and visuals to execute results that will astonish you.                "
+                  | slice: 0:130
+              }}
+            </p>
+            <a routerLink="1" class="btn">Discover more</a>
+          </div>
+          <div class="card-img right">
+            <img class="" src="assets/images/services_card/4.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 wow animated fadeInUp">
+        <div class="card">
+          <div class="card-content">
+            <h2>WEB DEVELOPMENT</h2>
+            <p>
+              {{
+                "                  The extra shot your brand needed. Bonding design and commitment to produce a uniquely designed website to boost your business and be visually appealing, responsive, and user friendly."
+                  | slice: 0:130
+              }}
+            </p>
+            <a routerLink="1" class="btn">Discover more</a>
+          </div>
+          <div class="card-img right">
+            <img class="" src="assets/images/services_card/5.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 wow animated fadeInUp">
+        <div class="card">
+          <div class="card-content">
+            <h2>MOBILE APPLICATIONS</h2>
+            <p>
+              {{
+                "                  Bonding the creativity within the numerically oriented minds on our team to develop effortlessly easy and accessible apps; with an out of this world user experience."
+                  | slice: 0:130
+              }}
+            </p>
+            <a routerLink="1" class="btn">Discover more</a>
+          </div>
+          <div class="card-img right">
+            <img class="" src="assets/images/services_card/6.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 wow animated fadeInUp">
+        <div class="card">
+          <div class="card-content">
+            <h2>SMS CAMPAIGNS</h2>
+            <p>
+              {{
+                "
+                  SMS campaigns will never be last season. These campaigns help in exposure and maintaining loyalty. We are here to discover your bond with the three different SMS techniques and how they can serve you."
+                  | slice: 0:130
+              }}
+            </p>
+            <a routerLink="1" class="btn">Discover more</a>
+          </div>
+          <div class="card-img right">
+            <img class="" src="assets/images/services_card/7.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

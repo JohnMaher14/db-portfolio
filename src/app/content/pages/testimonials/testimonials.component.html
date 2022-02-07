@@ -1,25 +1,37 @@
 <!--Banner Start-->
-<section class="page-title parallax1">
+<section class="page-title review_page--title parallax1">
       <div class="container">
           <div class="standalone-content-data">
-              <h2 class="hide-cursor">Testimonals</h2>
+              <h2 class="hide-cursor">Reviews</h2>
               <ul class="page-breadcrumb link">
                   <li><a routerLink="/home"><span class="icon fas fa-home"></span>Home</a></li>
-                  <li><a>Testimonals</a></li>
+                  <li><a>Reviews</a></li>
               </ul>
           </div>
       </div>
-
+      <svg
+      id="banner_svg"
+      class="separator__svg"
+      width="100%"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+      fill="#ffffff"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M 100 100 V 60 L 0 100" />
+      <path d="M 30 73 L 100 50 V 50 Z" fill="#ffffff" stroke-width="0" />
+    </svg>
   </section>
   <!--Banner End-->
   <!--testimonial section start-->
-<section class="testimonial-page padding-top">
+<section class="testimonial-page">
   <div class="container">
       <div class="testimonial-area">
           <div class="row">
               <div class="col-12">
                   <div class="testimonial-title">
-                      <h1 class="heading">SATISFIED <span>CUSTOMERS</span></h1>
+                      <h1 class="heading">SATISFIED <span>Clients</span></h1>
                   </div>
               </div>
           </div>
@@ -84,7 +96,7 @@
 </section>
 <!--testimonial section end-->
 <!-- section form testominals -->
-<section class="py-5 bg-gray">
+<section class=" bg-gray review_section">
   <div class="container">
     <h2>Send a Review
     </h2>
@@ -114,7 +126,7 @@
           <div class="form-group">
             <label for="email">Email address</label>
 
-            <input type="email" class="form-control" id="email" formControlName='email' name="email" placeholder="Email">
+            <input type="email" class="form-control" id="email" formControlName='email' name="email">
             <div *ngIf="testimonialForm.controls['email'].touched && testimonialForm.controls['email'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
               <p class="mb-0" *ngIf="testimonialForm.controls['email'].errors['required']">email is required</p>
               <p class="mb-0" *ngIf="testimonialForm.controls['email'].errors['email']">email is valid</p>
@@ -141,7 +153,7 @@
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" [disabled]="!testimonialForm.valid">Submit review</button>
+          <button class="btn btn-dark" [disabled]="!testimonialForm.valid">Submit review</button>
         </div>
 
       </div>

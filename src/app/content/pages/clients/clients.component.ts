@@ -1,5 +1,6 @@
 import { trigger, transition, animate, style } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { CasestudyService } from 'src/app/services/casestudy.service';
 @Component({
   selector: 'app-clients',
@@ -29,14 +30,44 @@ import { CasestudyService } from 'src/app/services/casestudy.service';
     ]
 })
 export class ClientsComponent implements OnInit {
+  loading= false;
+  caseStudiess: any[]= [];
   constructor(private _CasestudyService:CasestudyService) {
 
   }
+  getCaseStudies(){
+    this.caseStudiess = this._CasestudyService.caseStudies
+  }
+  caseStudies: OwlOptions ={
+    loop: true,
+    margin:40,
+    autoplay: true,
 
+    center: true,
+    dots: false,
+    navSpeed: 700,
+    navText: [`<a class='circle border-0 center' id='team-circle-left'><img src="assets/images/logo/arrow_black_left.png"></a>`
+    , `<a class='circle border-0 center' id='team-circle-right'><img src="assets/images/logo/arrow_black_right.png"></a>`],
+
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      
+      940: {
+        items: 3
+      },
+      1024: {
+        items: 3
+      }
+    },
+    nav:true
+  }
   ngOnInit(): void {
-    this.caseStudies()
+    this.getCaseStudies()
   }
-  caseStudies(){
-    console.log(this._CasestudyService.getCaseStudies());
-  }
+
 }

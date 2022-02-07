@@ -1,73 +1,52 @@
 <!--Banner Start-->
-<section class="page-title parallax1">
+<section class="page-title casestudy_page--title parallax1">
   <div class="container">
     <div class="standalone-content-data">
-      <h2 class="hide-cursor">Case study</h2>
+      <h2 class="hide-cursor">Case studies</h2>
       <ul class="page-breadcrumb link">
         <li>
           <a routerLink="/home"><span class="icon fas fa-home"></span>Home</a>
         </li>
-        <li><a>Case study</a></li>
+        <li><a>Case studies</a></li>
       </ul>
     </div>
   </div>
+  <svg
+  id="banner_svg"
+  class="separator__svg"
+  width="100%"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="none"
+  fill="#ffffff"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M 100 100 V 60 L 0 100" />
+  <path d="M 30 73 L 100 50 V 50 Z" fill="#ffffff" stroke-width="0" />
+</svg>
 </section>
 <!--Banner End-->
+<div *ngIf="loading">
+  <app-loader></app-loader>
+</div>
+
+
 <section class="case_studies">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4 mb-3 wow animated slideInUp">
+    <owl-carousel-o [options]="caseStudies" class="client-team">
+      
+      <ng-template *ngFor="let caseStudy of caseStudiess" carouselSlide class="wow fadeInUp">
         <div class="card case_study_card">
-          <img src="assets/images/Portfolio/F&B/Classic.jpg" alt="" />
+          <img src="{{caseStudy.imageSrc}}" alt="" />
           <div class="card-body">
-            <a href="">Classic</a>
+            <a href="">{{caseStudy.name}}</a>
             <p class="case_study_card_description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-              reprehenderit facilis ducimus et maxime. Recusandae modi ab quis
-              cupiditate repudiandae!
+              {{caseStudy.description}}
             </p>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 mb-3 wow animated slideInUp">
-        <div class="card case_study_card">
-          <img src="assets/images/Portfolio/F&B/ZiSushi.jpg" alt="" />
-          <div class="card-body">
-            <a href="">Zi sushi</a>
-            <p class="case_study_card_description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-              reprehenderit facilis ducimus et maxime. Recusandae modi ab quis
-              cupiditate repudiandae!
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3 wow animated slideInUp">
-        <div class="card case_study_card">
-          <img src="assets/images/Portfolio/F&B/Turbo.jpg" alt="" />
-          <div class="card-body">
-            <a href="">Turbo</a>
-            <p class="case_study_card_description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-              reprehenderit facilis ducimus et maxime. Recusandae modi ab quis
-              cupiditate repudiandae!
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3 wow animated slideInUp">
-        <div class="card case_study_card">
-          <img src="assets/images/Portfolio/F&B/Ritonka.jpg" alt="" />
-          <div class="card-body">
-            <a href="">Ritonka</a>
-            <p class="case_study_card_description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-              reprehenderit facilis ducimus et maxime. Recusandae modi ab quis
-              cupiditate repudiandae!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+      </ng-template>
+      
+      </owl-carousel-o>
   </div>
 </section>

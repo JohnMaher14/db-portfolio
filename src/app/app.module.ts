@@ -22,6 +22,7 @@ import { ServicesComponent } from './content/pages/services/services.component';
 import { ServicesDetailsComponent } from './content/pages/services/services-details/services-details.component';
 import { PortfolioComponent } from './content/pages/portfolio/portfolio.component';
 import { SayhelloComponent } from './content/pages/sayhello/sayhello.component';
+import { FacebookModule } from "ngx-facebook";
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,6 @@ import { SayhelloComponent } from './content/pages/sayhello/sayhello.component';
     ServicesDetailsComponent,
     PortfolioComponent,
     SayhelloComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -49,7 +49,8 @@ import { SayhelloComponent } from './content/pages/sayhello/sayhello.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FacebookModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -4,7 +4,7 @@
   position: fixed;
   overflow: hidden;
   z-index: 1200;
-  background: #FFFFFF;
+  background: #290707;
 }
 
 .loader-container {
@@ -20,7 +20,6 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 20px;
-  background-color: white;
 }
 
 .cooking-hat {
