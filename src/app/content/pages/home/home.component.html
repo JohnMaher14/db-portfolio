@@ -1,67 +1,31 @@
+<div class="" *ngIf="loading">
+  <app-loader></app-loader>
+</div>
 <div class="banner">
   <owl-carousel-o [options]="mainSlider" class="main_slider">
-    <ng-template carouselSlide class="wow fadeInUp">
+
+    <ng-template *ngFor="let slider of sliders" carouselSlide class="wow fadeInUp">
       <div
         class="item text-center"
-        style="
+        style='
           background-image: linear-gradient(
               to right bottom,
               rgba(0, 0, 0, 0.2),
               rgba(0, 0, 0, 0.8)
             ),
-            url(assets/images/Slider/1.jpg);
-        "
+            url(https://digitalbondmena.com/sliders/{{slider.image}});
+        '
       >
         <div class="main_slider_content" [attr.data-depth]="0.1">
           <img src="assets/images/logo/logo.png" class="main_slider_content_img" alt="">
-          <p class="main_slider_paragraph">Welcome to Digital Bond Agency</p>
+          <p class="main_slider_paragraph">{{slider.en_text}}</p>
           <h1 class="main_slider_header">
-            We Mix And Match Creativity & Commitment
+            {{slider.en_title}}
           </h1>
         </div>
       </div>
     </ng-template>
-    <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".3s">
-      <div
-        class="item text-center"
-        style="
-          background-image: linear-gradient(
-              to right bottom,
-              rgba(0, 0, 0, 0.2),
-              rgba(0, 0, 0, 0.8)
-            ),
-            url(assets/images/Slider/2.jpg);
-        "
-      >
-        <div class="main_slider_content" [attr.data-depth]="0.1">
-          <img src="assets/images/logo/logo.png" class="main_slider_content_img" alt="">
 
-          <p class="main_slider_paragraph">Welcome to Digital Bond Agency</p>
-          <h1 class="main_slider_header">We Bring A New Era Of Creativity</h1>
-        </div>
-      </div>
-    </ng-template>
-    <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".4s">
-      <div
-        class="item text-center"
-        style="
-          background-image: linear-gradient(
-              to right bottom,
-              rgba(0, 0, 0, 0.2),
-              rgba(0, 0, 0, 0.8)
-            ),
-            url(assets/images/Slider/3.jpg);
-        "
-      >
-        <div class="main_slider_content" [attr.data-depth]="0.1">
-          <img src="assets/images/logo/logo.png" class="main_slider_content_img" alt="">
-
-          <p class="main_slider_paragraph">Welcome to Digital Bond Agency</p>
-          <h1 class="main_slider_header">We Help Brands
-            Go Beyond The Limit</h1>
-        </div>
-      </div>
-    </ng-template>
   </owl-carousel-o>
   <svg
     id="banner_svg"
@@ -82,19 +46,16 @@
 <section class="about-sec" id="about-sec">
 
   <div class="container">
-    <div class="row">
-      <!-- Heading Area-->
+    <div class="row" >
       <div class="col-lg-5 wow fadeInUp">
         <div class="service-details" >
           <div class="first_heading" data-depth="0.1">
 
-            <h1 class="" >WE ARE</h1>
+            <h1 class="" >{{aboutUs?.en_about_home_title}}</h1>
             <h1>THE BONDERS!</h1>
           </div>
           <p>
-            Bonders are a blend of cheerful, uprising and creative peeps working
-            to deliver outstanding services. We are committed and loyalty runs
-            in the veins; when we are put together our results blow minds.
+            {{aboutUs?.en_about_home_text}}
           </p>
           <a
             routerLink="/about"
@@ -104,7 +65,6 @@
         </div>
       </div>
 
-      <!-- Features Box-->
       <div class="col-lg-7">
         <div class="services-area-width-manage">
           <div class="row no-gutters services-area">
@@ -113,7 +73,7 @@
                 <div class="icon-holder">
                   <i class="lni lni-briefcase"></i>
                 </div>
-                <h4 class="card-heading">Commitment</h4>
+                <h4 class="card-heading">{{aboutUs?.en_first_icon_title}}</h4>
               </div>
             </div>
             <div class="col-12 col-md-6 services text-center">
@@ -121,7 +81,7 @@
                 <div class="icon-holder">
                   <i class="lni lni-bulb"></i>
                 </div>
-                <h4 class="card-heading">Creative</h4>
+                <h4 class="card-heading">{{aboutUs?.en_second_icon_title}}</h4>
               </div>
             </div>
             <div class="col-12 col-md-6 services text-center">
@@ -129,7 +89,7 @@
                 <div class="icon-holder">
                   <i class="lni lni-heart"></i>
                 </div>
-                <h4 class="card-heading">Love our work</h4>
+                <h4 class="card-heading">{{aboutUs?.en_third_icon_title}}</h4>
               </div>
             </div>
             <div class="col-12 col-md-6 services text-center">
@@ -137,7 +97,7 @@
                 <div class="icon-holder">
                   <i class="lni lni-wallet"></i>
                 </div>
-                <h4 class="card-heading">Make you earn</h4>
+                <h4 class="card-heading">{{aboutUs?.en_fourth_icon_title}}</h4>
               </div>
             </div>
           </div>
@@ -288,69 +248,16 @@
       </div>
       <div class="col-12 col-lg-12 team-member-area">
         <owl-carousel-o [options]="teamCarousal" class="testimonial-team">
-          <ng-template carouselSlide class="wow fadeInUp">
+          <ng-template *ngFor="let team of teams" carouselSlide class="wow fadeInUp">
             <div class="item text-center">
               <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
+                <img [src]="teamImage+team.image" alt="team1" />
               </div>
-              <h3 class="team-name">Hassan Khaled</h3>
-              <p>CEO</p>
+              <h3 class="team-name">{{team.en_title}}</h3>
+              <p>{{team.en_role}}</p>
             </div>
           </ng-template>
-          <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".3s">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/females.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Haneen Hamdi</h3>
-              <p>Operations Executive</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".4s">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Mohamed Hamed</h3>
-              <p>Project Manager</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Abdelrahman Labib</h3>
-              <p>Customer Service Lead</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Tarek Abdullah</h3>
-              <p>Accountant</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Mohamed Khalifa</h3>
-              <p>Backend Developer</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/females.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Nardeen Youssef</h3>
-              <p>Graphic designer</p>
-            </div>
-          </ng-template>
+
         </owl-carousel-o>
       </div>
     </div>
@@ -384,31 +291,14 @@
     <!--Partner Slider-->
 
     <owl-carousel-o [options]="partnersSlider" class="partners-slider">
-      <ng-template carouselSlide
-        ><div class="logo-item">
-          <img alt="client-logo" src="assets/images/Partners/1.png" />
-        </div>
+
+      <ng-template carouselSlide *ngFor="let partner of studyCases">
+
+          <div class="logo-item" *ngIf="partner.type === 'happy'">
+            <img alt="client-logo" [src]="studyCaseImage+partner.logo" />
+          </div>
       </ng-template>
-      <ng-template carouselSlide
-        ><div class="logo-item">
-          <img alt="client-logo" src="assets/images/Partners/2.png" />
-        </div>
-      </ng-template>
-      <ng-template carouselSlide
-        ><div class="logo-item">
-          <img alt="client-logo" src="assets/images/Partners/3.png" />
-        </div>
-      </ng-template>
-      <ng-template carouselSlide
-        ><div class="logo-item">
-          <img alt="client-logo" src="assets/images/Partners/4.png" />
-        </div>
-      </ng-template>
-      <ng-template carouselSlide
-        ><div class="logo-item">
-          <img alt="client-logo" src="assets/images/Partners/5.png" />
-        </div>
-      </ng-template>
+
 
     </owl-carousel-o>
   </div>
@@ -431,267 +321,10 @@
       </div>
       <div class="col-12 col-lg-12 client-member-area">
         <owl-carousel-o [options]="portfolio" class="client-team">
-          <ng-template carouselSlide class="wow fadeInUp">
+          <ng-template *ngFor="let studyCase of studyCases" carouselSlide class="wow fadeInUp">
             <div class="item text-center">
               <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Automotive/ElMasria.jpg"
-                  alt="ElMasria"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".3s">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Automotive/NUIT.jpg"
-                  alt="Nuit"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".4s">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Business/NBD.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Business/QNB.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Business/saib.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Business/Triumph.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Business/we.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Education/EDUGATE.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Education/EGEC.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Education/Harvest.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Education/Instituto.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/F&B/Classic.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Portfolio/F&B/KOI.jpg" alt="team1" />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/F&B/Monginis.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/F&B/Ritonka.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Portfolio/F&B/Turbo.jpg" alt="team1" />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/F&B/ZiSushi.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Furniture/Arthouse.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Furniture/Danube.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Furniture/Divano.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Furniture/EDGEC.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Furniture/Rennie.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Last/AbdElLatiefGameel.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Last/DawryJameel.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Medical/ElEzaby.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Medical/LOreal.jpg"
-                  alt="team1"
-                />
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img
-                  src="assets/images/Portfolio/Medical/VLCC.jpg"
-                  alt="team1"
-                />
+                <img [src]="studyCaseImage+studyCase.logo" alt="team1" />
               </div>
             </div>
           </ng-template>
@@ -723,25 +356,24 @@
         <div class="col-12">
           <div class="testimonial-carousel">
             <owl-carousel-o [options]="testimonials" class="testimonial-box">
-              <ng-template carouselSlide>
-                <div class="item text-center">
+              <ng-template *ngFor="let review of reviews" carouselSlide>
+
+                <div *ngIf="review.status === 1" class="item text-center">
                   <div class="icon-holder">
                     <i class="fas fa-quote-right"></i>
                   </div>
                   <p class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce vitae egestas mi, vel dapibus diam. Mauris malesuada,
-                    nisl non rutrum commodo, sem magna laoreet tellus, eu
-                    euismod dolor enim et mi. In at tempor purus.
+                    {{review.en_feedback}}
                   </p>
                   <div class="img-holder">
-                    <img src="assets/images/Bonders/males.jpg" />
+                    <img [src]="feedbackImage+review.image" />
                   </div>
-                  <h4 class="user-name">Hassan Khaled</h4>
-                  <p>CEO</p>
+                  <h4 class="user-name">{{review.en_name}}</h4>
+                  <p>{{review.en_role}}</p>
                 </div>
+                <div class="d-none" *ngIf="review.status ===0" ></div>
               </ng-template>
-              <ng-template
+              <!-- <ng-template
                 carouselSlide
                 class="wow fadeInUp"
                 data-wow-delay=".3s"
@@ -852,7 +484,7 @@
                   <p>Moderator
                   </p>
                 </div>
-              </ng-template>
+              </ng-template> -->
             </owl-carousel-o>
           </div>
         </div>

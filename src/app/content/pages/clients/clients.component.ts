@@ -30,15 +30,21 @@ import { CasestudyService } from 'src/app/services/casestudy.service';
     ]
 })
 export class ClientsComponent implements OnInit {
-  loading= false;
-  caseStudiess: any[]= [];
+  loading= true;
+  caseStudies: any[] = [];
+  caseStudyImage='https://digitalbondmena.com/case-study/';
   constructor(private _CasestudyService:CasestudyService) {
 
   }
   getCaseStudies(){
-    this.caseStudiess = this._CasestudyService.caseStudies
+    this._CasestudyService.getCaseStudies().subscribe(
+      (response => {
+        this.caseStudies = response.caseStudys
+        this.loading= false
+      })
+    )
   }
-  caseStudies: OwlOptions ={
+  caseStudiesSlider: OwlOptions ={
     loop: true,
     margin:40,
     autoplay: true,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { HomeService } from 'src/app/services/home.service';
+import { ReviewsService } from 'src/app/services/reviews.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,82 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  loading = true;
+  sliders : any[] =[];
+  studyCaseImage = 'https://digitalbondmena.com/clients/';
+  teamImage = 'https://digitalbondmena.com/teams/';
+  feedbackImage = 'https://digitalbondmena.com/feedbacks/';
+  aboutUs :any;
+  teams: any[]= [];
+  studyCases: any[]= [];
+  reviews: any[] =[];
+  skills: any[] = [];
+  constructor(private _HomeService:HomeService,
+    private _ReviewsService:ReviewsService
+    ) { }
 
   ngOnInit(): void {
+    this.showSliders();
+    this.showStudyCases();
+    this.showTeams()
+    this.showAboutus();
+    this.showReview()
+  }
+  showSliders(){
+    this._HomeService.getHome().subscribe(
+      (response => {
+        this.loading= false
+        this.sliders = response.sliders
+      })
+    )
+  }
+  showTeams(){
+    this._HomeService.getHome().subscribe(
+      (response => {
+        this.loading= false
+
+        this.teams = response.team
+      })
+    )
+  }
+  showStudyCases(){
+    this._HomeService.getHome().subscribe(
+      (response => {
+        this.loading= false
+
+        this.studyCases = response.clients
+      })
+    )
+  }
+  showAboutus(){
+    this._HomeService.getHome().subscribe(
+      (response => {
+        this.loading= false
+
+        // this.aboutUs = response.main
+        // this.aboutUs = response.main.en_about_home_title;
+        // this.aboutUs = response.main.en_about_home_text;
+        this.aboutUs = response.main
+                console.log(this.aboutUs);
+      })
+    )
+  }
+  // showSkills(){
+  //   this._HomeService.getHome().subscribe(
+  //     (response => {
+  //       this.loading= false
+
+  //       this.skills = response.skills
+  //     })
+  //   )
+  // }
+  showReview(){
+    this._HomeService.getHome().subscribe(
+      (response) => {
+        this.reviews = response.feedbacks;
+        this.loading= false
+      }
+    )
   }
   mainSlider: OwlOptions = {
     loop: true,
@@ -132,9 +206,5 @@ export class HomeComponent implements OnInit {
 
     }
   }
-  ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
 
-  }
 }

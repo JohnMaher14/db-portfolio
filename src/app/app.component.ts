@@ -18,12 +18,19 @@ export class AppComponent implements OnInit {
   }
   title = 'ng-db-porfolio';
 
+  // ngOnInit(): void {
+  //     const InitParams: InitParams = {
+  //       xfbml: true ,
+  //       version: 'v3.2'
+  //     }
+  //     this._FacebookService.init(InitParams)
+  // }
   ngOnInit(): void {
-      const InitParams: InitParams = {
-        xfbml: true ,
-        version: 'v3.2'
-      }
-      this._FacebookService.init(InitParams)
+    this.initFacebookService();
   }
-
+  private initFacebookService(): void {
+    const initParams: InitParams = { xfbml:true, version:'v2.0'};
+    this._FacebookService.init(initParams);
+  }
+  
 }

@@ -1,5 +1,5 @@
 <!--Banner Start-->
-<section class="page-title review_page--title parallax1">
+<section class="page-title review_page--title" *ngFor="let banner of banners" style="background-image: url('https://digitalbondmena.com/banner_images/{{banner.feedback_banner_image}}');">
       <div class="container">
           <div class="standalone-content-data">
               <h2 class="hide-cursor">Reviews</h2>
@@ -24,6 +24,10 @@
     </svg>
   </section>
   <!--Banner End-->
+
+<div *ngIf="loading">
+  <app-loader></app-loader>
+</div>
   <!--testimonial section start-->
 <section class="testimonial-page">
   <div class="container">
@@ -40,7 +44,7 @@
                   <div class="testimonial-carousel">
                       <owl-carousel-o [options]="testimonials" class="testimonial-box">
 
-                          <ng-template carouselSlide>
+                          <ng-template *ngFor="let review of reviews" carouselSlide>
                             <div class="item">
                               <div class="item-body">
 
@@ -48,7 +52,7 @@
                                   <i class="fas fa-quote-right"></i>
                                 </div>
                                 <p class="text">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae egestas mi, vel dapibus diam. Mauris malesuada, nisl non rutrum commodo, sem magna laoreet tellus, eu euismod dolor enim et mi. In at tempor purus.
+                                  {{review.en_feedback}}
                                 </p>
                                 <div class="d-flex align-items-center py-3">
                                   <!-- <div class="media align-items-center">
@@ -59,29 +63,9 @@
                                     </div>
                                   </div> -->
                                   <div class="img-holder">
-                                    <img src="assets/digital-agency/img/test2.jpg">
+                                    <img [src]="reviewImage+review.image">
                                   </div>
-                                  <h4 class="user-name">Julia Miltese</h4>
-                                </div>
-                                </div>
-                              </div>
-                          </ng-template>
-                          <ng-template carouselSlide >
-                            <div class="item">
-                              <div class="item-body">
-
-                                <div class="icon-holder">
-                                  <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p class="text">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae egestas mi, vel dapibus diam. Mauris malesuada, nisl non rutrum commodo, sem magna laoreet tellus, eu euismod dolor enim et mi. In at tempor purus.
-                                </p>
-                                <div class="d-flex align-items-center py-3">
-
-                                  <div class="img-holder">
-                                    <img src="assets/digital-agency/img/test2.jpg">
-                                  </div>
-                                  <h4 class="user-name">Julia Miltese</h4>
+                                  <h4 class="user-name">{{review.en_name}}</h4>
                                 </div>
                                 </div>
                               </div>
@@ -95,7 +79,13 @@
 
 </section>
 <!--testimonial section end-->
+<div *ngIf="loadingSpinner">
+  <app-action-spinner></app-action-spinner>
+</div>
 <!-- section form testominals -->
+<div *ngIf="error" class="alert alert-danger" role="alert">
+  <strong>{{error}}</strong>
+</div>
 <section class=" bg-gray review_section">
   <div class="container">
     <h2>Send a Review
@@ -115,13 +105,14 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="phone">Phone number</label>
-            <input id="phone" class="form-control" type="number" name="phone" formControlName="phone">
+            <input id="phone" class="form-control" type="text" name="phone" formControlName="phone">
             <div *ngIf="testimonialForm.controls['phone'].touched && testimonialForm.controls['phone'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
               <p class="mb-0" *ngIf="testimonialForm.controls['phone'].errors['required']">Phone is required</p>
               <p class="mb-0" *ngIf="testimonialForm.controls['phone'].errors['pattern']">Enter phone number</p>
             </div>
           </div>
         </div>
+        <!-- <input id="type" class="form-control" type="hidden" name="type" formControlName="type"> -->
         <div class="col-md-6">
           <div class="form-group">
             <label for="email">Email address</label>
@@ -135,10 +126,10 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label for="position">Position</label>
-            <input id="position" class="form-control" type="text" name="position" formControlName="position">
-            <div *ngIf="testimonialForm.controls['position'].touched && testimonialForm.controls['position'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
-              <p class="mb-0" *ngIf="testimonialForm.controls['position'].errors['required']">Position is required</p>
+            <label for="job_title">Position</label>
+            <input id="job_title" class="form-control" type="text" name="job_title" formControlName="job_title">
+            <div *ngIf="testimonialForm.controls['job_title'].touched && testimonialForm.controls['job_title'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+              <p class="mb-0" *ngIf="testimonialForm.controls['job_title'].errors['required']">Position is required</p>
             </div>
           </div>
         </div>
@@ -146,9 +137,9 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="review">Review</label>
-            <textarea id="review" class="form-control" type="text" name="review" formControlName="review" rows="6"></textarea>
-            <div *ngIf="testimonialForm.controls['review'].touched && testimonialForm.controls['review'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
-              <p class="mb-0" *ngIf="testimonialForm.controls['review'].errors['required']">Review is required</p>
+            <textarea id="message" class="form-control" type="text" name="message" formControlName="message" rows="6"></textarea>
+            <div *ngIf="testimonialForm.controls['message'].touched && testimonialForm.controls['message'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
+              <p class="mb-0" *ngIf="testimonialForm.controls['message'].errors['required']">Review is required</p>
             </div>
           </div>
         </div>

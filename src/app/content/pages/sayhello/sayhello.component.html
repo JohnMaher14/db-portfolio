@@ -1,5 +1,5 @@
 <!--Banner Start-->
-<section class="page-title sayhello_page--title parallax1">
+<section class="page-title sayhello_page--title" *ngFor="let banner of banners" style="background-image: url('https://digitalbondmena.com/banner_images/{{banner.say_hello_banner_image}}');">
   <div class="container">
     <div class="standalone-content-data">
       <h2 class="hide-cursor">Say hello</h2>
@@ -26,7 +26,9 @@ xmlns="http://www.w3.org/2000/svg"
 </svg>
 </section>
 <!--Banner End-->
-
+<div *ngIf="loading">
+  <app-loader></app-loader>
+</div>
 <section class="say-hello">
   <div class="container">
     <div class="row">

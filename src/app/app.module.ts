@@ -23,6 +23,13 @@ import { ServicesDetailsComponent } from './content/pages/services/services-deta
 import { PortfolioComponent } from './content/pages/portfolio/portfolio.component';
 import { SayhelloComponent } from './content/pages/sayhello/sayhello.component';
 import { FacebookModule } from "ngx-facebook";
+import { HttpClientModule } from "@angular/common/http";
+import { ThankyouContactComponent } from './content/thankyou/thankyou-contact/thankyou-contact.component';
+import { ThankyouReviewComponent } from './content/thankyou/thankyou-review/thankyou-review.component';
+import { ActionSpinnerComponent } from './content/shared/action-spinner/action-spinner.component';
+import { ClientDetailComponent } from './content/pages/clients/client-detail/client-detail.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +48,10 @@ import { FacebookModule } from "ngx-facebook";
     ServicesDetailsComponent,
     PortfolioComponent,
     SayhelloComponent,
+    ThankyouContactComponent,
+    ThankyouReviewComponent,
+    ActionSpinnerComponent,
+    ClientDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +61,8 @@ import { FacebookModule } from "ngx-facebook";
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

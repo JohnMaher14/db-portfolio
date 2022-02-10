@@ -1,5 +1,8 @@
+<div class="" *ngIf="loading">
+  <app-loader></app-loader>
+</div>
 <!--Banner Start-->
-<section class="page-title parallax1" style="background-image: url(assets/images/about_page/Header.jpg);">
+<section class="page-title parallax1" style="background-image: url(https://digitalbondmena.com/about_us_page/{{aboutBannerImage}});">
   <div class="container">
     <div class="standalone-content-data">
       <h2 class="hide-cursor">About us</h2>
@@ -31,14 +34,15 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6">
-      <h1>CREATIVE COMMITMENT
+      <h1>
+        {{aboutSectionTitle}}
       </h1>
       <p>
-        We are a bonded family that mix and match creativity and commitment to help brands go beyond the limit. Bonders are a blend of cheerful, uprising and creative peeps working to deliver outstanding services. We are committed and loyalty runs in the veins; when we are put together our results blow minds.
+        {{aboutSectionText}}
       </p>
       </div>
       <div class="col-lg-6">
-        <img src="assets/images/about_page/About.png" class="w-100" alt="">
+        <img [src]="aboutUsPage+aboutSectionImage" class="w-100" alt="">
       </div>
     </div>
   </div>
@@ -98,7 +102,7 @@
             <div class="col-md-9">
 
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, facere. Doloribus, quibusdam. Adipisci tempora corrupti nemo? Sequi totam placeat omnis?
+                {{missionTitle}}
               </p>
             </div>
           </div>
@@ -112,14 +116,14 @@
             <div class="col-md-9">
 
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, facere. Doloribus, quibusdam. Adipisci tempora corrupti nemo? Sequi totam placeat omnis?
+                {{visionTitle}}
               </p>
             </div>
           </div>
         </div>
       </div>
       <div class="col-lg-5">
-        <img src="assets/images/about_page/Mission.png" class="w-100" alt="">
+        <img [src]="aboutUsPage+aboutUs.mission_vision_image" class="w-100" alt="">
       </div>
     </div>
   </div>
@@ -149,70 +153,17 @@
         </div>
       </div>
       <div class="col-12 col-lg-12 team-member-area">
-        <owl-carousel-o [options]="teamCarousal" class="team">
-          <ng-template carouselSlide class="wow fadeInUp">
+        <owl-carousel-o [options]="teamCarousal" class="testimonial-team">
+          <ng-template *ngFor="let team of teams" carouselSlide class="wow fadeInUp">
             <div class="item text-center">
               <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
+                <img [src]="teamImage+team.image" alt="team1" />
               </div>
-              <h3 class="team-name">Hassan Khaled</h3>
-              <p class="position">CEO</p>
+              <h3 class="team-name">{{team.en_title}}</h3>
+              <p>{{team.en_role}}</p>
             </div>
           </ng-template>
-          <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".3s">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/females.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Haneen Hamdi</h3>
-              <p class="position">Operations Executive</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="wow fadeInUp" data-wow-delay=".4s">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Mohamed Hamed</h3>
-              <p class="position">Project Manager</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Abdelrahman Labib</h3>
-              <p class="position">Customer Service Lead</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Tarek Abdullah</h3>
-              <p class="position">Accountant</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/males.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Mohamed Khalifa</h3>
-              <p class="position">Backend Developer</p>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide class="">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img src="assets/images/Bonders/females.jpg" alt="team1" />
-              </div>
-              <h3 class="team-name">Nardeen Youssef</h3>
-              <p class="position">Graphic designer</p>
-            </div>
-          </ng-template>
+
         </owl-carousel-o>
       </div>
     </div>

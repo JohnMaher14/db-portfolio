@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BannerService } from 'src/app/services/banner.service';
+import { SayhelloService } from 'src/app/services/sayhello.service';
 
 @Component({
   selector: 'app-sayhello',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sayhello.component.scss']
 })
 export class SayhelloComponent implements OnInit {
-
-  constructor() { }
-
+  loading = true ;
+  banners: any[] = []
+  constructor(private _BannerService:BannerService) { }
+  showSayHello(){
+    this._BannerService.getBanner().subscribe(
+      (response) => {
+        this.banners = response.bannerImages;
+        this.loading = false
+      }
+    )
+  }
   ngOnInit(): void {
+    this.showSayHello()
   }
 
 }

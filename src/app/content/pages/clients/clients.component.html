@@ -33,20 +33,20 @@
 
 <section class="case_studies">
   <div class="container">
-    <owl-carousel-o [options]="caseStudies" class="client-team">
-      
-      <ng-template *ngFor="let caseStudy of caseStudiess" carouselSlide class="wow fadeInUp">
-        <div class="card case_study_card">
-          <img src="{{caseStudy.imageSrc}}" alt="" />
+    <owl-carousel-o [options]="caseStudiesSlider" class="client-team">
+
+      <ng-template *ngFor="let caseStudy of caseStudies" carouselSlide class="wow fadeInUp">
+        <div routerLink="/clients/{{caseStudy.id}}"class="card case_study_card">
+          <img [src]="caseStudyImage+caseStudy.image" alt="" />
           <div class="card-body">
-            <a href="">{{caseStudy.name}}</a>
+            <a href="">{{caseStudy.en_title}}</a>
             <p class="case_study_card_description">
-              {{caseStudy.description}}
+              {{caseStudy.en_text}}
             </p>
           </div>
         </div>
       </ng-template>
-      
+
       </owl-carousel-o>
   </div>
 </section>
