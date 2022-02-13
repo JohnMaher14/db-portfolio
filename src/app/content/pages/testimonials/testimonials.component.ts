@@ -35,15 +35,19 @@ export class TestimonialsComponent implements OnInit {
     this.showReviews()
   }
   showbanner(){
+    this.loading = true ;
+
       this._BannerService.getBanner().subscribe(
         (response)=> {
           this.banners = response.bannerImages;
           this.loading = false;
-        } 
+        }
       )
-    
+
   }
   showReviews(){
+    this.loading = true ;
+
     this._HomeService.getHome().subscribe(
       (response) => {
         this.loading = false;
@@ -84,7 +88,7 @@ export class TestimonialsComponent implements OnInit {
         if(response.success){
           this._Router.navigate(['/thankyou-review'])
         }
-        
+
       }, error => {
         this.loadingSpinner = false
 

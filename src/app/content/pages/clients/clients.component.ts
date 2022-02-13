@@ -37,6 +37,8 @@ export class ClientsComponent implements OnInit {
 
   }
   getCaseStudies(){
+    this.loading = true ;
+
     this._CasestudyService.getCaseStudies().subscribe(
       (response => {
         this.caseStudies = response.caseStudys
@@ -62,7 +64,7 @@ export class ClientsComponent implements OnInit {
       400: {
         items: 2
       },
-      
+
       940: {
         items: 3
       },

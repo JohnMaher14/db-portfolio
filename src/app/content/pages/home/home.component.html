@@ -27,19 +27,6 @@
     </ng-template>
 
   </owl-carousel-o>
-  <svg
-    id="banner_svg"
-    class="separator__svg"
-    width="100%"
-    viewBox="0 0 100 100"
-    preserveAspectRatio="none"
-    fill="#ffffff"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M 100 100 V 60 L 0 100" />
-    <path d="M 30 73 L 100 50 V 50 Z" fill="#ffffff" stroke-width="0" />
-  </svg>
 </div>
 
 <!--About Star-->
@@ -292,12 +279,15 @@
 
     <owl-carousel-o [options]="partnersSlider" class="partners-slider">
 
-      <ng-template carouselSlide *ngFor="let partner of studyCases">
+      <ng-container  *ngFor="let partner of studyCases">
+      <ng-template carouselSlide *ngIf="partner.type === 'happy'">
 
-          <div class="logo-item" *ngIf="partner.type === 'happy'">
+
+          <div class="logo-item" >
             <img alt="client-logo" [src]="studyCaseImage+partner.logo" />
           </div>
-      </ng-template>
+        </ng-template>
+      </ng-container>
 
 
     </owl-carousel-o>
@@ -321,13 +311,16 @@
       </div>
       <div class="col-12 col-lg-12 client-member-area">
         <owl-carousel-o [options]="portfolio" class="client-team">
-          <ng-template *ngFor="let studyCase of studyCases" carouselSlide class="wow fadeInUp">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img [src]="studyCaseImage+studyCase.logo" alt="team1" />
+          <ng-container *ngFor="let studyCase of studyCases"  class="wow fadeInUp">
+            <ng-template carouselSlide *ngIf="studyCase.type === 'case'">
+
+              <div class="item text-center">
+                <div class="image-holder">
+                  <img [src]="studyCaseImage+studyCase.logo" alt="team1" />
+                </div>
               </div>
-            </div>
-          </ng-template>
+            </ng-template>
+          </ng-container>
         </owl-carousel-o>
       </div>
     </div>
@@ -356,23 +349,26 @@
         <div class="col-12">
           <div class="testimonial-carousel">
             <owl-carousel-o [options]="testimonials" class="testimonial-box">
-              <ng-template *ngFor="let review of reviews" carouselSlide>
+              <ng-container *ngFor="let review of reviews" >
+                <ng-template carouselSlide>
 
-                <div *ngIf="review.status === 1" class="item text-center">
-                  <div class="icon-holder">
-                    <i class="fas fa-quote-right"></i>
+                  <div *ngIf="review.status === 1" class="item text-center">
+                    <div class="icon-holder">
+                      <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="text">
+                      {{review.en_feedback | slice:0:130}}
+                    </p>
+                    <div class="img-holder">
+                      <img [src]="feedbackImage+review.image" />
+                    </div>
+                    <h4 class="user-name">{{review.en_name}}</h4>
+                    <p>{{review.en_role}}</p>
                   </div>
-                  <p class="text">
-                    {{review.en_feedback}}
-                  </p>
-                  <div class="img-holder">
-                    <img [src]="feedbackImage+review.image" />
-                  </div>
-                  <h4 class="user-name">{{review.en_name}}</h4>
-                  <p>{{review.en_role}}</p>
-                </div>
+                </ng-template>
+
                 <div class="d-none" *ngIf="review.status ===0" ></div>
-              </ng-template>
+              </ng-container>
               <!-- <ng-template
                 carouselSlide
                 class="wow fadeInUp"

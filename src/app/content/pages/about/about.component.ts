@@ -19,7 +19,7 @@ export class AboutComponent implements OnInit {
 
   missionTitle='';
   visionTitle='';
-  aboutUs: any;;
+  aboutUs: any;
   pageBanner: any[] = [];
   teams: any[] = [];
   missionAndVission: any[] = [];
@@ -27,16 +27,14 @@ export class AboutComponent implements OnInit {
     private _AboutUsService:AboutUsService,
     ) { }
   showAboutUsSection(){
+    this.loading = true ;
+
     this._AboutUsService.getAboutusPage().subscribe(
       (response)=> {
         this.loading = false
-        this.aboutBannerImage = response.aboutUsPage.about_banner_image;
-        this.aboutSectionImage = response.aboutUsPage.about_section_image;
-        this.aboutSectionTitle = response.aboutUsPage.en_about_section_title;
-        this.aboutSectionText = response.aboutUsPage.en_about_section_text;
-        this.visionTitle = response.aboutUsPage.en_vision_text;
-        this.missionTitle = response.aboutUsPage.en_mission_text;
+
         this.aboutUs = response.aboutUsPage
+        console.log(response.aboutUsPage);
       }
     )
   }
@@ -59,6 +57,7 @@ export class AboutComponent implements OnInit {
   //   )
   // }
   showTeams(){
+        this.loading = true ;
     this._AboutUsService.getAboutusPage().subscribe(
       (response)=>{
         this.loading = false

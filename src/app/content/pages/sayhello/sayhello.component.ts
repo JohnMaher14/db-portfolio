@@ -12,6 +12,8 @@ export class SayhelloComponent implements OnInit {
   banners: any[] = []
   constructor(private _BannerService:BannerService) { }
   showSayHello(){
+    this.loading = true ;
+
     this._BannerService.getBanner().subscribe(
       (response) => {
         this.banners = response.bannerImages;

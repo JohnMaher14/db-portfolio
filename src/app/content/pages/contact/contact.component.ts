@@ -17,14 +17,16 @@ export class ContactComponent implements OnInit {
     private _BannerService:BannerService,
     private _ContactService:ContactService,
     private _Router:Router
-    
+
     ) { }
   showContactbanner(){
+    this.loading = true ;
+
     this._BannerService.getBanner().subscribe(
       (response)=> {
         this.banners = response.bannerImages;
         this.loading = false;
-      } 
+      }
     )
   }
   contactForm:FormGroup = new FormGroup({
@@ -51,7 +53,7 @@ export class ContactComponent implements OnInit {
 
           this._Router.navigate(['/thankyou-contact'])
         }
-        
+
       }, error => {
 
         this.loadingSpinner = false;

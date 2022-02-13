@@ -757,6 +757,11 @@ header{
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+    @media screen and (max-width:1024px) {
+      clip-path: unset;
+    }
     z-index: 111;
 }
 
@@ -2176,15 +2181,16 @@ header{
     background-size: cover;
     background-position: top center;
     height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+    @media screen and (max-width:1024px) {
+      clip-path: unset;
+    }
 }
 
 .standalone-content-data {
     position: absolute;
-    bottom: 10px;
-    left: 20%;
+    bottom: 50px;
     text-align: left;
-    z-index: 9999;
-    transform: translate(-50%,-20%);
     h2{
       color: #fff;
     }
@@ -3265,17 +3271,17 @@ transform: none;
       .owl-nav{
         .owl-next{
           .circle{
-  
+
             right: 30px;
           }
         }
         .owl-prev{
           .circle{
-  
+
             left: 30px;
           }
         }
-  
+
       }
       &_slider{
         background-color: #fff;
@@ -3299,21 +3305,21 @@ transform: none;
     &_details{
       background-image: url('assets/images/BG/1.jpg');
       clip-path: unset;
-      
+
       .owl-nav{
         .owl-next{
           .circle{
-  
+
             right: 30px;
           }
         }
         .owl-prev{
           .circle{
-  
+
             left: 30px;
           }
         }
-  
+
       }
       &_slider{
         img{
@@ -3335,6 +3341,60 @@ transform: none;
     font-size: 25px;
     color:#fff
   }
+}
+@supports (position: sticky) {
+  .is-sticky {
+    margin: 0;
+    background-color: rgb(131,181,209);
+    padding: 5px;
+    border-radius: 3px;
+    margin: 1em 0;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.custom-shadow {
+  -webkit-box-shadow: 0 5px 20px 0 rgb(210 210 245 / 50%);
+  box-shadow: 0 5px 20px 0 rgb(210 210 245 / 50%);
+}
+.border-primary{
+  border-color: $mainColor !important
+}
+.border-4 {
+  border-width: 4px !important;
+}
+.border-top {
+  border-top: 1px solid #dee2e6
+}
+.case_study_details{
+
+  .owl-nav .owl-prev .circle{
+    left:20px !important;
+  }
+  .owl-nav .owl-next .circle{
+    right:20px !important;
+  }
+  &_slider{
+    img{
+      height: 500px;
+      padding: 40px;
+      width: 80% !important;
+      margin: 0 auto;
+    }
+  }
+  .card-body{
+    background-color: $mainColor;
+    color: #fff
+  }
+}
+.w-120px{
+  width: 120px;
+}
+.image_placeholder{
+  height:120px;
+  padding:20px;
+  margin: 0 auto
 }
 .social_website_banner{
   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)) , url('assets/images/Case_studies/Websites.jpg');
@@ -3363,6 +3423,7 @@ transform: none;
   box-shadow: 2px 12px 36px -11px;
   border: none;
   overflow: hidden;
+  cursor: pointer;
   transition-timing-function: ease-in-out;
   -ms-transition-timing-function: ease-in-out;
   -moz-transition-timing-function: ease-in-out;

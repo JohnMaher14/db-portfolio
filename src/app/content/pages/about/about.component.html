@@ -2,7 +2,7 @@
   <app-loader></app-loader>
 </div>
 <!--Banner Start-->
-<section class="page-title parallax1" style="background-image: url(https://digitalbondmena.com/about_us_page/{{aboutBannerImage}});">
+<section class="page-title parallax1" style="background-image: url(https://digitalbondmena.com/about_us_page/{{aboutUs?.about_banner_image}});">
   <div class="container">
     <div class="standalone-content-data">
       <h2 class="hide-cursor">About us</h2>
@@ -14,19 +14,7 @@
       </ul>
     </div>
   </div>
-  <svg
-  id="banner_svg"
-  class="separator__svg"
-  width="100%"
-  viewBox="0 0 100 100"
-  preserveAspectRatio="none"
-  fill="#ffffff"
-  version="1.1"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path d="M 100 100 V 60 L 0 100" />
-  <path d="M 30 73 L 100 50 V 50 Z" fill="#ffffff" stroke-width="0" />
-</svg>
+
 </section>
 <!--Banner End-->
 
@@ -35,14 +23,14 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
       <h1>
-        {{aboutSectionTitle}}
+        {{aboutUs?.en_about_section_title}}
       </h1>
       <p>
-        {{aboutSectionText}}
+        {{aboutUs?.en_about_section_text}}
       </p>
       </div>
       <div class="col-lg-6">
-        <img [src]="aboutUsPage+aboutSectionImage" class="w-100" alt="">
+        <img [src]="aboutUsPage+aboutUs?.about_section_image" class="w-100" alt="">
       </div>
     </div>
   </div>
@@ -102,7 +90,7 @@
             <div class="col-md-9">
 
               <p>
-                {{missionTitle}}
+                {{aboutUs?.en_mission_text}}
               </p>
             </div>
           </div>
@@ -116,14 +104,14 @@
             <div class="col-md-9">
 
               <p>
-                {{visionTitle}}
+                {{aboutUs?.en_vision_text}}
               </p>
             </div>
           </div>
         </div>
       </div>
       <div class="col-lg-5">
-        <img [src]="aboutUsPage+aboutUs.mission_vision_image" class="w-100" alt="">
+        <img [src]="aboutUsPage+aboutUs?.mission_vision_image" class="w-100" alt="">
       </div>
     </div>
   </div>

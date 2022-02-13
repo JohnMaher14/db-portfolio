@@ -26,11 +26,12 @@ export class AppComponent implements OnInit {
   //     this._FacebookService.init(InitParams)
   // }
   ngOnInit(): void {
+    
     this.initFacebookService();
   }
   private initFacebookService(): void {
     const initParams: InitParams = { xfbml:true, version:'v2.0'};
     this._FacebookService.init(initParams);
   }
-  
+
 }

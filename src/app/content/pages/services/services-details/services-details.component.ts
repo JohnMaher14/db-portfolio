@@ -13,15 +13,17 @@ export class ServicesDetailsComponent implements OnInit {
   loading = true ;
   serviceDetails:any[] = [];
   otherServicesArray: any[]= [];
-  bannerImage:any[]=[];
+  bannerImage:any;
   serviceImage='https://digitalbondmena.com/services/';
   indexForNumbers: any;
   constructor(private _ServicesService:ServicesService , private _ActivatedRoute:ActivatedRoute,
     private _BannerService:BannerService
-    ) { 
+    ) {
 
   }
   showServicesDetails(){
+    this.loading = true ;
+
     this.indexForNumbers = this._ActivatedRoute.snapshot.params["id"];
     this._ServicesService.getServicesDetails(this.indexForNumbers)
     .subscribe((data) => {
@@ -30,7 +32,16 @@ export class ServicesDetailsComponent implements OnInit {
       this.loading = false
     });
   }
+  showBannerImage(){
+    this.loading = true ;
 
+    this._BannerService.getBanner().subscribe(
+      (response) => {
+        this.bannerImage = response.bannerImages[0]
+        this.loading = false
+      }
+    )
+  }
   servicesSlider: OwlOptions ={
 
     loop: true,
@@ -61,7 +72,8 @@ export class ServicesDetailsComponent implements OnInit {
     nav:true
   }
   ngOnInit(): void {
-    this.showServicesDetails()
+    this.showServicesDetails();
+    this.showBannerImage()
   }
 
 }

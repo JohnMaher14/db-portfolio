@@ -31,6 +31,8 @@ export class HomeComponent implements OnInit {
     this.showReview()
   }
   showSliders(){
+    this.loading = true ;
+
     this._HomeService.getHome().subscribe(
       (response => {
         this.loading= false
@@ -39,6 +41,8 @@ export class HomeComponent implements OnInit {
     )
   }
   showTeams(){
+    this.loading = true ;
+
     this._HomeService.getHome().subscribe(
       (response => {
         this.loading= false
@@ -48,6 +52,8 @@ export class HomeComponent implements OnInit {
     )
   }
   showStudyCases(){
+    this.loading = true ;
+
     this._HomeService.getHome().subscribe(
       (response => {
         this.loading= false
@@ -57,6 +63,8 @@ export class HomeComponent implements OnInit {
     )
   }
   showAboutus(){
+    this.loading = true ;
+
     this._HomeService.getHome().subscribe(
       (response => {
         this.loading= false
@@ -65,7 +73,6 @@ export class HomeComponent implements OnInit {
         // this.aboutUs = response.main.en_about_home_title;
         // this.aboutUs = response.main.en_about_home_text;
         this.aboutUs = response.main
-                console.log(this.aboutUs);
       })
     )
   }
@@ -79,6 +86,8 @@ export class HomeComponent implements OnInit {
   //   )
   // }
   showReview(){
+    this.loading = true ;
+
     this._HomeService.getHome().subscribe(
       (response) => {
         this.reviews = response.feedbacks;

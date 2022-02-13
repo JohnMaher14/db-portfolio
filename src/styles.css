@@ -1310,7 +1310,16 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
   z-index: 111;
+}
+
+@media screen and (max-width: 1024px) {
+  .banner {
+    -webkit-clip-path: unset;
+            clip-path: unset;
+  }
 }
 
 .banner .banner-row {
@@ -2881,16 +2890,21 @@ header {
   background-size: cover;
   background-position: top center;
   height: 100vh;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+}
+
+@media screen and (max-width: 1024px) {
+  .page-title {
+    -webkit-clip-path: unset;
+            clip-path: unset;
+  }
 }
 
 .standalone-content-data {
   position: absolute;
-  bottom: 10px;
-  left: 20%;
+  bottom: 50px;
   text-align: left;
-  z-index: 9999;
-  -webkit-transform: translate(-50%, -20%);
-          transform: translate(-50%, -20%);
 }
 
 .standalone-content-data h2 {
@@ -3923,6 +3937,7 @@ header {
           box-shadow: 2px 12px 36px -11px;
   border: none;
   overflow: hidden;
+  cursor: pointer;
   transition-timing-function: ease-in-out;
   -ms-transition-timing-function: ease-in-out;
   -moz-transition-timing-function: ease-in-out;
