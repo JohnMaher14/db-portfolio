@@ -4,27 +4,30 @@
 <div class="banner">
   <owl-carousel-o [options]="mainSlider" class="main_slider">
 
-    <ng-template *ngFor="let slider of sliders" carouselSlide class="wow fadeInUp">
-      <div
-        class="item text-center"
-        style='
-          background-image: linear-gradient(
-              to right bottom,
-              rgba(0, 0, 0, 0.2),
-              rgba(0, 0, 0, 0.8)
-            ),
-            url(https://digitalbondmena.com/sliders/{{slider.image}});
-        '
-      >
-        <div class="main_slider_content" [attr.data-depth]="0.1">
-          <img src="assets/images/logo/logo.png" class="main_slider_content_img" alt="">
-          <p class="main_slider_paragraph">{{slider.en_text}}</p>
-          <h1 class="main_slider_header">
-            {{slider.en_title}}
-          </h1>
+    <ng-container *ngFor="let slider of sliders" >
+      <ng-template carouselSlide>
+
+        <div
+          class="item text-center"
+          style='
+            background-image: linear-gradient(
+                to right bottom,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.8)
+              ),
+              url(https://digitalbondmena.com/sliders/{{slider.image}});
+          '
+        >
+          <div class="main_slider_content" >
+            <img src="assets/images/logo/logo.png" class="main_slider_content_img" alt="">
+            <p class="main_slider_paragraph">{{slider.en_text}}</p>
+            <h1 class="main_slider_header" data-depth="0.1">
+              {{slider.en_title}}
+            </h1>
+          </div>
         </div>
-      </div>
-    </ng-template>
+      </ng-template>
+    </ng-container>
 
   </owl-carousel-o>
 </div>
@@ -115,7 +118,7 @@
       <div class="col-12 text-center">
         <div class="skill-details">
           <h6 class="sub-title main-color">DIGITAL BOND CREATION</h6>
-          <h2 class="title" [attr.data-depth]="0.1">CONCEPT OF "BONDERS"</h2>
+          <h2 class="title" data-depth="0.1">CONCEPT OF "BONDERS"</h2>
           <p class="paragraph">
             Bonders speak concepts not titles. Bonding creativity, commitment
             and you.
@@ -227,23 +230,26 @@
   <div class="container position-relative">
     <div class="row">
       <div class="col-12 col-lg-12">
-        <div class="team-details pr-lg-5" [attr.data-depth]="0.1">
+        <div class="team-details pr-lg-5" >
           <h6 class="sub-title main-color">Wanna meet the Bonders?
           </h6>
-          <h2 class="title">Our Creative Team</h2>
+          <h2 class="title" data-depth="0.1">Our Creative Team</h2>
         </div>
       </div>
       <div class="col-12 col-lg-12 team-member-area">
         <owl-carousel-o [options]="teamCarousal" class="testimonial-team">
-          <ng-template *ngFor="let team of teams" carouselSlide class="wow fadeInUp">
-            <div class="item text-center">
-              <div class="image-holder">
-                <img [src]="teamImage+team.image" alt="team1" />
+          <ng-container *ngFor="let team of teams" >
+            <ng-template carouselSlide class="wow fadeInUp">
+
+              <div class="item text-center">
+                <div class="image-holder">
+                  <img [src]="teamImage+team.image" alt="team1" />
+                </div>
+                <h3 class="team-name">{{team.en_name}}</h3>
+                <p>{{team.en_role}}</p>
               </div>
-              <h3 class="team-name">{{team.en_title}}</h3>
-              <p>{{team.en_role}}</p>
-            </div>
-          </ng-template>
+            </ng-template>
+          </ng-container>
 
         </owl-carousel-o>
       </div>
@@ -280,11 +286,11 @@
     <owl-carousel-o [options]="partnersSlider" class="partners-slider">
 
       <ng-container  *ngFor="let partner of studyCases">
-      <ng-template carouselSlide *ngIf="partner.type === 'happy'">
+        <ng-template   carouselSlide *ngIf="partner.type === 'happy'">
+          <div class="logo-item">
 
 
-          <div class="logo-item" >
-            <img alt="client-logo" [src]="studyCaseImage+partner.logo" />
+            <img alt="{{partner.en_title}}-logo " [src]="studyCaseImage+partner.logo" />
           </div>
         </ng-template>
       </ng-container>
@@ -303,7 +309,7 @@
   <div class="container position-relative">
     <div class="row">
       <div
-        class="col-lg-6 wow fadeInUp text-center text-lg-left client_header" [attr.data-depth]="0.1"
+        class="col-lg-6 wow fadeInUp text-center text-lg-left client_header" data-depth="0.1"
         data-wow-delay="300ms"
       >
         <h1 class="heading">OUR</h1>
@@ -341,7 +347,7 @@
       <div class="row">
         <div class="col-12">
           <div class="testimonial-title">
-            <h1 class="heading" [attr.data-depth]="0.1">They say <span class="d-block">About the bonders</span></h1>
+            <h1 class="heading" data-depth="0.1">They say <span class="d-block">About the bonders</span></h1>
           </div>
         </div>
       </div>

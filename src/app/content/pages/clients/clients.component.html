@@ -1,5 +1,5 @@
 <!--Banner Start-->
-<section class="page-title casestudy_page--title parallax1">
+<section class="page-title casestudy_page--title" style="background-image: url('https://digitalbondmena.com/banner_images/{{banner?.contact_banner_image}}');">
   <div class="container">
     <div class="standalone-content-data">
       <h2 class="hide-cursor">Case studies</h2>
@@ -21,10 +21,10 @@
 
 <section class="case_studies">
   <div class="container">
-    <owl-carousel-o [options]="caseStudiesSlider" class="client-team">
+    <div class="row">
 
-      <ng-template *ngFor="let caseStudy of caseStudies" carouselSlide class="wow fadeInUp">
-        <div routerLink="/clients/{{caseStudy.id}}"class="card case_study_card">
+      <div *ngFor="let caseStudy of caseStudies" class="col-lg-4 col-md-6 wow animated fadeInUp mb-4">
+        <div routerLink="/clients/{{caseStudy.id}}"class="card custom-shadow case_study_card">
           <img [src]="caseStudyImage+caseStudy.image" alt="" />
           <div class="card-body">
             <a href="">{{caseStudy.en_title}}</a>
@@ -33,8 +33,7 @@
             </p>
           </div>
         </div>
-      </ng-template>
-
-      </owl-carousel-o>
+      </div>
+    </div>
   </div>
 </section>

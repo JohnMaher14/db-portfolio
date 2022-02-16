@@ -45,6 +45,10 @@
   font-family: 'Oswald', sans-serif;
 }
 
+.text-primary {
+  color: #290707 !important;
+}
+
 /* ===================================
     General
 ====================================== */
@@ -1026,8 +1030,7 @@ header {
 }
 
 .side-menu .navbar-brand {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   display: inline-block;
   margin-top: 100px;
   margin-bottom: 50px;
@@ -1422,11 +1425,6 @@ header {
   height: 200px;
 }
 
-.service-details {
-  /* transform: translateY(-132px); */
-  /*transition: .8s ease all;*/
-}
-
 .service-details h1 {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
@@ -1655,10 +1653,6 @@ header {
   margin-top: 20px;
 }
 
-.client-section .image-holder {
-  cursor: pointer;
-}
-
 /* .team-section .image-holder:hover ~.team-name{
     color:#290707;
 } */
@@ -1671,8 +1665,7 @@ header {
   width: 250px !important;
   background-color: #290707;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   position: relative;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1751,10 +1744,6 @@ header {
   margin-top: 20px;
 }
 
-.team-section .image-holder {
-  cursor: pointer;
-}
-
 /* .team-section .image-holder:hover ~.team-name{
     color:#290707;
 } */
@@ -1771,8 +1760,7 @@ header {
   width: 250px !important;
   background-color: #290707;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -1793,8 +1781,7 @@ header {
   width: 250px !important;
   background-color: #290707;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -1824,8 +1811,7 @@ header {
   width: 250px !important;
   background-color: #290707;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -2180,8 +2166,7 @@ header {
 .testimonial-sec .testimonial-area .testimonial-carousel .testimonial-box .text {
   color: #290707;
   width: 75%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 }
 
 .testimonial-sec .testimonial-area .testimonial-carousel .testimonial-box .img-holder {
@@ -2217,6 +2202,8 @@ header {
 
 .review_section {
   background-image: url(assets/images/BG/2.jpg);
+  background-size: cover;
+  background-position: center center;
   -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
           clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
   padding: 120px 0;
@@ -2241,6 +2228,8 @@ header {
 
 .testimonial-page {
   background-image: url(assets/images/BG/1.jpg);
+  background-size: cover;
+  background-position: center center;
   -webkit-clip-path: polygon(0 0, 100% 7%, 100% 88%, 0% 100%);
           clip-path: polygon(0 0, 100% 7%, 100% 88%, 0% 100%);
 }
@@ -2250,6 +2239,22 @@ header {
     -webkit-clip-path: unset;
             clip-path: unset;
   }
+}
+
+.testimonial-page-slider .owl-item .item {
+  padding: 2rem;
+  opacity: 0.5;
+  -webkit-transition: .4s ease all;
+  transition: .4s ease all;
+  margin: 0 20px;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.testimonial-page-slider .owl-item.active .item {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .testimonial-page .testimonial-title .heading {
@@ -2309,6 +2314,9 @@ header {
 .testimonial-page .testimonial-area .testimonial-carousel .testimonial-box .img-holder img {
   border-radius: 50%;
   width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .testimonial-page .testimonial-area .testimonial-carousel .testimonial-box .user-name {
@@ -2467,6 +2475,8 @@ header {
 ====================================== */
 .contact-sec {
   background-image: url(assets/images/BG/1.jpg);
+  background-size: cover;
+  background-position: center center;
   -webkit-clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 100%);
 }
@@ -2677,14 +2687,6 @@ header {
 /* ===================================
     Background images
 ====================================== */
-.bg-img1 {
-  /*background-image: url("../img/cover-background.jpg");*/
-}
-
-.bg-img2 {
-  /*background-image: url("../img/testimionial.jpg");*/
-}
-
 [class*=bg-img] {
   position: relative;
   background-size: cover;
@@ -2769,10 +2771,6 @@ header {
           animation: .5s fadeInRight;
 }
 
-.fixed-nav-on-scroll .row {
-  /*width: 0%;*/
-}
-
 .fixed-nav-on-scroll .logo-fixed-scroll {
   width: 50%;
   display: inline-block;
@@ -2780,14 +2778,14 @@ header {
 }
 
 .fixed-nav-on-scroll .logo-fixed-scroll img {
-  height: 35px;
+  width: 100%;
   margin: auto;
   display: inline-block;
 }
 
 .fixed-nav-on-scroll .fixed-icon-scroll {
   display: inline-block;
-  width: 30%;
+  width: 50%;
   float: right;
 }
 
@@ -3404,7 +3402,7 @@ header {
   /*toggle btn*/
   .sidemenu_btn i {
     font-size: 30px;
-    color: #202020;
+    color: #fff;
   }
   /*side menu*/
   #site-mmenu-svg {
@@ -3817,6 +3815,18 @@ header {
   }
 }
 
+.even {
+  background-image: url(assets/images/layer3.jpg);
+}
+
+@media screen and (max-width: 768px) {
+  .even .col-lg-8 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .even .case_studies {
     -webkit-clip-path: unset;
@@ -3825,30 +3835,28 @@ header {
 }
 
 .even .case_studies_details {
-  background-image: url("assets/images/BG/2.jpg");
   -webkit-clip-path: unset;
           clip-path: unset;
-}
-
-.even .case_studies_details h3 {
-  color: #fff;
-  font-weight: 600;
-}
-
-.even .case_studies_details p {
-  color: #fff;
 }
 
 .even .case_studies_details .owl-nav .owl-next .circle {
   right: 30px;
 }
 
+@media screen and (max-width: 800px) {
+  .even .case_studies_details .owl-nav .owl-next .circle {
+    right: 0 !important;
+  }
+}
+
 .even .case_studies_details .owl-nav .owl-prev .circle {
   left: 30px;
 }
 
-.even .case_studies_details_slider {
-  background-color: #fff;
+@media screen and (max-width: 800px) {
+  .even .case_studies_details .owl-nav .owl-prev .circle {
+    left: 0 !important;
+  }
 }
 
 .even .case_studies_details_slider img {
@@ -3857,10 +3865,8 @@ header {
   margin: 0 auto;
 }
 
-.odd .case_studies {
-  -webkit-clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
-  background-image: url("assets/images/BG/1.jpg");
+.odd {
+  background-image: url(assets/images/layer2.jpg);
 }
 
 @media screen and (max-width: 1024px) {
@@ -3871,7 +3877,6 @@ header {
 }
 
 .odd .case_studies_details {
-  background-image: url("assets/images/BG/1.jpg");
   -webkit-clip-path: unset;
           clip-path: unset;
 }
@@ -3890,6 +3895,96 @@ header {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+  .social_media .text-right {
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .social_media .text-left {
+    text-align: center !important;
+  }
+}
+
+.website_section .owl-theme .owl-nav {
+  top: unset;
+  bottom: -142px;
+  z-index: 99999998;
+}
+
+@media screen and (max-width: 800px) {
+  .website_section .owl-theme .owl-nav {
+    bottom: -250px;
+  }
+}
+
+.social_media_section .owl-theme .owl-nav {
+  top: unset;
+  bottom: -80px;
+}
+
+@media screen and (max-width: 800px) {
+  .social_media_section .owl-theme .owl-nav {
+    bottom: -105px;
+  }
+}
+
+.mobile_section .owl-theme .owl-nav {
+  top: unset;
+  bottom: -50px;
+}
+
+@media screen and (max-width: 800px) {
+  .mobile_section .owl-theme .owl-nav {
+    bottom: -60px;
+  }
+}
+
+.caseStudyslider_pic {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  width: 100%;
+}
+
+.caseStudyslider_app_slider {
+  position: absolute;
+  left: 50px;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.caseStudyslider_app_slider_pic {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.caseStudyslider_slider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.caseStudyslider_slider_website {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 38%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.caseStudyslider_slider_pic {
+  height: 100% !important;
+  width: 100% !important;
+}
+
 .social_media_banner {
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.8))), url("assets/images/Case_studies/Social_Media.jpg");
   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("assets/images/Case_studies/Social_Media.jpg");
@@ -3902,6 +3997,156 @@ header {
   font-weight: 600;
   font-size: 25px;
   color: #fff;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .is-sticky {
+    margin: 0;
+    background-color: #83b5d1;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 1em 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.custom-shadow {
+  -webkit-box-shadow: 0 5px 20px 0 rgba(210, 210, 245, 0.5);
+  box-shadow: 0 5px 20px 0 rgba(210, 210, 245, 0.5);
+}
+
+.border-primary {
+  border-color: #290707 !important;
+}
+
+.border-4 {
+  border-width: 4px !important;
+}
+
+.border-top {
+  border-top: 1px solid #dee2e6;
+}
+
+@media screen and (max-width: 800px) {
+  .case_studies_details_caption {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    text-align: center !important;
+    margin-top: 50px;
+  }
+}
+
+a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
+  color: black;
+}
+
+.case_study_details_card {
+  border: none;
+}
+
+.case_study_details_cover {
+  height: 400px;
+}
+
+.case_study_details_cover img {
+  height: 100%;
+  width: 100%;
+}
+
+.case_study_details .item {
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+}
+
+.case_study_details .owl-nav .owl-prev .circle {
+  left: 20px !important;
+}
+
+.case_study_details .owl-nav .owl-next .circle {
+  right: 20px !important;
+}
+
+.case_study_details_slider img {
+  height: 400px;
+  width: 100% !important;
+  margin: 0 auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.case_study_details .card-body {
+  background-color: #290707;
+  color: #fff;
+}
+
+.w-120px {
+  width: 120px;
+}
+
+.page-title-casestudy-details {
+  padding-top: 0;
+  -webkit-clip-path: unset;
+          clip-path: unset;
+}
+
+.page-title-casestudy-details .cover-body {
+  margin-top: 40px;
+  height: 10%;
+}
+
+@media screen and (max-width: 450px) {
+  .page-title-casestudy-details .cover-body {
+    height: 30%;
+  }
+}
+
+.page-title-casestudy-details .cover-body h2 {
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+}
+
+.page-title-casestudy-details .cover-body p {
+  font-weight: 600;
+}
+
+.page-title-casestudy-details-cover {
+  height: 90%;
+  background-size: cover;
+  background-position: center;
+  overflow: initial;
+  position: relative;
+}
+
+@media screen and (max-width: 450px) {
+  .page-title-casestudy-details-cover {
+    height: 70%;
+  }
+}
+
+.page-title-casestudy-details-cover img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+.page-title-casestudy-details .image_placeholder {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  background: #fff;
+  height: 120px;
+  padding: 20px;
+  margin: 0 auto;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .social_website_banner {
@@ -4325,8 +4570,9 @@ input[type=number] {
   transition: all 1s;
 }
 
-.owl-nav .owl-prev .circle img:hover {
-  -webkit-animation: slideInLeft 1s forwards;
+.owl-nav .owl-prev .circle:hover img {
+  -webkit-animation: slideInLeft 1s;
+  animation: slideInLeft 1s;
 }
 
 .owl-nav .owl-next .circle {
@@ -4336,9 +4582,13 @@ input[type=number] {
   transition: all 1s;
 }
 
-.owl-nav .owl-next .circle img:hover {
+.owl-nav .owl-next .circle:hover img {
   -webkit-animation: slideInRight 1s forwards;
-          animation: slideInRight 1s forwards;
+  animation: slideInRight 1s forwards;
+}
+
+.form-group label {
+  width: 100%;
 }
 
 .owl-nav .owl-next .circle {
@@ -4384,13 +4634,6 @@ input[type=number] {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-}
-
-@media screen and (max-width: 800px) {
-  .owl-nav .circle.center {
-    top: unset;
-    bottom: 91px;
-  }
 }
 
 .owl-nav .circle.black {
@@ -4584,6 +4827,13 @@ a:hover {
   animation-delay: 0.9s;
 }
 
+@media screen and (max-width: 800px) {
+  .main_slider .owl-theme .owl-nav {
+    top: unset;
+    bottom: 40px;
+  }
+}
+
 .main_slider_content {
   text-align: center;
   color: #fff;
@@ -4643,6 +4893,8 @@ a:hover {
 
 .say-hello {
   background-image: url(assets/images/BG/1.jpg);
+  background-size: cover;
+  background-position: center center;
   -webkit-clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 100%);
 }
@@ -4719,12 +4971,12 @@ a:hover {
   background-image: url("assets/images/Footer/Footer_Off.jpg");
   background-size: cover;
   background-position: center;
+  padding: 20px 0;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
 
 .footer_link {
-  padding: 20px 0;
   display: block;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -4738,25 +4990,37 @@ a:hover {
   font-weight: 500;
 }
 
-.footer h1::after {
-  content: "";
-  background-color: #fff;
-  position: absolute;
-  width: 5px;
-  height: 100%;
-  top: 0;
-  right: 0;
-  display: block;
+@media screen and (max-width: 320px) {
+  .footer h1 {
+    font-size: 41px;
+  }
 }
 
 .footer_caption {
   text-align: left;
 }
 
+.footer_caption::before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
 .footer_caption h4 {
   color: #fff;
   font-size: 35px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 450px) {
+  .footer_caption h4 {
+    font-size: 20px;
+  }
 }
 
 .footer_caption p {
@@ -4766,8 +5030,14 @@ a:hover {
   margin-top: 20px;
 }
 
+@media screen and (max-width: 450px) {
+  .footer_caption p {
+    font-size: 14px;
+  }
+}
+
 .footer-style-1 {
-  padding: 1rem 0;
+  padding: 5px 0;
 }
 
 .footer_icon_1 {
@@ -4784,8 +5054,8 @@ a:hover {
 }
 
 .footer:hover {
-  background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(41, 7, 7, 0.2)), to(rgba(0, 0, 0, 0.2))), url("assets/images/Footer/Footer.jpg");
-  background-image: linear-gradient(to top right, rgba(41, 7, 7, 0.2), rgba(0, 0, 0, 0.2)), url("assets/images/Footer/Footer.jpg");
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(237, 41, 36, 0.5)), to(rgba(41, 7, 7, 0.7))), url("assets/images/Footer/Footer_Off.jpg");
+  background-image: linear-gradient(to right, rgba(237, 41, 36, 0.5), rgba(41, 7, 7, 0.7)), url("assets/images/Footer/Footer_Off.jpg");
 }
 
 .footer:hover .footer_icon_1 {
@@ -4811,6 +5081,15 @@ a:hover {
 
 .case_study_card:hover .card-body {
   bottom: 0;
+}
+
+.footerBackground {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(41, 7, 7, 0.5)), to(rgba(41, 7, 7, 0.2))), url("assets/images/Footer/Footer.jpg") !important;
+  background-image: linear-gradient(to top right, rgba(41, 7, 7, 0.5), rgba(41, 7, 7, 0.2)), url("assets/images/Footer/Footer.jpg") !important;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .about-sec {
@@ -4980,8 +5259,7 @@ a:hover {
   width: 250px !important;
   background-color: #290707;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -5374,26 +5652,32 @@ a:hover {
 }
 
 @-webkit-keyframes slideLeft {
-  100% {
-    left: 0;
+  from {
+    left: 5%;
+  }
+  to {
+    left: 85%;
   }
 }
 
 @-webkit-keyframes slideRight {
-  100% {
-    right: 0;
+  from {
+    right: 5%;
+  }
+  to {
+    right: 85%;
   }
 }
 
 @keyframes slideLeft {
-  100% {
-    left: 0;
+  to {
+    left: 85%;
   }
 }
 
 @keyframes slideRight {
-  100% {
-    right: 0;
+  to {
+    right: 85%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

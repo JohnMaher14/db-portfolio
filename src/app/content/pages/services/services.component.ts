@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BannerImage } from 'src/app/classes/banner-image';
+import { Service } from 'src/app/classes/service';
 import { BannerService } from 'src/app/services/banner.service';
 import { ServicesService } from 'src/app/services/services.service';
 @Component({
@@ -8,8 +10,8 @@ import { ServicesService } from 'src/app/services/services.service';
 })
 export class ServicesComponent implements OnInit {
   loading = true;
-  services: any[] =[];
-  bannerImage: any[] = [];
+  services: Service[] =[];
+  bannerImage: BannerImage[] = [];
   serviceImage='https://digitalbondmena.com/services/';
   constructor(private _ServicesService:ServicesService,
     private _BannerService:BannerService
@@ -20,13 +22,18 @@ export class ServicesComponent implements OnInit {
     this.showBanner()
   }
   showBanner(){
+    this.loading = true
+
     this._BannerService.getBanner().subscribe(
       (resposne) => {
         this.bannerImage = resposne.bannerImages
+        this.loading = false
+
       }
     )
   }
   showServices(){
+    this.loading = true
     this._ServicesService.getServices().subscribe(
       (response) => {
         this.services = response.services

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup , Validators , FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { BannerImage } from 'src/app/classes/banner-image';
+import { Review } from 'src/app/classes/review';
 import { BannerService } from 'src/app/services/banner.service';
 import { HomeService } from 'src/app/services/home.service';
 import { ReviewsService } from 'src/app/services/reviews.service';
@@ -13,9 +15,9 @@ import { ReviewsService } from 'src/app/services/reviews.service';
 export class TestimonialsComponent implements OnInit {
   loading = true;
   loadingSpinner = false;
-  reviews: any[] =[];
+  reviews: Review[] =[];
   error = '';
-  banners: any[]=[];
+  banners: BannerImage[]=[];
   reviewImage='https://digitalbondmena.com/feedbacks/';
   constructor(
     private _BannerService:BannerService ,
@@ -23,12 +25,12 @@ export class TestimonialsComponent implements OnInit {
      private _ReviewsService:ReviewsService ,
       private _Router:Router) { }
   testimonialForm:FormGroup = new FormGroup({
-    name: new FormControl('',Validators.required) ,
-    email: new FormControl('',[Validators.required , Validators.email]),
-    job_title: new FormControl('',Validators.required),
-    type: new FormControl('review',Validators.required),
-    phone: new FormControl('', [Validators.required , Validators.pattern(/^(0|[0-9][1-9]*)$/)]),
-    message: new FormControl('',Validators.required)
+    'name': new FormControl('',Validators.required) ,
+    'email': new FormControl('',[Validators.required , Validators.email]),
+    'job_title': new FormControl('',Validators.required),
+    'type': new FormControl('review',Validators.required),
+    'phone': new FormControl('', [Validators.required , Validators.pattern(/^((\\+91-?)|0)?[0-9]{10}$/)]),
+    'message': new FormControl('',Validators.required)
   })
   ngOnInit(): void {
     this.showbanner();
@@ -50,14 +52,14 @@ export class TestimonialsComponent implements OnInit {
 
     this._HomeService.getHome().subscribe(
       (response) => {
-        this.loading = false;
         this.reviews = response.feedbacks;
+        this.loading = false;
       }
     )
   }
   testimonials:OwlOptions = {
     loop: true,
-
+    // center: true,
     dots: false,
     margin:30,
     autoplay: false,
@@ -72,7 +74,9 @@ export class TestimonialsComponent implements OnInit {
       },
 
       940: {
-        items: 2
+
+        items: 1,
+        stagePadding:200
       }
     }
   }

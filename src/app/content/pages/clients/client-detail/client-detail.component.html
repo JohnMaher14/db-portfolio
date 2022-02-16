@@ -1,6 +1,6 @@
 <!--Banner Start-->
-<section class="page-title casestudy_page--title ">
-  <div class="container">
+<section class="page-title" >
+  <!-- <div class="container">
     <div class="standalone-content-data">
       <h2 class="hide-cursor">{{caseStudy?.en_title}}</h2>
       <ul class="page-breadcrumb link">
@@ -10,13 +10,151 @@
         <li><a>{{caseStudy?.en_title}}</a></li>
       </ul>
     </div>
+  </div> -->
+  <div class="page-title-casestudy-details-cover">
+    <img [src]="caseStudyLogo+caseStudy?.banner_image" alt="">
+    <div class="image_placeholder shadow-sm rounded-circle w-120px">
+      <img [src]="caseStudyLogo+caseStudy?.image" alt="{{caseStudy?.en_title}} logo" class="img-fluid ">
+    </div>
   </div>
-
+  <div class="container">
+    
+    <div class="cover-body">
+      <h2>
+        {{caseStudy?.en_title}}
+      </h2>
+      <p>
+        {{caseStudy?.en_text}}
+      </p>
+    </div>
+  </div>
 </section>
 <!--Banner End-->
 <div *ngIf="loading">
 <app-loader></app-loader>
 </div>
+
+
+<article *ngFor="let caseStudyModel of caseStudyModels; let first=first; let last=last; let index=index"  >
+  <div class="betterShadow" [ngClass]="{'odd': caseStudyModel.id % 2 == 0 , 'even': caseStudyModel.id % 2 != 0}">
+
+    <section class="case_studies_details py-5">
+      <div class="container">
+        <div *ngIf=" caseStudyModel.id % 2 == 0" class="row align-items-center">
+          <div class="col-lg-8 case_studies_details_caption" [ngClass]="{'text-right': caseStudyModel.id % 2 == 0 , 'text-left': caseStudyModel.id % 2 != 0 }">
+
+              <h3>
+                
+              {{caseStudyModel.en_title}}
+            </h3>
+            <p>
+              {{caseStudyModel.en_text}}
+            </p>
+        </div>
+          
+          <div *ngIf="caseStudyModel.en_title === 'Website'" class="col-lg-4 website_section px-0">
+            <img src="assets/images/Mac.png" class="social_media_pic" alt="">
+            
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
+
+              <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
+                <div class="case_studies_details_slider">
+
+                  <img [src]="caseStudyImage+caseStudyGallery.image" class="caseStudyslider_slider_pic" alt="" />
+                </div>
+              </ng-template>
+
+            </owl-carousel-o>
+          </div>
+          <div *ngIf="caseStudyModel.en_title === 'SOCIAL MEDIA'" class="col-lg-4  social_media_section caseStudyslider px-0">
+            <img src="assets/images/social_media.png" class=" caseStudyslider_pic" alt="">
+            
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
+
+              <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
+                <div class="case_studies_details_slider">
+
+                  <img [src]="caseStudyImage+caseStudyGallery.image" class="caseStudyslider_slider_pic" alt="" />
+                </div>
+              </ng-template>
+
+            </owl-carousel-o>
+          </div>
+          <div *ngIf="caseStudyModel.en_title === 'Mobile App'" class="col-lg-4 mobile_section caseStudyslider px-0">
+            <img src="assets/images/mobile.png" class="caseStudyslider_pic"  alt="">
+            
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_app_slider">
+
+              <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
+                <div class="case_studies_details_slider">
+
+                  <img [src]="caseStudyImage+caseStudyGallery.image" class="caseStudyslider_app_slider_pic" alt="" />
+                </div>
+              </ng-template>
+
+            </owl-carousel-o>
+          </div>
+        </div>
+        <div *ngIf=" caseStudyModel.id % 2 != 0" class="row align-items-center">
+          <div *ngIf="caseStudyModel.en_title === 'Website'" class="col-lg-4 website_section caseStudyslider px-0">
+            <img src="assets/images/Mac.png" class="caseStudyslider_pic" alt="">
+            
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider_website">
+
+              <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
+                <div class="case_studies_details_slider">
+
+                  <img [src]="caseStudyImage+caseStudyGallery.image" class="caseStudyslider_slider_pic" alt="" />
+                </div>
+              </ng-template>
+
+            </owl-carousel-o>
+          </div>
+          <div *ngIf="caseStudyModel.en_title === 'SOCIAL MEDIA'" class="col-lg-4 social_media_section caseStudyslider px-0">
+            <img src="assets/images/social_media.png" class="caseStudyslider_pic" alt="">
+            
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
+
+              <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
+                <div class="case_studies_details_slider">
+
+                  <img [src]="caseStudyImage+caseStudyGallery.image" class="caseStudyslider_slider_pic" alt="" />
+                </div>
+              </ng-template>
+
+            </owl-carousel-o>
+          </div>
+          <div *ngIf="caseStudyModel.en_title === 'Mobile App'" class="col-lg-4 mobile_section caseStudyslider px-0">
+            <img src="assets/images/mobile.png" class="caseStudyslider_pic" alt="">
+            
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
+
+              <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
+                <div class="case_studies_details_slider">
+
+                  <img [src]="caseStudyImage+caseStudyGallery.image" class="caseStudyslider_slider_pic" alt="" />
+                </div>
+              </ng-template>
+
+            </owl-carousel-o>
+          </div>
+          <div class="col-lg-8 case_studies_details_caption">
+
+            <h3>
+
+              {{caseStudyModel.en_title}}
+            </h3>
+            <p>
+              {{caseStudyModel.en_text}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</article>
+
 <!--
 
 
@@ -205,60 +343,3 @@
   </article>
 </main>
 -->
-<section class="caseStudyDeatils">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7">
-        <!-- <blockquote class="bg-white custom-shadow p-5 mt-0 rounded-custom border-4 border-primary border-top">
-          <p class="text-muted">
-            {{caseStudy?.en_text}}
-
-          </p>
-        </blockquote> -->
-        <div class="row">
-          <div class="col-12" *ngFor="let caseStudyModel of caseStudyModels" >
-
-            <div class="card case_study_details mb-3 border-0 custom-shadow">
-              <owl-carousel-o [options]="caseStudiesSlider" class="client-team">
-    
-                <ng-container *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images"  class="wow fadeInUp">
-                  <ng-template carouselSlide>
-
-                    
-                    <div class="case_study_details_slider">
-                      <img  [src]="caseStudyImage+caseStudyGallery.image" class="" alt="" />
-                    </div>
-                  </ng-template>
-                </ng-container>
-    
-              </owl-carousel-o>
-              <div class="card-body">
-                <h5 class="card-title">{{caseStudyModel.en_title}}</h5>
-                <p class="card-text">{{caseStudyModel.en_text}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="is-sticky author-wrap text-center bg-light p-5 sticky-sidebar rounded-custom mt-5 mt-lg-0">
-          <div class="image_placeholder shadow-sm rounded-circle w-120px">
-            <img [src]="caseStudyLogo+caseStudy?.image" alt="{{caseStudy?.en_title}} logo" class="img-fluid ">
-          </div>
-          <div class="author-info my-4">
-              <h5 class="mb-0">    
-                {{caseStudy?.en_title}}
-                
-              </h5>
-            </div>
-            <p>
-              <i class="fas fa-quote-left me-2 text-primary"></i>
-              {{caseStudy?.en_text}}
-              <i class="fas fa-quote-right ms-2 text-primary"></i>
-            </p>
-
-      </div>
-      </div>
-    </div>
-  </div>
-</section>

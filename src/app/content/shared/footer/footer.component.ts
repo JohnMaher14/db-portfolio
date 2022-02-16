@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  navigateToContact(){
-    this._Router.navigate(['/contact'])
+  navigateTosayHello(){
+    this._Router.navigate(['/say-hello'])
   }
 }

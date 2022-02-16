@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AboutUs } from 'src/app/classes/about-us';
+import { AboutUsHome } from 'src/app/classes/about-us-home';
+import { Casestudy } from 'src/app/classes/casestudy';
+import { Review } from 'src/app/classes/review';
+import { Slider } from 'src/app/classes/slider';
+import { Team } from 'src/app/classes/team';
 import { HomeService } from 'src/app/services/home.service';
 import { ReviewsService } from 'src/app/services/reviews.service';
 
@@ -10,14 +16,14 @@ import { ReviewsService } from 'src/app/services/reviews.service';
 })
 export class HomeComponent implements OnInit {
   loading = true;
-  sliders : any[] =[];
+  sliders : Slider[] =[];
   studyCaseImage = 'https://digitalbondmena.com/clients/';
   teamImage = 'https://digitalbondmena.com/teams/';
   feedbackImage = 'https://digitalbondmena.com/feedbacks/';
-  aboutUs :any;
-  teams: any[]= [];
-  studyCases: any[]= [];
-  reviews: any[] =[];
+  aboutUs!:AboutUsHome;
+  teams: Team[]= [];
+  studyCases: Casestudy[]= [];
+  reviews: Review[] =[];
   skills: any[] = [];
   constructor(private _HomeService:HomeService,
     private _ReviewsService:ReviewsService
@@ -30,6 +36,7 @@ export class HomeComponent implements OnInit {
     this.showAboutus();
     this.showReview()
   }
+  
   showSliders(){
     this.loading = true ;
 
@@ -121,7 +128,6 @@ export class HomeComponent implements OnInit {
   teamCarousal: OwlOptions = {
     loop:true,
     margin:40,
-    center: true,
     dots: false,
     autoplay:true,
     navSpeed: 700,
@@ -135,9 +141,13 @@ export class HomeComponent implements OnInit {
         items: 2
       },
       740: {
+        center: true,
+
         items: 3
       },
       940: {
+        center: true,
+
         items: 3
       },
     },
@@ -148,7 +158,6 @@ export class HomeComponent implements OnInit {
     margin:40,
     autoplay: true,
 
-    center: true,
     dots: false,
     navSpeed: 700,
     navText: [`<a class='circle border-0 center' id='team-circle-left'><img src="assets/images/logo/arrow_left.png"></a>`
@@ -162,9 +171,13 @@ export class HomeComponent implements OnInit {
         items: 2
       },
       740: {
-        items: 3
+        items: 3,
+        center:true
+
       },
       940: {
+        center:true,
+
         items: 3
       },
     },
@@ -197,7 +210,6 @@ export class HomeComponent implements OnInit {
     dots: false,
     autoplay: true,
     navSpeed: 700,
-    center:true,
     navText: [`<a class='circle border-0 center' id='team-circle-left'><img src="assets/images/logo/arrow_black_left.png"></a>`
     , `<a class='circle border-0 center' id='team-circle-right'><img src="assets/images/logo/arrow_black_right.png"></a>`],
 
@@ -210,7 +222,9 @@ export class HomeComponent implements OnInit {
         items: 2
       },
       960: {
-        items: 3
+        items: 3,
+        center:true
+
       },
 
     }

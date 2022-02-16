@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { BannerImage } from 'src/app/classes/banner-image';
 import { BannerService } from 'src/app/services/banner.service';
 import { ServicesService } from 'src/app/services/services.service';
 
@@ -13,9 +14,9 @@ export class ServicesDetailsComponent implements OnInit {
   loading = true ;
   serviceDetails:any[] = [];
   otherServicesArray: any[]= [];
-  bannerImage:any;
+  bannerImage!:BannerImage;
   serviceImage='https://digitalbondmena.com/services/';
-  indexForNumbers: any;
+  indexForNumbers!: number;
   constructor(private _ServicesService:ServicesService , private _ActivatedRoute:ActivatedRoute,
     private _BannerService:BannerService
     ) {
@@ -28,8 +29,18 @@ export class ServicesDetailsComponent implements OnInit {
     this._ServicesService.getServicesDetails(this.indexForNumbers)
     .subscribe((data) => {
       this.serviceDetails = data.service;
+      this.loading = false
+    });
+  }
+  showOtherServicesDetails(){
+    this.loading = true ;
+
+    this.indexForNumbers = this._ActivatedRoute.snapshot.params["id"];
+    this._ServicesService.getServicesDetails(this.indexForNumbers)
+    .subscribe((data) => {
       this.otherServicesArray = data.otherSecives;
       this.loading = false
+      console.log(data.otherSecives);
     });
   }
   showBannerImage(){
@@ -42,7 +53,7 @@ export class ServicesDetailsComponent implements OnInit {
       }
     )
   }
-  servicesSlider: OwlOptions ={
+  servicesSlider: OwlOptions = {
 
     loop: true,
     margin:40,
@@ -73,7 +84,8 @@ export class ServicesDetailsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.showServicesDetails();
-    this.showBannerImage()
+    this.showBannerImage();
+    this.showOtherServicesDetails();
   }
 
 }

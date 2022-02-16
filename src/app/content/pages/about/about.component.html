@@ -1,8 +1,8 @@
-<div class="" *ngIf="loading">
+<div *ngIf="loading">
   <app-loader></app-loader>
 </div>
 <!--Banner Start-->
-<section class="page-title parallax1" style="background-image: url(https://digitalbondmena.com/about_us_page/{{aboutUs?.about_banner_image}});">
+<section class="page-title" style="background-image: url(https://digitalbondmena.com/about_us_page/{{aboutUs?.about_banner_image}});">
   <div class="container">
     <div class="standalone-content-data">
       <h2 class="hide-cursor">About us</h2>
@@ -22,7 +22,7 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6">
-      <h1>
+      <h1 class="about_us_title" data-depth="0.1">
         {{aboutUs?.en_about_section_title}}
       </h1>
       <p>
@@ -43,8 +43,8 @@
     <div class="row align-items-center">
       <div class="col-lg-7">
         <div class="about-details pr-lg-5">
-          <h6 class="sub-title main-color">Wanna meet the Bonders? </h6>
-          <h2 class="title">Our Story</h2>
+          <h6 class="sub-title main-color" >Wanna meet the Bonders? </h6>
+          <h2 class="title" data-depth="0.1">Our Story</h2>
         </div>
         <!-- <div class="accordion" id="accordionExample">
           <div class="card">
@@ -134,10 +134,10 @@
   <div class="container position-relative">
     <div class="row">
       <div class="col-12 col-lg-12">
-        <div class="team-details pr-lg-5" [attr.data-depth]="0.1">
+        <div class="team-details pr-lg-5">
           <h6 class="sub-title main-color">Wanna meet the Bonders?
           </h6>
-          <h2 class="title">Our Creative Team</h2>
+          <h2 class="title" data-depth="0.1">Our Creative Team</h2>
         </div>
       </div>
       <div class="col-12 col-lg-12 team-member-area">
@@ -147,7 +147,7 @@
               <div class="image-holder">
                 <img [src]="teamImage+team.image" alt="team1" />
               </div>
-              <h3 class="team-name">{{team.en_title}}</h3>
+              <h3 class="team-name">{{team.en_name}}</h3>
               <p>{{team.en_role}}</p>
             </div>
           </ng-template>

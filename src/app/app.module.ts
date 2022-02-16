@@ -28,6 +28,8 @@ import { ThankyouContactComponent } from './content/thankyou/thankyou-contact/th
 import { ThankyouReviewComponent } from './content/thankyou/thankyou-review/thankyou-review.component';
 import { ActionSpinnerComponent } from './content/shared/action-spinner/action-spinner.component';
 import { ClientDetailComponent } from './content/pages/clients/client-detail/client-detail.component';
+import { HoverfooterDirective } from './directives/hoverfooter.directive';
+import { OtherServiceComponent } from './content/pages/services/other-service/other-service.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { ClientDetailComponent } from './content/pages/clients/client-detail/cli
     ThankyouReviewComponent,
     ActionSpinnerComponent,
     ClientDetailComponent,
+    HoverfooterDirective,
+    OtherServiceComponent,
   ],
   imports: [
     BrowserModule,

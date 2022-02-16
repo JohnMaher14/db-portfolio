@@ -11,19 +11,7 @@
       </ul>
     </div>
   </div>
-  <svg
-  id="banner_svg"
-  class="separator__svg"
-  width="100%"
-  viewBox="0 0 100 100"
-  preserveAspectRatio="none"
-  fill="#ffffff"
-  version="1.1"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path d="M 100 100 V 60 L 0 100" />
-  <path d="M 30 73 L 100 50 V 50 Z" fill="#ffffff" stroke-width="0" />
-</svg>
+
 </section>
 <!--Banner End-->
 
@@ -65,7 +53,7 @@
                 otherService.en_text | slice: 0:130
               }}
             </p>
-            <a routerLink="/services/{{ otherService.id }}" class="btn">Discover more</a>
+            <a routerLink="/service/{{ otherService.id }}" class="btn">Discover more</a>
           </div>
           <div class="card-img right">
             <img class="" [src]="serviceImage+otherService.image" alt="" />

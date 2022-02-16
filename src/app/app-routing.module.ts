@@ -8,6 +8,7 @@ import { ContactComponent } from './content/pages/contact/contact.component';
 import { HomeComponent } from './content/pages/home/home.component';
 import { PortfolioComponent } from './content/pages/portfolio/portfolio.component';
 import { SayhelloComponent } from './content/pages/sayhello/sayhello.component';
+import { OtherServiceComponent } from './content/pages/services/other-service/other-service.component';
 import { ServicesDetailsComponent } from './content/pages/services/services-details/services-details.component';
 import { ServicesComponent } from './content/pages/services/services.component';
 import { TestimonialsComponent } from './content/pages/testimonials/testimonials.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'services', component: ServicesComponent},
   { path: 'services/:id', component: ServicesDetailsComponent },
+  { path: 'service/:id', component: OtherServiceComponent },
   { path: '**', component: NotfoundComponent },
 ];
 

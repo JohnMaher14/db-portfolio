@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Casestudy } from 'src/app/classes/casestudy';
 import { CasestudyService } from 'src/app/services/casestudy.service';
 @Component({
   selector: 'app-client-detail',
@@ -11,12 +12,11 @@ export class ClientDetailComponent implements OnInit {
 
   loading= true;
   caseStudy: any;
-  caseStudyImages: any[]=[];
-  caseStudyImage='https://digitalbondmena.com/case_study_model_image/';
-  caseStudyLogo='https://digitalbondmena.com/case-study/';
+  caseStudyImages: Casestudy[]=[];
+  caseStudyImage:string='https://digitalbondmena.com/case_study_model_image/';
+  caseStudyLogo:string='https://digitalbondmena.com/case-study/';
   caseStudyModels: any[]= [];
-  idOfCaseStudy:any;
-  idOfCaseStudyModel:any;
+  idOfCaseStudy!:number;
   constructor(private _CasestudyService:CasestudyService,
     private _ActivatedRoute:ActivatedRoute
 
@@ -30,7 +30,6 @@ export class ClientDetailComponent implements OnInit {
     this._CasestudyService.getCaseStudyDetail(this.idOfCaseStudy).subscribe(
       (response) => {
         this.caseStudy = response.caseStudyData[0]
-        console.log(response.caseStudyData[0]);
         this.loading= false
       }
     )
@@ -60,9 +59,8 @@ export class ClientDetailComponent implements OnInit {
   // }
   caseStudiesSlider: OwlOptions ={
     loop: true,
-    margin:40,
-    autoplay: false,
-
+    autoplay: true,
+    margin: 0,
     dots: false,
     navSpeed: 700,
     navText: [`<a class='circle border-0 center' id='team-circle-left'><img src="assets/images/logo/arrow_black_left.png"></a>`
@@ -74,6 +72,5 @@ export class ClientDetailComponent implements OnInit {
   ngOnInit(): void {
     this.showCaseStudy();
     this.showCaseStudyModel()
-    // this.showCaseStudyImages()
   }
 }

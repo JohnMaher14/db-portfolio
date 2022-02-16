@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AboutUs } from 'src/app/classes/about-us';
+import { BannerImage } from 'src/app/classes/banner-image';
+import { Team } from 'src/app/classes/team';
 import { AboutUsService } from 'src/app/services/about-us.service';
 import { HomeService } from 'src/app/services/home.service';
 
@@ -9,20 +12,13 @@ import { HomeService } from 'src/app/services/home.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  loading= true;
+  loading= false;
   teamImage = 'https://digitalbondmena.com/teams/';
   aboutUsPage = 'https://digitalbondmena.com/about_us_page/';
-  aboutBannerImage= '';
-  aboutSectionTitle = '';
-  aboutSectionText = '';
-  aboutSectionImage= '';
 
-  missionTitle='';
-  visionTitle='';
-  aboutUs: any;
-  pageBanner: any[] = [];
-  teams: any[] = [];
-  missionAndVission: any[] = [];
+  aboutUs!: AboutUs;
+  pageBanner: BannerImage[] = [];
+  teams: Team[] = [];
   constructor(
     private _AboutUsService:AboutUsService,
     ) { }
@@ -34,7 +30,6 @@ export class AboutComponent implements OnInit {
         this.loading = false
 
         this.aboutUs = response.aboutUsPage
-        console.log(response.aboutUsPage);
       }
     )
   }
@@ -76,7 +71,6 @@ export class AboutComponent implements OnInit {
     loop: true,
     autoplay: true,
     margin:40,
-    center: true,
     dots: false,
     navSpeed: 700,
     navText: [`<a class='circle border-0 center' id='team-circle-left'><img src="assets/images/logo/arrow_black_left.png"></a>`
@@ -91,9 +85,13 @@ export class AboutComponent implements OnInit {
         items: 2
       },
       740: {
+        center: true,
+
         items: 3
       },
       940: {
+        center: true,
+
         items: 3
       },
     },

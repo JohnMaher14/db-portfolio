@@ -4,26 +4,12 @@
     <div class="standalone-content-data">
       <h2 class="hide-cursor text-white">Services</h2>
       <ul class="page-breadcrumb link">
-        <li>
-          <a routerLink="/home" class="text-white"><span class="icon text-white fas fa-home"></span>Home</a>
-        </li>
-        <li><a class="text-white">Services</a></li>
-      </ul>
+        <li><a routerLink="/home"><span class="icon fas fa-home"></span>Home</a></li>
+        <li><a>Services</a></li>
+    </ul>
     </div>
   </div>
-  <svg
-    id="banner_svg"
-    class="separator__svg"
-    width="100%"
-    viewBox="0 0 100 100"
-    preserveAspectRatio="none"
-    fill="#ffffff"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M 100 100 V 60 L 0 100" />
-    <path d="M 30 73 L 100 50 V 50 Z" fill="#ffffff" stroke-width="0" />
-  </svg>
+
 </section>
 <!--Banner End-->
 <div *ngIf="loading">
@@ -36,7 +22,7 @@
       <div class="col-12 text-center">
         <h1 class="section-header">Services</h1>
       </div>
-      <div *ngFor="let service of services" class="col-md-4 wow animated fadeInUp">
+      <div *ngFor="let service of services" class="col-lg-4 col-md-6 wow animated fadeInUp">
         <div class="card">
           <div class="card-content">
             <h2>{{service.en_title}}</h2>

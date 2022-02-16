@@ -1,6 +1,9 @@
 import { trigger, transition, animate, style } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { BannerImage } from 'src/app/classes/banner-image';
+import { Casestudy } from 'src/app/classes/casestudy';
+import { BannerService } from 'src/app/services/banner.service';
 import { CasestudyService } from 'src/app/services/casestudy.service';
 @Component({
   selector: 'app-clients',
@@ -30,20 +33,33 @@ import { CasestudyService } from 'src/app/services/casestudy.service';
     ]
 })
 export class ClientsComponent implements OnInit {
-  loading= true;
-  caseStudies: any[] = [];
+  loading= false;
+  caseStudies: Casestudy[] = [];
+  banner!:BannerImage;
   caseStudyImage='https://digitalbondmena.com/case-study/';
-  constructor(private _CasestudyService:CasestudyService) {
+  constructor(private _CasestudyService:CasestudyService,
+    private _BannerService:BannerService
+    ) {
 
   }
   getCaseStudies(){
+    
     this.loading = true ;
-
     this._CasestudyService.getCaseStudies().subscribe(
       (response => {
         this.caseStudies = response.caseStudys
         this.loading= false
       })
+    )
+  }
+  showCasStudybanner(){
+    this.loading = true ;
+
+    this._BannerService.getBanner().subscribe(
+      (response)=> {
+        this.banner = response.bannerImages[0];
+        this.loading = false;
+      }
     )
   }
   caseStudiesSlider: OwlOptions ={
@@ -75,7 +91,8 @@ export class ClientsComponent implements OnInit {
     nav:true
   }
   ngOnInit(): void {
-    this.getCaseStudies()
+    this.getCaseStudies();
+    this.showCasStudybanner();
   }
 
 }
