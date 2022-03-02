@@ -1,5 +1,5 @@
 <!--Banner Start-->
-<section class="page-title" >
+<section class="page-title page-title-casestudy-details" >
   <!-- <div class="container">
     <div class="standalone-content-data">
       <h2 class="hide-cursor">{{caseStudy?.en_title}}</h2>
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="container">
-    
+
     <div class="cover-body">
       <h2>
         {{caseStudy?.en_title}}
@@ -40,22 +40,22 @@
 
     <section class="case_studies_details py-5">
       <div class="container">
-        <div *ngIf=" caseStudyModel.id % 2 == 0" class="row align-items-center">
+        <div *ngIf="caseStudyModel.id % 2 === 0" class="row align-items-center">
           <div class="col-lg-8 case_studies_details_caption" [ngClass]="{'text-right': caseStudyModel.id % 2 == 0 , 'text-left': caseStudyModel.id % 2 != 0 }">
 
               <h3>
-                
+
               {{caseStudyModel.en_title}}
             </h3>
             <p>
               {{caseStudyModel.en_text}}
             </p>
-        </div>
-          
+          </div>
+
           <div *ngIf="caseStudyModel.en_title === 'Website'" class="col-lg-4 website_section px-0">
-            <img src="assets/images/Mac.png" class="social_media_pic" alt="">
-            
-            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
+            <img src="assets/images/Mac.png" class="caseStudyslider_pic " alt="">
+
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider_website">
 
               <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
                 <div class="case_studies_details_slider">
@@ -68,7 +68,7 @@
           </div>
           <div *ngIf="caseStudyModel.en_title === 'SOCIAL MEDIA'" class="col-lg-4  social_media_section caseStudyslider px-0">
             <img src="assets/images/social_media.png" class=" caseStudyslider_pic" alt="">
-            
+
             <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
 
               <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
@@ -82,7 +82,7 @@
           </div>
           <div *ngIf="caseStudyModel.en_title === 'Mobile App'" class="col-lg-4 mobile_section caseStudyslider px-0">
             <img src="assets/images/mobile.png" class="caseStudyslider_pic"  alt="">
-            
+
             <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_app_slider">
 
               <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
@@ -95,11 +95,12 @@
             </owl-carousel-o>
           </div>
         </div>
-        <div *ngIf=" caseStudyModel.id % 2 != 0" class="row align-items-center">
-          <div *ngIf="caseStudyModel.en_title === 'Website'" class="col-lg-4 website_section caseStudyslider px-0">
-            <img src="assets/images/Mac.png" class="caseStudyslider_pic" alt="">
-            
-            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider_website">
+        <div *ngIf="caseStudyModel.id % 2 !== 0" class="row align-items-center">
+
+          <div *ngIf="caseStudyModel.en_title === 'SOCIAL MEDIA'" class="col-lg-4 social_media_section caseStudyslider px-0">
+            <img src="assets/images/social_media.png" class="caseStudyslider_pic" alt="">
+
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
 
               <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
                 <div class="case_studies_details_slider">
@@ -110,10 +111,10 @@
 
             </owl-carousel-o>
           </div>
-          <div *ngIf="caseStudyModel.en_title === 'SOCIAL MEDIA'" class="col-lg-4 social_media_section caseStudyslider px-0">
-            <img src="assets/images/social_media.png" class="caseStudyslider_pic" alt="">
-            
-            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
+          <div *ngIf="caseStudyModel.en_title === 'Website'" class="col-lg-4 website_section caseStudyslider px-0">
+            <img src="assets/images/Mac.png" class="caseStudyslider_pic" alt="">
+
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider_website">
 
               <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
                 <div class="case_studies_details_slider">
@@ -126,13 +127,13 @@
           </div>
           <div *ngIf="caseStudyModel.en_title === 'Mobile App'" class="col-lg-4 mobile_section caseStudyslider px-0">
             <img src="assets/images/mobile.png" class="caseStudyslider_pic" alt="">
-            
-            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
+
+            <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_app_slider">
 
               <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
                 <div class="case_studies_details_slider">
 
-                  <img [src]="caseStudyImage+caseStudyGallery.image" class="caseStudyslider_slider_pic" alt="" />
+                  <img [src]="caseStudyImage+caseStudyGallery.image" class="caseStudyslider_app_slider_pic" alt="" />
                 </div>
               </ng-template>
 

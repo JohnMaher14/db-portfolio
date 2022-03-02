@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { delay, map, tap } from 'rxjs';
 import { AboutUs } from 'src/app/classes/about-us';
 import { AboutUsHome } from 'src/app/classes/about-us-home';
 import { Casestudy } from 'src/app/classes/casestudy';
@@ -15,7 +17,7 @@ import { ReviewsService } from 'src/app/services/reviews.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  loading = true;
+  loading = false;
   sliders : Slider[] =[];
   studyCaseImage = 'https://digitalbondmena.com/clients/';
   teamImage = 'https://digitalbondmena.com/teams/';
@@ -26,9 +28,30 @@ export class HomeComponent implements OnInit {
   reviews: Review[] =[];
   skills: any[] = [];
   constructor(private _HomeService:HomeService,
-    private _ReviewsService:ReviewsService
-    ) { }
+    private _ReviewsService:ReviewsService,
+    private _Title:Title
+    ) { 
+      _Title.setTitle('Digital Bond | Home')
 
+    }
+
+    showSliders(){
+      this.loading = true ;
+  
+      this._HomeService.getHome().pipe(
+        tap(() => this.loading = true , delay(5000))
+      ).subscribe(
+        (response => {
+          this.sliders = response.sliders
+          this.loading= false
+        })
+      )
+      this._HomeService.getHome().pipe(
+        map(
+          (response:any) => { console.log(response); }
+        )
+      )
+    }
   ngOnInit(): void {
     this.showSliders();
     this.showStudyCases();
@@ -36,25 +59,15 @@ export class HomeComponent implements OnInit {
     this.showAboutus();
     this.showReview()
   }
-  
-  showSliders(){
-    this.loading = true ;
 
-    this._HomeService.getHome().subscribe(
-      (response => {
-        this.loading= false
-        this.sliders = response.sliders
-      })
-    )
-  }
   showTeams(){
     this.loading = true ;
 
     this._HomeService.getHome().subscribe(
       (response => {
-        this.loading= false
-
+        
         this.teams = response.team
+        this.loading= false
       })
     )
   }
@@ -63,9 +76,9 @@ export class HomeComponent implements OnInit {
 
     this._HomeService.getHome().subscribe(
       (response => {
-        this.loading= false
-
+        
         this.studyCases = response.clients
+        this.loading= false
       })
     )
   }
@@ -74,24 +87,12 @@ export class HomeComponent implements OnInit {
 
     this._HomeService.getHome().subscribe(
       (response => {
-        this.loading= false
-
-        // this.aboutUs = response.main
-        // this.aboutUs = response.main.en_about_home_title;
-        // this.aboutUs = response.main.en_about_home_text;
         this.aboutUs = response.main
+        this.loading= false
       })
     )
   }
-  // showSkills(){
-  //   this._HomeService.getHome().subscribe(
-  //     (response => {
-  //       this.loading= false
 
-  //       this.skills = response.skills
-  //     })
-  //   )
-  // }
   showReview(){
     this.loading = true ;
 

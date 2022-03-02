@@ -1,3 +1,9 @@
+.loader_sekelton {
+  position: fixed;
+  z-index: 999999;
+  inset: 0;
+}
+
 .loader_sekelton .card {
   height: 100vh;
 }

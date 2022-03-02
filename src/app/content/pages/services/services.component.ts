@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { BannerImage } from 'src/app/classes/banner-image';
 import { Service } from 'src/app/classes/service';
 import { BannerService } from 'src/app/services/banner.service';
@@ -14,8 +15,11 @@ export class ServicesComponent implements OnInit {
   bannerImage: BannerImage[] = [];
   serviceImage='https://digitalbondmena.com/services/';
   constructor(private _ServicesService:ServicesService,
-    private _BannerService:BannerService
-    ) { }
+    private _BannerService:BannerService,    private _Title:Title
+    ) { 
+      _Title.setTitle('Digital Bond | Services')
+
+   }
 
   ngOnInit(): void {
     this.showServices();

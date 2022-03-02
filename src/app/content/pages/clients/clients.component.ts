@@ -1,5 +1,6 @@
 import { trigger, transition, animate, style } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { BannerImage } from 'src/app/classes/banner-image';
 import { Casestudy } from 'src/app/classes/casestudy';
@@ -38,9 +39,10 @@ export class ClientsComponent implements OnInit {
   banner!:BannerImage;
   caseStudyImage='https://digitalbondmena.com/case-study/';
   constructor(private _CasestudyService:CasestudyService,
-    private _BannerService:BannerService
+    private _BannerService:BannerService,
+    private _Title:Title
     ) {
-
+      _Title.setTitle('Digital Bond | Case studies')
   }
   getCaseStudies(){
     

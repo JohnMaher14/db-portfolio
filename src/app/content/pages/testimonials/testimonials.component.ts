@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , Validators , FormControl } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { BannerImage } from 'src/app/classes/banner-image';
@@ -23,7 +24,13 @@ export class TestimonialsComponent implements OnInit {
     private _BannerService:BannerService ,
      private _HomeService:HomeService  ,
      private _ReviewsService:ReviewsService ,
-      private _Router:Router) { }
+      private _Router:Router,
+          private _Title:Title
+    ) { 
+      _Title.setTitle('Digital Bond | Reviews')
+
+
+       }
   testimonialForm:FormGroup = new FormGroup({
     'name': new FormControl('',Validators.required) ,
     'email': new FormControl('',[Validators.required , Validators.email]),
@@ -64,7 +71,10 @@ export class TestimonialsComponent implements OnInit {
     margin:30,
     autoplay: false,
     navSpeed: 700,
-    nav: false,
+    navText: [`<a class='circle border-0 center' id='team-circle-left'><img src="assets/images/logo/arrow_black_left.png"></a>`
+    , `<a class='circle border-0 center' id='team-circle-right'><img src="assets/images/logo/arrow_black_right.png"></a>`],
+
+    nav: true,
     responsive: {
       0: {
         items: 1
@@ -74,6 +84,11 @@ export class TestimonialsComponent implements OnInit {
       },
 
       940: {
+
+        items: 1,
+        stagePadding:200
+      },
+      1600: {
 
         items: 1,
         stagePadding:200

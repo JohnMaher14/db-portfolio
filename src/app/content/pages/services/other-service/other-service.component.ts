@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { BannerImage } from 'src/app/classes/banner-image';
@@ -19,9 +20,9 @@ export class OtherServiceComponent implements OnInit {
   serviceImage='https://digitalbondmena.com/services/';
   indexForNumbers!: number;
   constructor(private _ServicesService:ServicesService , private _ActivatedRoute:ActivatedRoute,
-    private _BannerService:BannerService
+    private _BannerService:BannerService , private _Title:Title
     ) {
-
+      this._Title.setTitle('Digital Bond | Other service')
   }
   showServicesDetails(){
     this.loading = true ;
@@ -69,16 +70,24 @@ export class OtherServiceComponent implements OnInit {
     responsive: {
       0: {
         items: 1
+
       },
-      400: {
-        items: 2
+      350:{
+        items: 1
+
+      },
+      540: {
+        items: 2,
+
       },
 
       940: {
-        items: 3
+        items: 2,
+
       },
       1024: {
-        items: 3
+
+        items: 3,
       }
     },
     nav:true

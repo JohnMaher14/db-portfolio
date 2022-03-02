@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { tap, delay } from 'rxjs';
 import { AboutUs } from 'src/app/classes/about-us';
 import { BannerImage } from 'src/app/classes/banner-image';
 import { Team } from 'src/app/classes/team';
@@ -20,52 +22,39 @@ export class AboutComponent implements OnInit {
   pageBanner: BannerImage[] = [];
   teams: Team[] = [];
   constructor(
-    private _AboutUsService:AboutUsService,
-    ) { }
+    private _AboutUsService:AboutUsService, private _Title:Title
+    ) {
+      this._Title.setTitle('Digital Bond | About us')
+   }
   showAboutUsSection(){
     this.loading = true ;
 
-    this._AboutUsService.getAboutusPage().subscribe(
-      (response)=> {
-        this.loading = false
+    this._AboutUsService.getAboutusPage().pipe(
+      tap(() => this.loading = true , delay(5000))
 
+    ).subscribe(
+      (response)=> {
+        
         this.aboutUs = response.aboutUsPage
+        this.loading = false
       }
     )
   }
-  // showPageBanner(){
-  //   this._AboutUsService.getPageBanner().subscribe(
-  //     (response)=> {
-  //       this.loading = false
 
-  //       this.pageBanner = response
-  //     }
-  //   )
-  // }
-  // showVisionAndMission(){
-  //   this._AboutUsService.getVisionAndMission().subscribe(
-  //     (response)=> {
-  //       this.loading = false
-
-  //       this.missionAndVission = response
-  //     }
-  //   )
-  // }
   showTeams(){
         this.loading = true ;
     this._AboutUsService.getAboutusPage().subscribe(
       (response)=>{
-        this.loading = false
-
+        
         this.teams= response.team
+        this.loading = false
       }
     )
   }
   ngOnInit(): void {
     this.showTeams();
     this.showAboutUsSection();
-    // this.showPageBanner();
-    // this.showVisionAndMission();
+
   }
   teamCarousal: OwlOptions = {
     loop: true,

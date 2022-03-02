@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     //   this._NgxSpinnerService.hide();
     // }, 5000);
   }
-  title = 'ng-db-porfolio';
+  // title = 'ng-db-porfolio';
 
   // ngOnInit(): void {
   //     const InitParams: InitParams = {

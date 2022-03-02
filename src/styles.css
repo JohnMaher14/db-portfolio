@@ -1,6 +1,19 @@
 /* ===================================
     About
 ====================================== */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+.main-title {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  cursor: context-menu;
+}
+
+.main-title:hover {
+  -webkit-animation: spaceboots 1s infinite;
+          animation: spaceboots 1s infinite;
+}
+
 /*
     Theme Name: MegaOne
     Theme URI:
@@ -35,8 +48,6 @@
 /* ===================================
     Google font
 ====================================== */
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 .main-font {
   font-family: 'Roboto', sans-serif;
 }
@@ -47,6 +58,12 @@
 
 .text-primary {
   color: #290707 !important;
+}
+
+.justify-content-right {
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
 }
 
 /* ===================================
@@ -834,7 +851,7 @@ header {
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 11111;
+  z-index: 99999999999;
 }
 
 .upper-nav {
@@ -1313,6 +1330,7 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 100vh;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
   z-index: 111;
@@ -2243,7 +2261,7 @@ header {
 
 .testimonial-page-slider .owl-item .item {
   padding: 2rem;
-  opacity: 0.5;
+  opacity: 0.7;
   -webkit-transition: .4s ease all;
   transition: .4s ease all;
   margin: 0 20px;
@@ -2262,6 +2280,11 @@ header {
   font-weight: bold;
   color: #000;
   font-size: 50px;
+}
+
+.testimonial-page .testimonial-title .heading:hover {
+  -webkit-animation: spaceboots 1s infinite;
+          animation: spaceboots 1s infinite;
 }
 
 .testimonial-page label {
@@ -2492,6 +2515,11 @@ header {
   color: #202020;
   font-size: 39px;
   margin-bottom: 40px;
+}
+
+.contact-sec .heading:hover {
+  -webkit-animation: shake 1.5s infinite;
+          animation: shake 1.5s infinite;
 }
 
 .contact-sec .contact-form {
@@ -2888,6 +2916,8 @@ header {
   background-size: cover;
   background-position: top center;
   height: 100vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.2)));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
 }
@@ -2995,7 +3025,7 @@ header {
 .loader {
   position: fixed;
   inset: 0;
-  z-index: 99999;
+  z-index: 99999999999;
   background: #290707;
 }
 
@@ -3915,7 +3945,7 @@ header {
 
 @media screen and (max-width: 800px) {
   .website_section .owl-theme .owl-nav {
-    bottom: -250px;
+    bottom: -195 px;
   }
 }
 
@@ -3937,7 +3967,10 @@ header {
 
 @media screen and (max-width: 800px) {
   .mobile_section .owl-theme .owl-nav {
-    bottom: -60px;
+    bottom: -88px;
+  }
+  .mobile_section .owl-theme .owl-nav .owl-prev .circle {
+    left: -31px;
   }
 }
 
@@ -4091,6 +4124,7 @@ a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
   padding-top: 0;
   -webkit-clip-path: unset;
           clip-path: unset;
+  background: unset;
 }
 
 .page-title-casestudy-details .cover-body {
@@ -4360,7 +4394,6 @@ bottom: 0;
 
 .services-section .card {
   position: relative;
-  max-width: 320px;
   padding: 2rem 1.5rem;
   background-color: transparent;
   overflow: hidden;
@@ -4403,6 +4436,8 @@ bottom: 0;
 .services-section .card p {
   text-align: justify;
   min-height: 108px;
+  max-height: 108px;
+  overflow: hidden;
 }
 
 .services-section .card .btn {
@@ -4497,6 +4532,123 @@ bottom: 0;
   100% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+  }
+  5% {
+    -webkit-transform: skewX(15deg);
+            transform: skewX(15deg);
+  }
+  10% {
+    -webkit-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+  }
+  15% {
+    -webkit-transform: skewX(15deg);
+            transform: skewX(15deg);
+  }
+  20% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+  }
+  5% {
+    -webkit-transform: skewX(15deg);
+            transform: skewX(15deg);
+  }
+  10% {
+    -webkit-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+  }
+  15% {
+    -webkit-transform: skewX(15deg);
+            transform: skewX(15deg);
+  }
+  20% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+}
+
+@-webkit-keyframes spaceboots {
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes spaceboots {
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-1deg);
+  }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
   }
 }
 
@@ -5077,6 +5229,10 @@ a:hover {
   transition: all 1s;
   width: 100%;
   background-color: #290707;
+}
+
+.case_study_card h4 {
+  color: #fff;
 }
 
 .case_study_card:hover .card-body {

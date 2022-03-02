@@ -28,7 +28,7 @@
 
           <div class="col-12 col-lg-5 text-center text-lg-left position-relative">
               <div class="contact-details bg-gray p-5 wow fadeInLeft">
-                  <h4 class="heading" data-depth="0.1">GET IN TOUCH</h4>
+                  <h4 class="heading main-title" data-depth="0.1">GET IN TOUCH</h4>
 
                   <ul>
                       <li><i class="fas fa-map-pin text-primary"></i><a href="https://goo.gl/maps/4MFFx6BBxAEw3dug6">11 Al Israa street, El Mohandseen, Giza Governorate, Egypt
@@ -47,7 +47,7 @@
           <div class="col-12 col-lg-7">
             <div class="bg-gray p-5 wow fadeInRight">
 
-              <h4 class="heading text-center text-lg-left" data-depth="0.1">Send A Message</h4>
+              <h4 class="heading text-center main-title text-lg-left ">Send A Message</h4>
               <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)">
 
                 <div class="row">
@@ -55,9 +55,9 @@
                     <div class="input-group form-group">
                       <label for="name">Name</label>
                       <input id="name" [ngClass]="{'border-danger': contactForm.controls['name'].touched && contactForm.controls['name'].errors != null}" class="form-control" type="text" formControlName="name" name="name">
- 
+
                       <div class="input-group-append" *ngIf="contactForm.controls['name'].touched && contactForm.controls['name'].errors != null">
-                        <button class="input-group-text" id="basic-addon2" *ngIf="contactForm.controls['name'].errors['required']" data-toggle="tooltip" title="Name is required">
+                        <button class="input-group-text" type="button" id="basic-addon2" *ngIf="contactForm.controls['name'].errors['required']" data-toggle="tooltip" title="Name is required">
                           <i class="fa fa-info" aria-hidden="true"></i>
                         </button>
                       </div>
@@ -71,10 +71,10 @@
                       <input id="phone" [ngClass]="{'border-danger': contactForm.controls['phone'].touched && contactForm.controls['phone'].errors != null}" min="1" class="form-control" type="number" name="phone" formControlName="phone">
 
                       <div class="input-group-append" *ngIf="contactForm.controls['phone'].touched && contactForm.controls['phone'].errors != null">
-                        <button class="input-group-text" id="basic-addon2" *ngIf="contactForm.controls['phone'].errors['required']" data-toggle="tooltip" title="Phone is required">
+                        <button class="input-group-text" type="button" id="basic-addon2" *ngIf="contactForm.controls['phone'].errors['required']" data-toggle="tooltip" title="Phone is required">
                           <i class="fa fa-info" aria-hidden="true"></i>
                         </button>
-                        <button class="input-group-text" id="basic-addon2" *ngIf="contactForm.controls['phone'].errors['pattern']" data-toggle="tooltip" title="Phone is minimum 11 digits">
+                        <button class="input-group-text" type="button" id="basic-addon2" *ngIf="contactForm.controls['phone'].errors['pattern']" data-toggle="tooltip" title="Phone is minimum 11 digits">
                           <i class="fa fa-info" aria-hidden="true"></i>
                         </button>
                       </div>
@@ -88,10 +88,10 @@
                       <input type="email" class="form-control" [ngClass]="{'border-danger': contactForm.controls['email'].touched && contactForm.controls['email'].errors != null}" id="email" formControlName='email' name="email">
 
                       <div class="input-group-append" *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].errors != null">
-                        <button class="input-group-text" id="basic-addon2" *ngIf="contactForm.controls['email'].errors['required']" data-toggle="tooltip" title="Email is required">
+                        <button class="input-group-text" type="button" id="basic-addon2" *ngIf="contactForm.controls['email'].errors['required']" data-toggle="tooltip" title="Email is required">
                           <i class="fa fa-info" aria-hidden="true"></i>
                         </button>
-                        <button class="input-group-text" id="basic-addon2" *ngIf="contactForm.controls['email'].errors['email']" data-toggle="tooltip" title="Email is invalid">
+                        <button class="input-group-text" type="button" id="basic-addon2" *ngIf="contactForm.controls['email'].errors['email']" data-toggle="tooltip" title="Email is invalid">
                           <i class="fa fa-info" aria-hidden="true"></i>
                         </button>
                       </div>
@@ -103,7 +103,7 @@
                       <input id="subject" class="form-control" type="text" name="subject" formControlName="subject" [ngClass]="{'border-danger': contactForm.controls['subject'].touched && contactForm.controls['subject'].errors != null}">
 
                       <div class="input-group-append" *ngIf="contactForm.controls['subject'].touched && contactForm.controls['subject'].errors != null">
-                        <button class="input-group-text" id="basic-addon2" *ngIf="contactForm.controls['subject'].errors['required']" data-toggle="tooltip" title="Subject is required">
+                        <button class="input-group-text" type="button" id="basic-addon2" *ngIf="contactForm.controls['subject'].errors['required']" data-toggle="tooltip" title="Position is required">
                           <i class="fa fa-info" aria-hidden="true"></i>
                         </button>
                       </div>
@@ -116,7 +116,7 @@
                       <textarea id="message" class="form-control" [ngClass]="{'border-danger': contactForm.controls['message'].touched && contactForm.controls['message'].errors != null}" type="text" name="message" formControlName="message" rows="6"></textarea>
 
                       <div class="input-group-append" *ngIf="contactForm.controls['message'].touched && contactForm.controls['message'].errors != null">
-                        <button class="input-group-text" id="basic-addon2" *ngIf="contactForm.controls['message'].errors['required']" data-toggle="tooltip" title="Message is required">
+                        <button class="input-group-text" type="button" id="basic-addon2" *ngIf="contactForm.controls['message'].errors['required']" data-toggle="tooltip" title="Message is required">
                           <i class="fa fa-info" aria-hidden="true"></i>
                         </button>
                       </div>

@@ -30,6 +30,7 @@ import { ActionSpinnerComponent } from './content/shared/action-spinner/action-s
 import { ClientDetailComponent } from './content/pages/clients/client-detail/client-detail.component';
 import { HoverfooterDirective } from './directives/hoverfooter.directive';
 import { OtherServiceComponent } from './content/pages/services/other-service/other-service.component';
+import { PrivacyPolicyComponent } from './content/pages/privacy-policy/privacy-policy.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { OtherServiceComponent } from './content/pages/services/other-service/ot
     ClientDetailComponent,
     HoverfooterDirective,
     OtherServiceComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,

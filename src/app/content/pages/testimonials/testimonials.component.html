@@ -91,7 +91,7 @@
               </button>
             </div> -->
             <div class="input-group-append" *ngIf="testimonialForm.controls['name'].touched && testimonialForm.controls['name'].errors != null">
-              <button class="input-group-text" id="basic-addon2" *ngIf="testimonialForm.controls['name'].errors['required']" data-toggle="tooltip" title="Name is required">
+              <button class="input-group-text" type="button" id="basic-addon2" *ngIf="testimonialForm.controls['name'].errors['required']" data-toggle="tooltip" title="Name is required">
                 <i class="fa fa-info" aria-hidden="true"></i>
               </button>
             </div>
@@ -110,10 +110,10 @@
               <p class="mb-0" *ngIf="testimonialForm.controls['phone'].errors['pattern']">Enter phone number</p>
             </div> -->
             <div class="input-group-append" *ngIf="testimonialForm.controls['phone'].touched && testimonialForm.controls['phone'].errors != null">
-              <button class="input-group-text" id="basic-addon2" *ngIf="testimonialForm.controls['phone'].errors['required']" data-toggle="tooltip" title="Phone is required">
+              <button class="input-group-text" type="button" id="basic-addon2" *ngIf="testimonialForm.controls['phone'].errors['required']" data-toggle="tooltip" title="Phone is required">
                 <i class="fa fa-info" aria-hidden="true"></i>
               </button>
-              <button class="input-group-text" id="basic-addon2" *ngIf="testimonialForm.controls['phone'].errors['pattern']" data-toggle="tooltip" title="Phone is minimum 11 digits">
+              <button class="input-group-text" type="button" id="basic-addon2" *ngIf="testimonialForm.controls['phone'].errors['pattern']" data-toggle="tooltip" title="Phone is minimum 11 digits">
                 <i class="fa fa-info" aria-hidden="true"></i>
               </button>
             </div>
@@ -130,10 +130,10 @@
               <p class="mb-0" *ngIf="testimonialForm.controls['email'].errors['email']">Email is invalid</p>
             </div> -->
             <div class="input-group-append" *ngIf="testimonialForm.controls['email'].touched && testimonialForm.controls['email'].errors != null">
-              <button class="input-group-text" id="basic-addon2" *ngIf="testimonialForm.controls['email'].errors['required']" data-toggle="tooltip" title="Email is required">
+              <button class="input-group-text" type="button" id="basic-addon2" *ngIf="testimonialForm.controls['email'].errors['required']" data-toggle="tooltip" title="Email is required">
                 <i class="fa fa-info" aria-hidden="true"></i>
               </button>
-              <button class="input-group-text" id="basic-addon2" *ngIf="testimonialForm.controls['email'].errors['email']" data-toggle="tooltip" title="Email is invalid">
+              <button class="input-group-text" type="button" id="basic-addon2" *ngIf="testimonialForm.controls['email'].errors['email']" data-toggle="tooltip" title="Email is invalid">
                 <i class="fa fa-info" aria-hidden="true"></i>
               </button>
             </div>
@@ -141,13 +141,13 @@
         </div>
         <div class="col-md-6">
           <div class="form-group input-group">
-            <label for="subject">Position</label>
+            <label for="subject">Job title</label>
             <input id="subject" class="form-control" type="text" name="job_title" formControlName="job_title">
             <!-- <div *ngIf="testimonialForm.controls['subject'].touched && testimonialForm.controls['subject'].errors != null" class="alert mt-2 alert-danger text-left" role="alert">
               <p class="mb-0" *ngIf="testimonialForm.controls['subject'].errors['required']">Position is required</p>
             </div> -->
             <div class="input-group-append" *ngIf="testimonialForm.controls['job_title'].touched && testimonialForm.controls['job_title'].errors != null">
-              <button class="input-group-text" id="basic-addon2" *ngIf="testimonialForm.controls['job_title'].errors['required']" data-toggle="tooltip" title="Job title is required">
+              <button class="input-group-text" type="button" id="basic-addon2" *ngIf="testimonialForm.controls['job_title'].errors['required']" data-toggle="tooltip" title="Job title is required">
                 <i class="fa fa-info" aria-hidden="true"></i>
               </button>
             </div>
@@ -162,14 +162,14 @@
               <p class="mb-0" *ngIf="testimonialForm.controls['message'].errors['required']">Message is required</p>
             </div> -->
             <div class="input-group-append" *ngIf="testimonialForm.controls['message'].touched && testimonialForm.controls['message'].errors != null">
-              <button class="input-group-text" id="basic-addon2" *ngIf="testimonialForm.controls['message'].errors['required']" data-toggle="tooltip" title="Message is required">
+              <button class="input-group-text" type="button" id="basic-addon2" *ngIf="testimonialForm.controls['message'].errors['required']" data-toggle="tooltip" title="Message is required">
                 <i class="fa fa-info" aria-hidden="true"></i>
               </button>
             </div>
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-dark" [disabled]="!testimonialForm.valid">Submit review</button>
+          <button class="btn btn-light" [disabled]="!testimonialForm.valid">Submit review</button>
         </div>
 
       </div>

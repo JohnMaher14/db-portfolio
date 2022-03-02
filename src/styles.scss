@@ -7,7 +7,13 @@ $secondaryColor: #ED2924;
 /* ===================================
     About
 ====================================== */
-
+.main-title{
+  transition:all 1s;
+  cursor: context-menu;
+  &:hover{
+    animation: spaceboots 1s infinite;
+  }
+}
 /*
     Theme Name: MegaOne
     Theme URI:
@@ -57,6 +63,9 @@ $secondaryColor: #ED2924;
 
 .text-primary{
   color: $mainColor !important
+}
+.justify-content-right{
+  justify-content: right;
 }
 /* ===================================
     General
@@ -300,7 +309,7 @@ header{
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 11111;
+    z-index: 99999999999;
 }
 
 .upper-nav{
@@ -759,7 +768,7 @@ header{
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    height: 100vh;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
     @media screen and (max-width:1024px) {
       clip-path: unset;
@@ -1596,7 +1605,7 @@ header{
 
     .owl-item .item{
       padding: 2rem;
-      opacity: 0.5;
+      opacity: 0.7;
       transition: .4s ease all;
       margin: 0 20px;
       transform: scale(0.9);
@@ -1612,6 +1621,9 @@ header{
     font-weight: bold;
     color: #000;
     font-size: 50px;
+    &:hover{
+      animation: spaceboots 1s infinite;
+    }
 }
 
 .testimonial-page label{
@@ -1838,6 +1850,10 @@ header{
     color: #202020;
     font-size: 39px;
     margin-bottom: 40px;
+    &:hover{
+      animation: shake 1.5s infinite
+    }
+
 }
 .contact-sec .contact-form{
     width: 95%;
@@ -2193,6 +2209,7 @@ header{
     background-size: cover;
     background-position: top center;
     height: 100vh;
+    background-image: linear-gradient(to top , rgba(0,0,0,0.4) , rgba(0,0,0,0.2));
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
     @media screen and (max-width:1024px) {
       clip-path: unset;
@@ -2295,7 +2312,7 @@ header{
 .loader {
   position: fixed;
   inset: 0;
-  z-index: 99999;
+  z-index: 99999999999;
   background: #290707;
 }
 .loader .loader-container{
@@ -3367,7 +3384,8 @@ transform: none;
       bottom: -142px;
       @media screen and (max-width:800px){
 
-        bottom: -250px;
+        bottom: -195
+        px;
       }
       z-index: 99999998;
     }
@@ -3393,7 +3411,10 @@ transform: none;
       bottom:-50px;
       @media screen and (max-width:800px){
 
-        bottom: -60px;
+        bottom: -88px;
+        .owl-prev .circle{
+          left: -31px;
+        }
       }
     }
   }
@@ -3531,6 +3552,7 @@ a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
 .page-title-casestudy-details{
   padding-top:0;
   clip-path: unset;
+  background: unset;
   .cover-body{
     margin-top: 40px;
     height: 10%;
@@ -3735,7 +3757,6 @@ bottom: 0;
   }
   .card{
     position: relative;
-    max-width: 320px;
     padding: 2rem 1.5rem;
     background-color: transparent;
     overflow: hidden;
@@ -3768,6 +3789,8 @@ bottom: 0;
     p {
       text-align: justify;
       min-height: 108px;
+      max-height: 108px;
+      overflow: hidden;
     }
     .btn {
       margin-top: 1.5rem;
@@ -3840,7 +3863,46 @@ bottom: 0;
   75% {transform: rotate(-5deg);}
   100% {transform: rotate(0deg);}
 }
+@keyframes shake {
+  0% { transform: skewX(-15deg); }
+  5% { transform: skewX(15deg); }
+  10% { transform: skewX(-15deg); }
+  15% { transform: skewX(15deg); }
+  20% { transform: skewX(0deg); }
+  100% { transform: skewX(0deg); }  
+}
+@-webkit-keyframes shake {
+  0% { transform: skewX(-15deg); }
+  5% { transform: skewX(15deg); }
+  10% { transform: skewX(-15deg); }
+  15% { transform: skewX(15deg); }
+  20% { transform: skewX(0deg); }
+  100% { transform: skewX(0deg); }  
+}
 
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+@keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
 
 
 
@@ -4362,6 +4424,9 @@ a {
       width: 100%;
 
       background-color: rgba($mainColor, 70%);
+    }
+    h4{
+      color: #fff;
     }
     &:hover .card-body {
       bottom: 0;

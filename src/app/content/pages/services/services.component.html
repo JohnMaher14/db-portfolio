@@ -20,12 +20,12 @@
     <div class="row">
       <!--Column item-->
       <div class="col-12 text-center">
-        <h1 class="section-header">Services</h1>
+        <h1 class="section-header main-title">Services</h1>
       </div>
       <div *ngFor="let service of services" class="col-lg-4 col-md-6 wow animated fadeInUp">
         <div class="card">
           <div class="card-content">
-            <h2>{{service.en_title}}</h2>
+            <h2>{{service.en_title | slice:0:30}}</h2>
             <p>
               {{
                 service.en_text | slice:0:130

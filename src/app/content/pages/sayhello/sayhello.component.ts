@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { BannerService } from 'src/app/services/banner.service';
 import { SayhelloService } from 'src/app/services/sayhello.service';
 
@@ -10,7 +11,11 @@ import { SayhelloService } from 'src/app/services/sayhello.service';
 export class SayhelloComponent implements OnInit {
   loading = true ;
   banners: any[] = []
-  constructor(private _BannerService:BannerService) { }
+  constructor(private _BannerService:BannerService,
+    private _Title:Title
+    ) { 
+      _Title.setTitle('Digital Bond | Contact us')
+  }
   showSayHello(){
     this.loading = true ;
 

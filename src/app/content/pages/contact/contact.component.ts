@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormControl, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { BannerImage } from 'src/app/classes/banner-image';
 import { BannerService } from 'src/app/services/banner.service';
@@ -17,9 +18,12 @@ export class ContactComponent implements OnInit {
   constructor(
     private _BannerService:BannerService,
     private _ContactService:ContactService,
-    private _Router:Router
+    private _Router:Router,
+    private _Title:Title
+    ) { 
+      _Title.setTitle('Digital Bond | Contact us')
 
-    ) { }
+    }
   showContactbanner(){
     this.loading = true ;
 

@@ -26,7 +26,7 @@
         <img [src]="serviceImage+service.image" class="w-100" alt="">
       </div>
       <div class="col-md-8">
-        <h4 class="section_heading_single">{{service?.en_title}}</h4>
+        <h4 class="section_heading_single main-title" >{{service?.en_title}}</h4>
         <p>{{service?.en_text}}</p>
       </div>
     </div>
@@ -38,7 +38,7 @@
     <div class="row">
       <!--Column item-->
       <div class="col-12 text-center">
-        <h1 class="section-header">Other Services</h1>
+        <h1 class="section-header main-title">Other Services</h1>
       </div>
     </div>
     <owl-carousel-o [options]="servicesSlider">
@@ -47,7 +47,7 @@
 
         <div class="card">
           <div class="card-content">
-            <h2>{{otherService.en_title}}</h2>
+            <h2>{{otherService.en_title | slice:0:30}}</h2>
             <p>
               {{
                 otherService.en_text | slice: 0:130
