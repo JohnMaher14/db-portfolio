@@ -2,7 +2,9 @@
   <app-loader></app-loader>
 </div>
 <!--Banner Start-->
-<section class="page-title" style="background-image: url(https://digitalbondmena.com/about_us_page/{{aboutUs?.about_banner_image}});">
+<!-- <section class="page-title" style="background-image: url(https://digitalbondmena.com/about_us_page/{{aboutUs?.about_banner_image}});"> -->
+<section class="page-title">
+  <img [src]="aboutUsPage+aboutUs?.about_banner_image" class="page-title_img" alt="">
   <div class="container">
     <div class="standalone-content-data">
       <h2 class="hide-cursor">About us</h2>

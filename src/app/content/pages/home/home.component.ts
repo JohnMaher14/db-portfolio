@@ -30,27 +30,21 @@ export class HomeComponent implements OnInit {
   constructor(private _HomeService:HomeService,
     private _ReviewsService:ReviewsService,
     private _Title:Title
-    ) { 
+    ) {
       _Title.setTitle('Digital Bond | Home')
 
     }
 
     showSliders(){
       this.loading = true ;
-  
-      this._HomeService.getHome().pipe(
-        tap(() => this.loading = true , delay(5000))
-      ).subscribe(
+
+      this._HomeService.getHome().subscribe(
         (response => {
           this.sliders = response.sliders
           this.loading= false
         })
       )
-      this._HomeService.getHome().pipe(
-        map(
-          (response:any) => { console.log(response); }
-        )
-      )
+
     }
   ngOnInit(): void {
     this.showSliders();
@@ -65,7 +59,7 @@ export class HomeComponent implements OnInit {
 
     this._HomeService.getHome().subscribe(
       (response => {
-        
+
         this.teams = response.team
         this.loading= false
       })
@@ -76,7 +70,7 @@ export class HomeComponent implements OnInit {
 
     this._HomeService.getHome().subscribe(
       (response => {
-        
+
         this.studyCases = response.clients
         this.loading= false
       })
@@ -106,7 +100,7 @@ export class HomeComponent implements OnInit {
   mainSlider: OwlOptions = {
     loop: true,
     dots: true,
-    autoplay: true,
+    autoplay: false,
     navSpeed: 700,
     nav: true,
     navText: [`<a class='circle border-0 center' id='team-circle-left'><img src="assets/images/logo/arrow_left.png"></a>`

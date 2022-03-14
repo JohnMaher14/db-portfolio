@@ -17,6 +17,7 @@ export class OtherServiceComponent implements OnInit {
   serviceDetails:any[] = [];
   otherServicesArray: any[]= [];
   bannerImage!:BannerImage;
+  serviceBannerImage= 'https://digitalbondmena.com/banner_images/';
   serviceImage='https://digitalbondmena.com/services/';
   indexForNumbers!: number;
   constructor(private _ServicesService:ServicesService , private _ActivatedRoute:ActivatedRoute,

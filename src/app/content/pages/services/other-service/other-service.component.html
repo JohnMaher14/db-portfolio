@@ -1,5 +1,7 @@
 <!--Banner Start-->
-<section class="page-title services_details--title" style="background-image: url('https://digitalbondmena.com/banner_images/{{bannerImage?.services_detail_banner_image}}');" *ngFor="let service of serviceDetails">
+<!-- <section class="page-title services_details--title" style="background-image: url('https://digitalbondmena.com/banner_images/{{bannerImage?.services_detail_banner_image}}');" *ngFor="let service of serviceDetails"> -->
+<section class="page-title services_details--title" *ngFor="let service of serviceDetails">
+  <img [src]="serviceBannerImage+bannerImage?.services_detail_banner_image" class="page-title_img"  alt="">
   <div class="container">
     <div class="standalone-content-data">
       <h2 class="hide-cursor">{{ service.en_title }}</h2>
@@ -47,7 +49,7 @@
 
         <div class="card">
           <div class="card-content">
-            <h2>{{otherService.en_title | slice:0:30}</h2>
+            <h2>{{otherService.en_title | slice:0:30}}</h2>
             <p>
               {{
                 otherService.en_text | slice: 0:130

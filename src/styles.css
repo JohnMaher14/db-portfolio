@@ -2929,6 +2929,24 @@ header {
   }
 }
 
+.page-title_img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.page-title_img_layer {
+  position: absolute;
+  inset: 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.8)));
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+}
+
 .standalone-content-data {
   position: absolute;
   bottom: 50px;
@@ -4977,6 +4995,24 @@ a:hover {
 .active .main_slider_content a {
   -webkit-animation-delay: 0.9s;
   animation-delay: 0.9s;
+}
+
+.main_slider_img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.main_slider_img_layer {
+  position: absolute;
+  inset: 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.8)));
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
 }
 
 @media screen and (max-width: 800px) {

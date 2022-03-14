@@ -7,7 +7,10 @@
     <ng-container *ngFor="let slider of sliders" >
       <ng-template carouselSlide>
 
-        <div
+        <div class="item text-center">
+            <img  src="https://digitalbondmena.com/sliders/{{slider.image}}" class="main_slider_img" alt="">
+            <div class="main_slider_img_layer"></div>
+            <!-- <div
           class="item text-center"
           style='
             background-image: linear-gradient(
@@ -17,7 +20,7 @@
               ),
               url(https://digitalbondmena.com/sliders/{{slider.image}});
           '
-        >
+        > -->
           <div class="main_slider_content main-title" >
             <img src="assets/images/logo/logo.png" class="main_slider_content_img" alt="">
             <p class="main_slider_paragraph">{{slider.en_text}}</p>

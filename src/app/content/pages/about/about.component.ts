@@ -29,12 +29,9 @@ export class AboutComponent implements OnInit {
   showAboutUsSection(){
     this.loading = true ;
 
-    this._AboutUsService.getAboutusPage().pipe(
-      tap(() => this.loading = true , delay(5000))
-
-    ).subscribe(
+    this._AboutUsService.getAboutusPage().subscribe(
       (response)=> {
-        
+
         this.aboutUs = response.aboutUsPage
         this.loading = false
       }
@@ -45,7 +42,7 @@ export class AboutComponent implements OnInit {
         this.loading = true ;
     this._AboutUsService.getAboutusPage().subscribe(
       (response)=>{
-        
+
         this.teams= response.team
         this.loading = false
       }

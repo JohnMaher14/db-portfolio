@@ -14,9 +14,11 @@ import { ServicesService } from 'src/app/services/services.service';
 export class ServicesDetailsComponent implements OnInit {
   loading = true ;
   serviceDetails:any[] = [];
+  
   otherServicesArray: any[]= [];
   bannerImage!:BannerImage;
   serviceImage='https://digitalbondmena.com/services/';
+  serviceBannerImage= 'https://digitalbondmena.com/banner_images/';
   indexForNumbers!: number;
   constructor(private _ServicesService:ServicesService ,
     private _ActivatedRoute:ActivatedRoute,

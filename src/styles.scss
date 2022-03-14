@@ -2214,6 +2214,23 @@ header{
     @media screen and (max-width:1024px) {
       clip-path: unset;
     }
+    &_img{
+      position: absolute;
+      inset:0;
+      height:100%;
+      width:100%;
+      object-fit: cover;
+      object-position:center;
+      &_layer{
+        position: absolute;
+        inset:0;
+        background-image: linear-gradient(
+          to right bottom,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.8)
+        );
+      }
+    }
 }
 
 .standalone-content-data {
@@ -3869,7 +3886,7 @@ bottom: 0;
   10% { transform: skewX(-15deg); }
   15% { transform: skewX(15deg); }
   20% { transform: skewX(0deg); }
-  100% { transform: skewX(0deg); }  
+  100% { transform: skewX(0deg); }
 }
 @-webkit-keyframes shake {
   0% { transform: skewX(-15deg); }
@@ -3877,7 +3894,7 @@ bottom: 0;
   10% { transform: skewX(-15deg); }
   15% { transform: skewX(15deg); }
   20% { transform: skewX(0deg); }
-  100% { transform: skewX(0deg); }  
+  100% { transform: skewX(0deg); }
 }
 
 @-webkit-keyframes spaceboots {
@@ -4204,6 +4221,25 @@ a {
   }
 }
 .main_slider {
+  &_img{
+    position:  absolute;
+    inset:0;
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    object-position:center;
+
+    &_layer{
+      position: absolute;
+      inset:0;
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.8)
+      );
+    }
+  }
+
   .owl-theme .owl-nav  {
 
     @media screen and (max-width:800px){
