@@ -16,7 +16,7 @@ export class ServicesComponent implements OnInit {
   serviceImage='https://digitalbondmena.com/services/';
   constructor(private _ServicesService:ServicesService,
     private _BannerService:BannerService,    private _Title:Title
-    ) { 
+    ) {
       _Title.setTitle('Digital Bond | Services')
 
    }
@@ -31,7 +31,7 @@ export class ServicesComponent implements OnInit {
     this._BannerService.getBanner().subscribe(
       (resposne) => {
         this.bannerImage = resposne.bannerImages
-        this.loading = false
+        // this.loading = false
 
       }
     )

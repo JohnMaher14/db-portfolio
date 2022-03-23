@@ -17,11 +17,12 @@ import { ReviewsService } from 'src/app/services/reviews.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  loading = false;
+  loading:boolean = false;
   sliders : Slider[] =[];
   studyCaseImage = 'https://digitalbondmena.com/clients/';
   teamImage = 'https://digitalbondmena.com/teams/';
   feedbackImage = 'https://digitalbondmena.com/feedbacks/';
+  homeImage = 'https://digitalbondmena.com/home_page/';
   aboutUs!:AboutUsHome;
   teams: Team[]= [];
   studyCases: Casestudy[]= [];
@@ -41,7 +42,7 @@ export class HomeComponent implements OnInit {
       this._HomeService.getHome().subscribe(
         (response => {
           this.sliders = response.sliders
-          this.loading= false
+          // this.loading= false
         })
       )
 
@@ -61,7 +62,7 @@ export class HomeComponent implements OnInit {
       (response => {
 
         this.teams = response.team
-        this.loading= false
+        // this.loading= false
       })
     )
   }
@@ -72,7 +73,7 @@ export class HomeComponent implements OnInit {
       (response => {
 
         this.studyCases = response.clients
-        this.loading= false
+        // this.loading= false
       })
     )
   }
@@ -82,7 +83,7 @@ export class HomeComponent implements OnInit {
     this._HomeService.getHome().subscribe(
       (response => {
         this.aboutUs = response.main
-        this.loading= false
+        // this.loading= false
       })
     )
   }

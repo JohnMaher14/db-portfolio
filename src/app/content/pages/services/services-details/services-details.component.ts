@@ -14,7 +14,7 @@ import { ServicesService } from 'src/app/services/services.service';
 export class ServicesDetailsComponent implements OnInit {
   loading = true ;
   serviceDetails:any[] = [];
-  
+
   otherServicesArray: any[]= [];
   bannerImage!:BannerImage;
   serviceImage='https://digitalbondmena.com/services/';
@@ -34,7 +34,7 @@ export class ServicesDetailsComponent implements OnInit {
     this._ServicesService.getServicesDetails(this.indexForNumbers)
     .subscribe((data) => {
       this.serviceDetails = data.service;
-      this.loading = false
+      // this.loading = false
     });
   }
   showOtherServicesDetails(){
@@ -44,8 +44,8 @@ export class ServicesDetailsComponent implements OnInit {
     this._ServicesService.getServicesDetails(this.indexForNumbers)
     .subscribe((data) => {
       this.otherServicesArray = data.otherSecives;
-      this.loading = false
-      console.log(data.otherSecives);
+      // this.loading = false
+      // console.log(data.otherSecives);
     });
   }
   showBannerImage(){

@@ -63,7 +63,8 @@
             <div class="col-12 col-md-6 services text-center">
               <div class="service-card wow fadeInRight">
                 <div class="icon-holder">
-                  <i class="lni lni-briefcase"></i>
+                  <!-- <i class="lni lni-briefcase"></i> -->
+                  <img [src]="homeImage+aboutUs?.first_icon" alt="">
                 </div>
                 <h4 class="card-heading">{{aboutUs?.en_first_icon_title}}</h4>
               </div>
@@ -71,7 +72,7 @@
             <div class="col-12 col-md-6 services text-center">
               <div class="service-card wow fadeInRight">
                 <div class="icon-holder">
-                  <i class="lni lni-bulb"></i>
+                  <img [src]="homeImage+aboutUs?.second_icon" alt="">
                 </div>
                 <h4 class="card-heading">{{aboutUs?.en_second_icon_title}}</h4>
               </div>
@@ -79,7 +80,7 @@
             <div class="col-12 col-md-6 services text-center">
               <div class="service-card wow fadeInRight" data-wow-delay=".5s">
                 <div class="icon-holder">
-                  <i class="lni lni-heart"></i>
+                  <img [src]="homeImage+aboutUs?.third_icon" alt="">
                 </div>
                 <h4 class="card-heading">{{aboutUs?.en_third_icon_title}}</h4>
               </div>
@@ -87,7 +88,7 @@
             <div class="col-12 col-md-6 services text-center">
               <div class="service-card wow fadeInRight" data-wow-delay=".5s">
                 <div class="icon-holder">
-                  <i class="lni lni-wallet"></i>
+                  <img [src]="homeImage+aboutUs?.fourth_icon" alt="">
                 </div>
                 <h4 class="card-heading">{{aboutUs?.en_fourth_icon_title}}</h4>
               </div>

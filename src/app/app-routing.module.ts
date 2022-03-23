@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './content/pages/about/about.component';
-import { BondersComponent } from './content/pages/bonders/bonders.component';
 import { ClientDetailComponent } from './content/pages/clients/client-detail/client-detail.component';
 import { ClientsComponent } from './content/pages/clients/clients.component';
 import { ContactComponent } from './content/pages/contact/contact.component';
 import { HomeComponent } from './content/pages/home/home.component';
-import { PortfolioComponent } from './content/pages/portfolio/portfolio.component';
 import { PrivacyPolicyComponent } from './content/pages/privacy-policy/privacy-policy.component';
 import { SayhelloComponent } from './content/pages/sayhello/sayhello.component';
 import { OtherServiceComponent } from './content/pages/services/other-service/other-service.component';
@@ -24,9 +22,7 @@ const routes: Routes = [
   { path: 'review', component: TestimonialsComponent },
   {path: 'clients' ,component:ClientsComponent },
   { path: 'clients/:id', component: ClientDetailComponent  },
-  { path: 'bonders', component: BondersComponent },
   { path: 'say-hello', component: SayhelloComponent },
-  { path: 'portfolio', component: PortfolioComponent },
   { path: 'services', component: ServicesComponent},
   { path: 'services/:id', component: ServicesDetailsComponent },
   { path: 'service/:id', component: OtherServiceComponent },

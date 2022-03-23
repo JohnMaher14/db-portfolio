@@ -39,12 +39,12 @@ export class AboutComponent implements OnInit {
   }
 
   showTeams(){
-        this.loading = true ;
+    this.loading = true ;
     this._AboutUsService.getAboutusPage().subscribe(
       (response)=>{
 
         this.teams= response.team
-        this.loading = false
+        // this.loading = false
       }
     )
   }

@@ -916,9 +916,10 @@ header{
     margin-bottom: 12px;
     transition: .5s ease;
 }
-.about-sec .services-area .services .service-card .icon-holder i{
+.about-sec .services-area .services .service-card .icon-holder img{
     color: #FFFFFF;
-    font-size: 120px;
+    width: 120px;
+    height: 120px;
 }
 .about-sec .services-area .services:hover .service-card .icon-holder{
     animation: .8s pulse infinite;
@@ -934,13 +935,13 @@ header{
     text-transform: initial !important;
 }
 
-.about-sec img{
-    position: absolute;
-    z-index: 1111;
-    left: 300px;
-    transform: rotate(-6deg);
-    bottom: -100px;
-}
+// .about-sec img{
+//     position: absolute;
+//     z-index: 1111;
+//     left: 300px;
+//     transform: rotate(-6deg);
+//     bottom: -100px;
+// }
 
 /* ===================================
    Skill Section
@@ -2675,11 +2676,11 @@ header{
         bottom: -1px;
         height: 100px;
     }
-    .about-sec img {
-        left: 150px;
-        bottom: -179px;
-        width: 50%;
-    }
+    // .about-sec img {
+    //     left: 150px;
+    //     bottom: -179px;
+    //     width: 50%;
+    // }
 
     /*Skill Section Css*/
     .skill-sec .skill-details .title {
@@ -2870,11 +2871,11 @@ header{
         bottom: -1px;
         height: 100px;
     }
-    .about-sec img {
-        left: 100px;
-        bottom: -91px;
-        width: 60%;
-    }
+    // .about-sec img {
+    //     left: 100px;
+    //     bottom: -91px;
+    //     width: 60%;
+    // }
 
     /*Skill Section Css*/
     .skill-sec .skill-details .title {
@@ -3145,7 +3146,7 @@ header{
         top: -100px;
     }
 
-    .about-sec .services-area .services .service-card .icon-holder i {
+    .about-sec .services-area .services .service-card .icon-holder img {
         font-size: 110px;
     }
 
@@ -3250,9 +3251,9 @@ header{
 }
 
 @media screen and (min-width: 1900px){
-    .about-sec img {
-        left: 410px;
-    }
+    // .about-sec img {
+    //     left: 410px;
+    // }
     .lastest-blog .pot-2 {
         left: 500px;
     }

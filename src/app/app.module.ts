@@ -15,12 +15,10 @@ import { TestimonialsComponent } from './content/pages/testimonials/testimonials
 import { LoaderComponent } from './content/shared/loader/loader.component';
 import { ClientsComponent } from './content/pages/clients/clients.component';
 import { ContactComponent } from './content/pages/contact/contact.component';
-import { BondersComponent } from './content/pages/bonders/bonders.component';
 import { NotfoundComponent } from './content/shared/notfound/notfound.component';
 import { AboutComponent } from './content/pages/about/about.component';
 import { ServicesComponent } from './content/pages/services/services.component';
 import { ServicesDetailsComponent } from './content/pages/services/services-details/services-details.component';
-import { PortfolioComponent } from './content/pages/portfolio/portfolio.component';
 import { SayhelloComponent } from './content/pages/sayhello/sayhello.component';
 import { FacebookModule } from "ngx-facebook";
 import { HttpClientModule } from "@angular/common/http";
@@ -44,12 +42,10 @@ import { PrivacyPolicyComponent } from './content/pages/privacy-policy/privacy-p
     LoaderComponent,
     ClientsComponent,
     ContactComponent,
-    BondersComponent,
     NotfoundComponent,
     AboutComponent,
     ServicesComponent,
     ServicesDetailsComponent,
-    PortfolioComponent,
     SayhelloComponent,
     ThankyouContactComponent,
     ThankyouReviewComponent,
