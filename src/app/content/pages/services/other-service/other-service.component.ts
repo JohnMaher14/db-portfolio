@@ -14,7 +14,7 @@ import { ServicesService } from 'src/app/services/services.service';
 export class OtherServiceComponent implements OnInit {
 
   loading = true ;
-  serviceDetails:any[] = [];
+  serviceDetail:any;
   otherServicesArray: any[]= [];
   bannerImage!:BannerImage;
   serviceBannerImage= 'https://digitalbondmena.com/banner_images/';
@@ -23,7 +23,7 @@ export class OtherServiceComponent implements OnInit {
   constructor(private _ServicesService:ServicesService , private _ActivatedRoute:ActivatedRoute,
     private _BannerService:BannerService , private _Title:Title
     ) {
-      this._Title.setTitle('Digital Bond | Other service')
+      this._Title.setTitle(`Digital Bond | Services`)
   }
   showServicesDetails(){
     this.loading = true ;
@@ -31,7 +31,7 @@ export class OtherServiceComponent implements OnInit {
     this.indexForNumbers = this._ActivatedRoute.snapshot.params["id"];
     this._ServicesService.getServicesDetails(this.indexForNumbers)
     .subscribe((data) => {
-      this.serviceDetails = data.service;
+      this.serviceDetail = data.service[0];
       // this.loading = false
     });
   }

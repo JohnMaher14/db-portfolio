@@ -4,12 +4,12 @@
   <img [src]="serviceBannerImage+bannerImage?.services_detail_banner_image" class="page-title_img"  alt="">
   <div class="container">
     <div class="standalone-content-data">
-      <h2 class="hide-cursor">{{ service.en_title }}</h2>
+      <h2 class="hide-cursor">{{ service?.en_title }}</h2>
       <ul class="page-breadcrumb link">
         <li>
           <a routerLink="/home"><span class="icon fas fa-home"></span>Home</a>
         </li>
-        <li><a>{{ service.en_title }}</a></li>
+        <li><a>{{ service?.en_title }}</a></li>
       </ul>
     </div>
   </div>

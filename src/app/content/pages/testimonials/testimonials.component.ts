@@ -16,6 +16,7 @@ import { ReviewsService } from 'src/app/services/reviews.service';
 export class TestimonialsComponent implements OnInit {
   loading = true;
   loadingSpinner = false;
+  thankyou = false;
   reviews: Review[] =[];
   error = '';
   banners: BannerImage[]=[];
@@ -105,7 +106,7 @@ export class TestimonialsComponent implements OnInit {
         this.loadingSpinner = false
 
         if(response.success){
-          this._Router.navigate(['/thankyou-review'])
+          this.thankyou = true
         }
 
       }, error => {

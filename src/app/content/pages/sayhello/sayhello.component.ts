@@ -14,7 +14,7 @@ export class SayhelloComponent implements OnInit {
   constructor(private _BannerService:BannerService,
     private _Title:Title
     ) { 
-      _Title.setTitle('Digital Bond | Contact us')
+      _Title.setTitle('Digital Bond | Say hello')
   }
   showSayHello(){
     this.loading = true ;

@@ -56,7 +56,7 @@ import { PrivacyPolicyComponent } from './content/pages/privacy-policy/privacy-p
     PrivacyPolicyComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     CarouselModule,
     BrowserAnimationsModule,

@@ -14,6 +14,7 @@ export class ContactComponent implements OnInit {
   loading= true;
   error ='';
   loadingSpinner = false;
+  thankyou = false;
   banner!: BannerImage;
   constructor(
     private _BannerService:BannerService,
@@ -53,10 +54,10 @@ export class ContactComponent implements OnInit {
     this.loadingSpinner = true;
     this._ContactService.addMessage(contactForm.value).subscribe(
       (response) => {
+        this.loadingSpinner = false;
         if(response.success){
-          this.loadingSpinner = false;
 
-          this._Router.navigate(['/thankyou-contact'])
+          this.thankyou = true
         }
 
       }, error => {

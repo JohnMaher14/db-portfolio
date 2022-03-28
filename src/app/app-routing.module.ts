@@ -26,15 +26,14 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent},
   { path: 'services/:id', component: ServicesDetailsComponent },
   { path: 'service/:id', component: OtherServiceComponent },
-  { path: 'thankyou-contact', component: ThankyouContactComponent },
-  { path: 'thankyou-review', component: ThankyouReviewComponent },
+
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', component: NotfoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes , {scrollPositionRestoration:'top' , useHash: true})],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top', useHash: true, initialNavigation: 'enabledBlocking' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -29,10 +29,8 @@ export class HomeComponent implements OnInit {
   reviews: Review[] =[];
   skills: any[] = [];
   constructor(private _HomeService:HomeService,
-    private _ReviewsService:ReviewsService,
     private _Title:Title
     ) {
-      _Title.setTitle('Digital Bond | Home')
 
     }
 
@@ -47,13 +45,7 @@ export class HomeComponent implements OnInit {
       )
 
     }
-  ngOnInit(): void {
-    this.showSliders();
-    this.showStudyCases();
-    this.showTeams()
-    this.showAboutus();
-    this.showReview()
-  }
+
 
   showTeams(){
     this.loading = true ;
@@ -225,5 +217,13 @@ export class HomeComponent implements OnInit {
 
     }
   }
+  ngOnInit(): void {
+    this.showSliders();
+    this.showStudyCases();
+    this.showTeams()
+    this.showAboutus();
+    this.showReview();
+    this._Title.setTitle('Digital Bond | Home')
 
+  }
 }

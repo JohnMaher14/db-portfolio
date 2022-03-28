@@ -24,7 +24,7 @@ export class ServicesDetailsComponent implements OnInit {
     private _ActivatedRoute:ActivatedRoute,
     private _BannerService:BannerService, private _Title:Title
     ) {
-      this._Title.setTitle('Digital Bond | Other service')
+      this._Title.setTitle('Digital Bond | Services')
 
   }
   showServicesDetails(){
