@@ -53,7 +53,7 @@
           </div>
 
           <div *ngIf="caseStudyModel.en_title === 'Website'" class="col-lg-4 website_section px-0">
-            <img src="assets/images/Mac.png" class="caseStudyslider_pic " alt="">
+            <!-- <img src="assets/images/Mac.png" class="caseStudyslider_pic " alt=""> -->
 
             <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider_website">
 
@@ -67,7 +67,7 @@
             </owl-carousel-o>
           </div>
           <div *ngIf="caseStudyModel.en_title === 'SOCIAL MEDIA'" class="col-lg-4  social_media_section caseStudyslider px-0">
-            <img src="assets/images/social_media.png" class=" caseStudyslider_pic" alt="">
+            <!-- <img src="assets/images/social_media.png" class=" caseStudyslider_pic" alt=""> -->
 
             <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
 
@@ -81,7 +81,7 @@
             </owl-carousel-o>
           </div>
           <div *ngIf="caseStudyModel.en_title === 'Mobile App'" class="col-lg-4 mobile_section caseStudyslider px-0">
-            <img src="assets/images/mobile.png" class="caseStudyslider_pic"  alt="">
+            <!-- <img src="assets/images/mobile.png" class="caseStudyslider_pic"  alt=""> -->
 
             <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_app_slider">
 
@@ -98,7 +98,7 @@
         <div *ngIf="caseStudyModel.id % 2 !== 0" class="row align-items-center">
 
           <div *ngIf="caseStudyModel.en_title === 'SOCIAL MEDIA'" class="col-lg-4 social_media_section caseStudyslider px-0">
-            <img src="assets/images/social_media.png" class="caseStudyslider_pic" alt="">
+            <!-- <img src="assets/images/social_media.png" class="caseStudyslider_pic" alt=""> -->
 
             <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider">
 
@@ -112,7 +112,7 @@
             </owl-carousel-o>
           </div>
           <div *ngIf="caseStudyModel.en_title === 'Website'" class="col-lg-4 website_section caseStudyslider px-0">
-            <img src="assets/images/Mac.png" class="caseStudyslider_pic" alt="">
+            <!-- <img src="assets/images/Mac.png" class="caseStudyslider_pic" alt=""> -->
 
             <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_slider_website">
 
@@ -126,7 +126,7 @@
             </owl-carousel-o>
           </div>
           <div *ngIf="caseStudyModel.en_title === 'Mobile App'" class="col-lg-4 mobile_section caseStudyslider px-0">
-            <img src="assets/images/mobile.png" class="caseStudyslider_pic" alt="">
+            <!-- <img src="assets/images/mobile.png" class="caseStudyslider_pic" alt=""> -->
 
             <owl-carousel-o [options]="caseStudiesSlider" class="client-team caseStudyslider_app_slider">
 
@@ -155,192 +155,3 @@
   </div>
 
 </article>
-
-<!--
-
-
-<section class="case_studies">
-  <div class="container">
-    <owl-carousel-o [options]="caseStudiesSlider" class="client-team">
-
-      <ng-template *ngFor="let caseStudy of caseStudies" carouselSlide class="wow fadeInUp">
-        <div routerLink="/clients/{{caseStudy.id}}"class="card case_study_card">
-          <img [src]="caseStudyImage+caseStudy.logo" alt="" />
-          <div class="card-body">
-            <a href="">{{caseStudy.en_title}}</a>
-            <p class="case_study_card_description">
-              {{caseStudy.en_text}}
-            </p>
-          </div>
-        </div>
-      </ng-template>
-
-      </owl-carousel-o>
-  </div>
-</section > -->
-<!-- <section class="aboutClient">
-  <div class="container">
-
-    <h3>{{caseStudy?.en_title}}</h3>
-    <p>{{caseStudy?.en_text}}</p>
-  </div>
-</section> -->
-
-  <!--  <main>
-
-<article *ngFor="let caseStudyModel of caseStudyModels; let first=first; let last=last; let index=index"  >
-    <div class="social_media" [ngClass]="{'odd': caseStudyModel.id % 2 == 0 , 'even': caseStudyModel.id % 2 != 0 }">
-
-      <section *ngIf="caseStudyModel.en_title.indexOf('title',0) != 0" class="social_media_banner" >
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <h3>{{caseStudyModel.en_title}}</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section *ngIf="caseStudyModel.en_title.indexOf('second',0) != 0" class="social_website_banner" >
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <h3>{{caseStudyModel.en_title}}</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section *ngIf="caseStudyModel.en_title.indexOf('third',0) != 0" class="social_apps_banner" >
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <h3>{{caseStudyModel.en_title}}</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="case_studies_details py-0">
-        <div class="container-fluid">
-          <div *ngIf=" caseStudyModel.id % 2 == 0" class="row align-items-center">
-            <div class="col-lg-6">
-              <p>
-                {{caseStudyModel.en_text}}
-              </p>
-            </div>
-            <div class="col-lg-6 px-0">
-
-              <owl-carousel-o [options]="caseStudiesSlider" class="client-team">
-
-                <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
-                  <div class="case_studies_details_slider">
-
-                    <img [src]="caseStudyImage+caseStudyGallery.image" class="" alt="" />
-                  </div>
-                </ng-template>
-
-              </owl-carousel-o>
-            </div>
-          </div>
-          <div *ngIf=" caseStudyModel.id % 2 != 0" class="row align-items-center">
-            <div class="col-lg-6 px-0">
-
-              <owl-carousel-o [options]="caseStudiesSlider" class="client-team">
-
-                <ng-template *ngFor="let caseStudyGallery of caseStudyModel.case_study_model_images" carouselSlide class="wow fadeInUp">
-                  <div class="case_studies_details_slider">
-                    <img [src]="caseStudyImage+caseStudyGallery.image" class="" alt="" />
-                  </div>
-                </ng-template>
-
-              </owl-carousel-o>
-            </div>
-            <div class="col-lg-6">
-              <p>
-                {{caseStudyModel.en_text}}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-  </article>
-<article class="even web_development">
-    <section class="web_development_banner" style="background-image: url('assets/images/banner1.jpg');">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h3>Social media</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="case_studies_details py-0">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-lg-6 px-0">
-
-            <owl-carousel-o [options]="caseStudiesSlider" class="client-team">
-
-              <ng-template *ngFor="let caseStudy of caseStudies" carouselSlide class="wow fadeInUp">
-                <div class="case_studies_details_slider">
-                  <img [src]="caseStudyImage+caseStudy.logo" class="w-100" alt="" />
-                </div>
-              </ng-template>
-
-            </owl-carousel-o>
-          </div>
-          <div class="col-lg-6">
-            <h3>Lorem, ipsum dolor.</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, quidem porro, sit quaerat reiciendis ipsam officiis dolore nemo sapiente ab numquam laboriosam ducimus harum error temporibus cumque in magnam facere?
-              Illo voluptate laboriosam et consectetur mollitia nihil architecto cumque quos eos fuga reiciendis molestiae, magni, dolor praesentium! Illum unde, nulla maxime reiciendis alias tempore laboriosam deleniti! Eius aperiam nam a.
-              Nemo facilis sequi, incidunt suscipit dolorum nostrum quis. Tempora, voluptates, vero harum aut, nam at assumenda libero consequuntur maxime id ipsum illum. Repellat odit, similique nobis iure laborum eius ducimus!
-              Reiciendis est sunt maiores nesciunt nulla illo inventore quas deserunt quidem corrupti obcaecati, libero impedit aperiam rerum nostrum doloribus soluta ab sequi dignissimos tempora assumenda ut quaerat recusandae. Explicabo, deserunt.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </article>
-  <article class="odd mobile_development">
-    <section class="mobile_development_banner" style="background-image: url('assets/images/banner1.jpg');">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h3>Social media</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="case_studies_details py-0">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-lg-6 px-0">
-
-            <owl-carousel-o [options]="caseStudiesSlider" class="client-team">
-
-               <ng-template *ngFor="let caseStudy of caseStudies" carouselSlide class="wow fadeInUp">
-                <div class="case_studies_details_slider">
-                  <img [src]="caseStudyImage+caseStudy.logo" class="w-100" alt="" />
-                </div>
-              </ng-template>
-
-            </owl-carousel-o>
-          </div>
-          <div class="col-lg-6">
-            <h3>Lorem, ipsum dolor.</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, quidem porro, sit quaerat reiciendis ipsam officiis dolore nemo sapiente ab numquam laboriosam ducimus harum error temporibus cumque in magnam facere?
-              Illo voluptate laboriosam et consectetur mollitia nihil architecto cumque quos eos fuga reiciendis molestiae, magni, dolor praesentium! Illum unde, nulla maxime reiciendis alias tempore laboriosam deleniti! Eius aperiam nam a.
-              Nemo facilis sequi, incidunt suscipit dolorum nostrum quis. Tempora, voluptates, vero harum aut, nam at assumenda libero consequuntur maxime id ipsum illum. Repellat odit, similique nobis iure laborum eius ducimus!
-              Reiciendis est sunt maiores nesciunt nulla illo inventore quas deserunt quidem corrupti obcaecati, libero impedit aperiam rerum nostrum doloribus soluta ab sequi dignissimos tempora assumenda ut quaerat recusandae. Explicabo, deserunt.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </article>
-</main>
--->
