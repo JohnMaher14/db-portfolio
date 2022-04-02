@@ -5,7 +5,7 @@
       <h2 class="hide-cursor">Case studies</h2>
       <ul class="page-breadcrumb link">
         <li>
-          <a routerLink="/home"><span class="icon fas fa-home"></span>Home</a>
+          <a routerLink="/"><span class="icon fas fa-home"></span>Home</a>
         </li>
         <li><a>Case studies</a></li>
       </ul>
@@ -19,12 +19,12 @@
 </div>
 
 
-<section class="case_studies">
+<section class="case_studies ">
   <div class="container">
     <div class="row">
 
       <div *ngFor="let caseStudy of caseStudies" class="col-lg-4 col-md-6 wow animated fadeInUp mb-4">
-        <div routerLink="/clients/{{caseStudy.id}}"class="card custom-shadow case_study_card">
+        <div routerLink="/clients/{{caseStudy.id}}" class="card custom-shadow case_study_card">
           <img [src]="caseStudyImage+caseStudy.image" alt="" />
           <div class="card-body">
             <h4>{{caseStudy.en_title}}</h4>

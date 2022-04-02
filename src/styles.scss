@@ -312,12 +312,32 @@ header{
     z-index: 999999999;
 }
 ._424s .conversationContainer{
-  margin: 12pt;
+  margin: 7.5pt 15pt !important;
 }
 .upper-nav{
     padding: 25px 0;
 }
+.other_case_studies{
+  @media screen and (min-width:800px) {
 
+    .card{
+      height: 280px;
+      width: 280px;
+      margin: 0 auto;
+    }
+  }
+
+}
+.other_service_section{
+  @media screen and (min-width:800px) {
+
+    .card{
+      width: 85%;
+      margin: 0 auto;
+    }
+  }
+
+}
 .upper-nav .contact-info{
     display: flex;
     align-content: center;
@@ -550,7 +570,7 @@ header{
     padding: 6px;
     margin-right: 1rem;
     position: absolute;
-
+    cursor: pointer;
     display: inline-block;
 }
 
@@ -904,6 +924,7 @@ header{
     cursor: pointer;
 }
 .about-sec .services-area .services .service-card{
+  cursor: context-menu;
     margin-bottom: 80px;
 }
 .about-sec .services-area .services:last-child .service-card,.about-sec .services-area .services:nth-child(3) .service-card{
@@ -1217,6 +1238,9 @@ header{
     color: #ffffff;
     transition: .5s ease all;
 }
+// .other_case_studies .owl-item:has(.card.d-none){
+//   display: none;
+// }
 .casestudy{
   &_page{
     &--title{
@@ -2187,10 +2211,7 @@ header{
       text-align:center;
     }
     box-shadow: 0 0 18px rgba(0, 0 ,0 , 6%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
     // color: #fff;
     h4{
       font-weight: 600;
@@ -4398,7 +4419,10 @@ a {
   background-image: url("assets/images/Footer/Footer_Off.jpg");
   background-size: cover;
   background-position: center;
-  padding: 20px 0;
+  &_a{
+
+    padding: 20px 0;
+  }
   &_link{
     display: block;
     transition: all .3s ease-in-out;

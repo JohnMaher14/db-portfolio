@@ -22,13 +22,12 @@ import { ServicesDetailsComponent } from './content/pages/services/services-deta
 import { SayhelloComponent } from './content/pages/sayhello/sayhello.component';
 import { FacebookModule } from "ngx-facebook";
 import { HttpClientModule } from "@angular/common/http";
-import { ThankyouContactComponent } from './content/thankyou/thankyou-contact/thankyou-contact.component';
-import { ThankyouReviewComponent } from './content/thankyou/thankyou-review/thankyou-review.component';
 import { ActionSpinnerComponent } from './content/shared/action-spinner/action-spinner.component';
 import { ClientDetailComponent } from './content/pages/clients/client-detail/client-detail.component';
 import { HoverfooterDirective } from './directives/hoverfooter.directive';
 import { OtherServiceComponent } from './content/pages/services/other-service/other-service.component';
 import { PrivacyPolicyComponent } from './content/pages/privacy-policy/privacy-policy.component';
+import { ClientsDetailComponent } from './content/pages/clients/clients-detail/clients-detail.component';
 
 
 @NgModule({
@@ -47,16 +46,16 @@ import { PrivacyPolicyComponent } from './content/pages/privacy-policy/privacy-p
     ServicesComponent,
     ServicesDetailsComponent,
     SayhelloComponent,
-    ThankyouContactComponent,
-    ThankyouReviewComponent,
+
     ActionSpinnerComponent,
     ClientDetailComponent,
     HoverfooterDirective,
     OtherServiceComponent,
     PrivacyPolicyComponent,
+    ClientsDetailComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
     AppRoutingModule,
     CarouselModule,
     BrowserAnimationsModule,

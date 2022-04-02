@@ -32,6 +32,8 @@ export class OtherServiceComponent implements OnInit {
     this._ServicesService.getServicesDetails(this.indexForNumbers)
     .subscribe((data) => {
       this.serviceDetail = data.service[0];
+      this._Title.setTitle(`Digital Bond | ${this.serviceDetail?.en_title}`)
+
       // this.loading = false
     });
   }

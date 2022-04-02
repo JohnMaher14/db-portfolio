@@ -1,3 +1,6 @@
+$(window).ready(function(){
+  $(".loader").delay(800).fadeOut(2000)
+})
 $(window).on("load", function () {
   "use strict";
   /* ===================================
@@ -8,9 +11,6 @@ $(window).on("load", function () {
 
 
 });
-  $(window).ready(function(){
-    $(".loader").delay(800).fadeOut(2000)
-  })
 jQuery(function ($) {
   "use strict";
   window.addEventListener("keydown", function(e) {
@@ -65,6 +65,7 @@ jQuery(function ($) {
     $("html, body").animate({ scrollTop: 0 }, 800);
     return false;
   });
+  // $('other_case_studies:has(.card.d-none)').addClass('has_child');
 
   /* ===================================
         Side Menu
@@ -92,7 +93,8 @@ jQuery(function ($) {
           $(".side-menu").addClass("side-menu-opacity");
         }, 500);
       }),
-      $(".side-nav .navbar-nav .nav-item .dropdown-content a").on("click", function () {
+      $(".navbar-nav li ul.dropdown-menu a").on("click", function (e) {
+        e.preventDefault()
         $(".side-menu").removeClass("side-menu-active"),
           $("#close_side_menu").fadeOut(200),
           $(".pushwrap").removeClass("active");
@@ -147,116 +149,117 @@ $(".btn_up").on('click', function(e) {
   e.preventDefault();
   $('html, body').animate({scrollTop:0}, '300');
 });
-  if ($(window).width() > 991) {
-    $(".banner .main_slider_content .main_slider_header, header , .service-details , .about_us_title , .team-details .title, .about-details .title , .services-section .section-header , .contact-sec .heading , .testimonial-page .heading , .review_section h2" ).mousemove(function (e) {
-      $("[data-depth]").each(function () {
-        var depth = $(this).data("depth");
-        var amountMovedX = (e.pageX * -depth) / 4;
-        var amountMovedY = (e.pageY * -depth) / 4;
 
-        $(this).css({
-          transform:
-            "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
-        });
-      });
-    });
-    $(".service-details .first_heading" ).mousemove(function (e) {
-      $("[data-depth]").each(function () {
-        var depth = $(this).data("depth");
-        var amountMovedX = (e.pageX * -depth) / 4;
-        var amountMovedY = (e.pageY * -depth) / 4;
+  // if ($(window).width() > 991) {
+  //   $(".banner .main_slider_content .main_slider_header, header , .service-details , .about_us_title , .team-details .title, .about-details .title , .services-section .section-header , .contact-sec .heading , .testimonial-page .heading , .review_section h2" ).mousemove(function (e) {
+  //     $("[data-depth]").each(function () {
+  //       var depth = $(this).data("depth");
+  //       var amountMovedX = (e.pageX * -depth) / 4;
+  //       var amountMovedY = (e.pageY * -depth) / 4;
 
-        $(this).css({
-          transform:
-            "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
-        });
-      });
-    });
-    $(" .team-details .title " ).mousemove(function (e) {
-      $("[data-depth]").each(function () {
-        var depth = $(this).data("depth");
-        var amountMovedX = (e.pageX * -depth) / 4;
-        var amountMovedY = (e.pageY * -depth) / 4;
+  //       $(this).css({
+  //         transform:
+  //           "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
+  //       });
+  //     });
+  //   });
+  //   $(".service-details .first_heading" ).mousemove(function (e) {
+  //     $("[data-depth]").each(function () {
+  //       var depth = $(this).data("depth");
+  //       var amountMovedX = (e.pageX * -depth) / 4;
+  //       var amountMovedY = (e.pageY * -depth) / 4;
 
-        $(this).css({
-          transform:
-            "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
-        });
-      });
-    });
-    $(".skill-details .title" ).mousemove(function (e) {
-      $("[data-depth]").each(function () {
-        var depth = $(this).data("depth");
-        var amountMovedX = (e.pageX * -depth) / 4;
-        var amountMovedY = (e.pageY * -depth) / 4;
+  //       $(this).css({
+  //         transform:
+  //           "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
+  //       });
+  //     });
+  //   });
+  //   $(" .team-details .title " ).mousemove(function (e) {
+  //     $("[data-depth]").each(function () {
+  //       var depth = $(this).data("depth");
+  //       var amountMovedX = (e.pageX * -depth) / 4;
+  //       var amountMovedY = (e.pageY * -depth) / 4;
 
-        $(this).css({
-          transform:
-            "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
-        });
-      });
-    });
-    $(".brand-sec .heading" ).mousemove(function (e) {
-      $("[data-depth]").each(function () {
-        var depth = $(this).data("depth");
-        var amountMovedX = (e.pageX * -depth) / 4;
-        var amountMovedY = (e.pageY * -depth) / 4;
+  //       $(this).css({
+  //         transform:
+  //           "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
+  //       });
+  //     });
+  //   });
+  //   $(".skill-details .title" ).mousemove(function (e) {
+  //     $("[data-depth]").each(function () {
+  //       var depth = $(this).data("depth");
+  //       var amountMovedX = (e.pageX * -depth) / 4;
+  //       var amountMovedY = (e.pageY * -depth) / 4;
 
-        $(this).css({
-          transform:
-            "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
-        });
-      });
-    });
-    $(".client-section .client_header" ).mousemove(function (e) {
-      $("[data-depth]").each(function () {
-        var depth = $(this).data("depth");
-        var amountMovedX = (e.pageX * -depth) / 4;
-        var amountMovedY = (e.pageY * -depth) / 4;
+  //       $(this).css({
+  //         transform:
+  //           "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
+  //       });
+  //     });
+  //   });
+  //   $(".brand-sec .heading" ).mousemove(function (e) {
+  //     $("[data-depth]").each(function () {
+  //       var depth = $(this).data("depth");
+  //       var amountMovedX = (e.pageX * -depth) / 4;
+  //       var amountMovedY = (e.pageY * -depth) / 4;
 
-        $(this).css({
-          transform:
-            "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
-        });
-      });
-    });
-    $(".testimonial-sec .heading" ).mousemove(function (e) {
-      $("[data-depth]").each(function () {
-        var depth = $(this).data("depth");
-        var amountMovedX = (e.pageX * -depth) / 4;
-        var amountMovedY = (e.pageY * -depth) / 4;
+  //       $(this).css({
+  //         transform:
+  //           "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
+  //       });
+  //     });
+  //   });
+  //   $(".client-section .client_header" ).mousemove(function (e) {
+  //     $("[data-depth]").each(function () {
+  //       var depth = $(this).data("depth");
+  //       var amountMovedX = (e.pageX * -depth) / 4;
+  //       var amountMovedY = (e.pageY * -depth) / 4;
 
-        $(this).css({
-          transform:
-            "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
-        });
-      });
-    });
-    $(".testimonial-sec .heading" ).mousemove(function (e) {
-      $("[data-depth]").each(function () {
-        var depth = $(this).data("depth");
-        var amountMovedX = (e.pageX * -depth) / 4;
-        var amountMovedY = (e.pageY * -depth) / 4;
+  //       $(this).css({
+  //         transform:
+  //           "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
+  //       });
+  //     });
+  //   });
+  //   $(".testimonial-sec .heading" ).mousemove(function (e) {
+  //     $("[data-depth]").each(function () {
+  //       var depth = $(this).data("depth");
+  //       var amountMovedX = (e.pageX * -depth) / 4;
+  //       var amountMovedY = (e.pageY * -depth) / 4;
 
-        $(this).css({
-          transform:
-            "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
-        });
-      });
-    });
-    $(".navbar-brand img" ).mousemove(function (e) {
-      $("[data-depth]").each(function () {
-        var depth = $(this).data("depth");
-        var amountMovedX = (e.pageX * -depth) / 4;
-        var amountMovedY = (e.pageY * -depth) / 4;
+  //       $(this).css({
+  //         transform:
+  //           "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
+  //       });
+  //     });
+  //   });
+  //   $(".testimonial-sec .heading" ).mousemove(function (e) {
+  //     $("[data-depth]").each(function () {
+  //       var depth = $(this).data("depth");
+  //       var amountMovedX = (e.pageX * -depth) / 4;
+  //       var amountMovedY = (e.pageY * -depth) / 4;
 
-        $(this).css({
-          transform:
-            "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
-        });
-      });
-    });
-  }
+  //       $(this).css({
+  //         transform:
+  //           "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
+  //       });
+  //     });
+  //   });
+  //   $(".navbar-brand img" ).mousemove(function (e) {
+  //     $("[data-depth]").each(function () {
+  //       var depth = $(this).data("depth");
+  //       var amountMovedX = (e.pageX * -depth) / 4;
+  //       var amountMovedY = (e.pageY * -depth) / 4;
+
+  //       $(this).css({
+  //         transform:
+  //           "translate3d(" + amountMovedX + "px," + 11 + "px, 0)",
+  //       });
+  //     });
+  //   });
+  // }
 
   /* ===================================
     Skill Section Bars

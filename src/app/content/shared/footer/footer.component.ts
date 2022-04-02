@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
+  date:any;
   constructor(
     private _Router:Router
   ) { }
 
   ngOnInit(): void {
+    this.date = new Date().getFullYear()
   }
   navigateTosayHello(){
     this._Router.navigate(['/say-hello'])

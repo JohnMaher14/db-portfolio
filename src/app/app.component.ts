@@ -26,8 +26,23 @@ export class AppComponent implements OnInit {
   //     this._FacebookService.init(InitParams)
   // }
   ngOnInit(): void {
-    
+
     this.initFacebookService();
+    document.onkeydown = function (e) {
+      e = e || window.event;//Get event
+
+      if (!e.ctrlKey) return;
+
+      var code = e.which || e.keyCode;//Get key code
+
+      switch (code) {
+          case 83://Block Ctrl+S
+          case 87://Block Ctrl+W -- Not work in Chrome and new Firefox
+              e.preventDefault();
+              e.stopPropagation();
+              break;
+      }
+  };
   }
   private initFacebookService(): void {
     const initParams: InitParams = { xfbml:true, version:'v2.0'};

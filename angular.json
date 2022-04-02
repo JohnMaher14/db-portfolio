@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-db-porfolio/browser",
+            "outputPath": "dist/ng-db-porfolio",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,8 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bundle.min.css",
-              "node_modules/bootstrap/dist/css/LineIcons.min.css",
+              "src/assets/css/bundle.min.css",
+              "src/assets/css/LineIcons.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "node_modules/animate.css/animate.min.css",
               "node_modules/jquery-fancybox/source/scss/jquery.fancybox.scss",
@@ -42,11 +42,11 @@
             ],
             "scripts": [
 
-              "node_modules/bootstrap/dist/js/bundle.min.js",
+              "src/assets/js/bundle.min.js",
               "node_modules/jquery-fancybox/source/js/jquery.fancybox.js",
               "node_modules/jquery.appear/jquery.appear.js",
               "node_modules/wowjs/dist/wow.min.js",
-              "node_modules/bootstrap/script.js"
+              "src/assets/js/script.js"
             ]
           },
           "configurations": {
@@ -120,65 +120,6 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy"
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/ng-db-porfolio/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "ng-db-porfolio:build:development",
-              "serverTarget": "ng-db-porfolio:server:development"
-            },
-            "production": {
-              "browserTarget": "ng-db-porfolio:build:production",
-              "serverTarget": "ng-db-porfolio:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "ng-db-porfolio:build:production",
-              "serverTarget": "ng-db-porfolio:server:production"
-            },
-            "development": {
-              "browserTarget": "ng-db-porfolio:build:development",
-              "serverTarget": "ng-db-porfolio:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }
