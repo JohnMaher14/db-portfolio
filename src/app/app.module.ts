@@ -24,7 +24,6 @@ import { FacebookModule } from "ngx-facebook";
 import { HttpClientModule } from "@angular/common/http";
 import { ActionSpinnerComponent } from './content/shared/action-spinner/action-spinner.component';
 import { ClientDetailComponent } from './content/pages/clients/client-detail/client-detail.component';
-import { HoverfooterDirective } from './directives/hoverfooter.directive';
 import { OtherServiceComponent } from './content/pages/services/other-service/other-service.component';
 import { PrivacyPolicyComponent } from './content/pages/privacy-policy/privacy-policy.component';
 import { ClientsDetailComponent } from './content/pages/clients/clients-detail/clients-detail.component';
@@ -49,7 +48,6 @@ import { ClientsDetailComponent } from './content/pages/clients/clients-detail/c
 
     ActionSpinnerComponent,
     ClientDetailComponent,
-    HoverfooterDirective,
     OtherServiceComponent,
     PrivacyPolicyComponent,
     ClientsDetailComponent,

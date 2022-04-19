@@ -34,62 +34,67 @@ export class HomeComponent implements OnInit {
 
     }
 
-    showSliders(){
+    showHome(){
       this.loading = true ;
 
       this._HomeService.getHome().subscribe(
         (response => {
-          this.sliders = response.sliders
-          // this.loading= false
+          this.sliders = response.sliders;
+          this.teams = response.team;
+          this.studyCases = response.clients;
+          this.aboutUs = response.main;
+          this.reviews = response.feedbacks;
+
+          this.loading= false
         })
       )
 
     }
 
 
-  showTeams(){
-    this.loading = true ;
+  // showTeams(){
+  //   this.loading = true ;
 
-    this._HomeService.getHome().subscribe(
-      (response => {
+  //   this._HomeService.getHome().subscribe(
+  //     (response => {
 
-        this.teams = response.team
-        // this.loading= false
-      })
-    )
-  }
-  showStudyCases(){
-    this.loading = true ;
+  //       this.teams = response.team
+  //       // this.loading= false
+  //     })
+  //   )
+  // }
+  // showStudyCases(){
+  //   this.loading = true ;
 
-    this._HomeService.getHome().subscribe(
-      (response => {
+  //   this._HomeService.getHome().subscribe(
+  //     (response => {
 
-        this.studyCases = response.clients
-        // this.loading= false
-      })
-    )
-  }
-  showAboutus(){
-    this.loading = true ;
+  //       this.studyCases = response.clients
+  //       // this.loading= false
+  //     })
+  //   )
+  // }
+  // showAboutus(){
+  //   this.loading = true ;
 
-    this._HomeService.getHome().subscribe(
-      (response => {
-        this.aboutUs = response.main
-        // this.loading= false
-      })
-    )
-  }
+  //   this._HomeService.getHome().subscribe(
+  //     (response => {
+  //       this.aboutUs = response.main
+  //       // this.loading= false
+  //     })
+  //   )
+  // }
 
-  showReview(){
-    this.loading = true ;
+  // showReview(){
+  //   this.loading = true ;
 
-    this._HomeService.getHome().subscribe(
-      (response) => {
-        this.reviews = response.feedbacks;
-        this.loading= false
-      }
-    )
-  }
+  //   this._HomeService.getHome().subscribe(
+  //     (response) => {
+  //       this.reviews = response.feedbacks;
+  //       this.loading= false
+  //     }
+  //   )
+  // }
   mainSlider: OwlOptions = {
     loop: true,
     dots: true,
@@ -218,11 +223,11 @@ export class HomeComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    this.showSliders();
-    this.showStudyCases();
-    this.showTeams()
-    this.showAboutus();
-    this.showReview();
+    this.showHome();
+    // this.showStudyCases();
+    // this.showTeams()
+    // this.showAboutus();
+    // this.showReview();
     this._Title.setTitle('Digital Bond | Home')
 
   }

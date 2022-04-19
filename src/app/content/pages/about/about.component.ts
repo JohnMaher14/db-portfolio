@@ -22,36 +22,28 @@ export class AboutComponent implements OnInit {
   pageBanner: BannerImage[] = [];
   teams: Team[] = [];
   constructor(
-    private _AboutUsService:AboutUsService, private _Title:Title
-    ) {
+    private _AboutUsService:AboutUsService,
+    private _Title:Title
+  ) {
       this._Title.setTitle('Digital Bond | About us')
-   }
+  }
   showAboutUsSection(){
     this.loading = true ;
 
     this._AboutUsService.getAboutusPage().subscribe(
       (response)=> {
 
-        this.aboutUs = response.aboutUsPage
+        this.aboutUs = response.aboutUsPage;
+        this.teams= response.team;
+
         this.loading = false
       }
     )
   }
 
-  showTeams(){
-    this.loading = true ;
-    this._AboutUsService.getAboutusPage().subscribe(
-      (response)=>{
 
-        this.teams= response.team
-        // this.loading = false
-      }
-    )
-  }
   ngOnInit(): void {
-    this.showTeams();
     this.showAboutUsSection();
-
   }
   teamCarousal: OwlOptions = {
     loop: true,

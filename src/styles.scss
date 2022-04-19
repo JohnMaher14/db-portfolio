@@ -921,7 +921,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    // cursor: pointer;
 }
 .about-sec .services-area .services .service-card{
   cursor: context-menu;
@@ -956,6 +956,7 @@ header{
     transition: .5s ease;
     font-weight: 300;
     text-transform: initial !important;
+    cursor: context-menu;
 }
 
 // .about-sec img{
@@ -1244,7 +1245,7 @@ header{
 .casestudy{
   &_page{
     &--title{
-      background-image: url('assets/images/Case_studies/Heaeder.jpg') !important;
+      // background-image: url('assets/images/Case_studies/Heaeder.jpg') !important;
       background-size: cover;
       background-position: center;
     }
@@ -1603,7 +1604,7 @@ header{
   margin-top: 60px;
 }
 .review_section{
-  background-image: url(assets/images/BG/2.jpg);
+    // background-image: url(assets/images/BG/2.jpg);
   background-size: cover;
   background-position: center center;
   clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
@@ -1621,7 +1622,7 @@ header{
   }
 }
 .testimonial-page{
-  background-image: url(assets/images/BG/1.jpg);
+   // background-image: url(assets/images/BG/1.jpg);
   background-size: cover;
   background-position: center center;
   clip-path: polygon(0 0, 100% 7%, 100% 88%, 0% 100%);
@@ -1864,7 +1865,7 @@ header{
 ====================================== */
 
 .contact-sec{
-  background-image: url(assets/images/BG/1.jpg);
+    // background-image: url(assets/images/BG/1.jpg);
   background-size: cover;
   background-position: center center;
   clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 100%);
@@ -3314,6 +3315,8 @@ transform: none;
 .case_studies{
   clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
   background-image: url('assets/images/BG/1.jpg');
+  background-size: cover;
+  background-position: center;
   @media screen and (max-width:1024px) {
     clip-path: unset;
   }
@@ -3517,17 +3520,17 @@ transform: none;
 //     }
 //   }
 // }
-.social_media_banner{
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)) , url('assets/images/Case_studies/Social_Media.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  h3{
-    font-weight: 600;
-    font-size: 25px;
-    color:#fff
-  }
-}
+// .social_media_banner{
+//   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)) , url('assets/images/Case_studies/Social_Media.jpg');
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-size: cover;
+//   h3{
+//     font-weight: 600;
+//     font-size: 25px;
+//     color:#fff
+//   }
+// }
 @supports (position: sticky) {
   .is-sticky {
     margin: 0;
@@ -3654,29 +3657,29 @@ a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
     transform: translateX(-50%);
   }
 }
-.social_website_banner{
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)) , url('assets/images/Case_studies/Websites.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  h3{
-    font-weight: 600;
-    font-size: 25px;
-    color:#fff
-  }
-}
-.social_apps_banner{
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)) , url('assets/images/Case_studies/Apps.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  h3{
-    font-weight: 600;
-    font-size: 25px;
-    color:#fff
+// .social_website_banner{
+//   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)) , url('assets/images/Case_studies/Websites.jpg');
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-size: cover;
+//   h3{
+//     font-weight: 600;
+//     font-size: 25px;
+//     color:#fff
+//   }
+// }
+// .social_apps_banner{
+//   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)) , url('assets/images/Case_studies/Apps.jpg');
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-size: cover;
+//   h3{
+//     font-weight: 600;
+//     font-size: 25px;
+//     color:#fff
 
-  }
-}
+//   }
+// }
 .case_studies .card{
   box-shadow: 2px 12px 36px -11px;
   border: none;
@@ -3795,7 +3798,7 @@ bottom: 0;
   }
   &_page{
     &--title{
-      background-image: url('assets/images/Services_Page/Services.jpg');
+      // background-image: url('assets/images/Services_Page/Services.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -4351,15 +4354,15 @@ a {
 .w-90 {
   width: 90%;
 }
-.sayhello{
-  &_page{
-    &--title{
-      background-image: url('assets/images/Say_Page/Say_Hello.jpg');
-    }
-  }
-}
+// .sayhello{
+//   &_page{
+//     &--title{
+//       background-image: url('assets/images/Say_Page/Say_Hello.jpg');
+//     }
+//   }
+// }
 .say-hello{
-  background-image: url(assets/images/BG/1.jpg);
+    // background-image: url(assets/images/BG/1.jpg);
   background-size: cover;
   background-position: center center;
   clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 100%);
@@ -4532,7 +4535,7 @@ a {
   transition: all 1s;
 }
 .about-sec {
-  background-image: url(assets/images/BG/2.jpg);
+    // background-image: url(assets/images/BG/2.jpg);
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 9%, 100% 90%, 0 100%);
@@ -4542,7 +4545,7 @@ a {
   }
 }
 .skill-sec {
-  background-image: url(assets/images/BG/1.jpg);
+    // background-image: url(assets/images/BG/1.jpg);
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
@@ -4552,7 +4555,7 @@ a {
   }
 }
 .team-section {
-  background-image: url(assets/images/BG/2.jpg);
+    // background-image: url(assets/images/BG/2.jpg);
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 9%, 100% 90%, 0 100%);
@@ -4569,7 +4572,7 @@ a {
   }
 }
 .client-section {
-  background-image: url(assets/images/BG/2.jpg);
+    // background-image: url(assets/images/BG/2.jpg);
   clip-path: polygon(0 0, 100% 9%, 100% 90%, 0 100%);
 
   background-size: cover;
@@ -4591,7 +4594,7 @@ a {
   }
 }
 .brand-sec {
-  background-image: url(assets/images/BG/1.jpg);
+    // background-image: url(assets/images/BG/1.jpg);
   clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 90%);
 
   background-size: cover;
@@ -4615,7 +4618,7 @@ a {
 }
 
 .testimonial-sec {
-  background-image: url(assets/images/BG/1.jpg);
+    // background-image: url(assets/images/BG/1.jpg);
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 8%, 100% 0%, 100% 100%, 0 100%);
@@ -4641,7 +4644,7 @@ a {
     &_page{
 
       clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
-      background-image: url(assets/images/BG/1.jpg);
+        // background-image: url(assets/images/BG/1.jpg);
       background-size: cover;
       background-position: center;
       @media screen and (max-width:1024px) {
@@ -4687,7 +4690,7 @@ a {
 }
 .about{
   &_us{
-    background-image: url(assets/images/BG/1.jpg);
+      // background-image: url(assets/images/BG/1.jpg);
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 3%, 100% 8%, 100% 93%, 0 100%);
@@ -4705,7 +4708,7 @@ a {
       }
   }
   &_vision{
-    background-image: url(assets/images/BG/2.jpg);
+      // background-image: url(assets/images/BG/2.jpg);
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
@@ -4791,20 +4794,20 @@ a {
     }
   }
 }
-.contact{
-  &_page{
-    &--title{
-      background-image: url('assets/images/Say_Page/Contact.jpg');
-    }
-  }
-}
-.review{
-  &_page{
-    &--title{
-      background-image: url('assets/images/Say_Page/Feedback.jpg');
-    }
-  }
-}
+// .contact{
+//   &_page{
+//     &--title{
+//       background-image: url('assets/images/Say_Page/Contact.jpg');
+//     }
+//   }
+// }
+// .review{
+//   &_page{
+//     &--title{
+//       background-image: url('assets/images/Say_Page/Feedback.jpg');
+//     }
+//   }
+// }
 
 
 

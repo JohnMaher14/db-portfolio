@@ -41,7 +41,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-
               "src/assets/js/bundle.min.js",
               "node_modules/jquery-fancybox/source/js/jquery.fancybox.js",
               "node_modules/jquery.appear/jquery.appear.js",
